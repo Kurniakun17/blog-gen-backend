@@ -142,7 +142,7 @@ ${commentsStr || "No comments found."}
  */
 export async function researchTopic(keyword: string): Promise<ResearchData> {
   console.log(`[RESEARCH] Starting research for keyword: ${keyword}`);
-  const MAX_URLS = 12;
+  const MAX_URLS = 20;
 
   // Step 1: Google Search using SerpApi
   const serpApiKey = process.env.SERPAPI_API_KEY;

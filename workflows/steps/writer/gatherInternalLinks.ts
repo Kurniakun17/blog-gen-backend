@@ -88,6 +88,7 @@ export async function gatherInternalLinksStep(
         console.log(
           `\n========== [Gather Internal Links] Completed ==========`
         );
+        console.log(internalLinks)
         console.log(`Found ${internalLinks.length} internal links`);
         console.log(
           "=======================================================\n"

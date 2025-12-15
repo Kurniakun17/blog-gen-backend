@@ -19,6 +19,12 @@ type VerifyContextResult = {
   verifiedData: VerificationQuestion[];
 };
 
+type ClaimGroup = {
+  claims: VerificationQuestion[];
+  combinedQuestion: string;
+  groupTopic: string;
+};
+
 /**
  * Step: Verify Context
  * Extracts sensitive claims from the outline and verifies them using SERP API Google AI Mode
@@ -86,7 +92,99 @@ ${input.outline}`;
         `\n[Verify Context] Extracted ${questions.length} claims to verify\n`
       );
 
-      // Step 2: Verify each question using SERP API Google AI Mode
+      // Step 2: Use AI to group related claims to reduce API calls
+      let claimGroups: ClaimGroup[] = [];
+
+      if (questions.length === 0) {
+        claimGroups = [];
+      } else if (questions.length === 1) {
+        claimGroups = [
+          {
+            claims: questions,
+            combinedQuestion: questions[0].question,
+            groupTopic: "single",
+          },
+        ];
+      } else {
+        // Use AI to intelligently group claims
+        const groupingPrompt = `You are an expert at grouping related factual claims for efficient verification.
+
+Given a list of claims and their verification questions, group related claims together based on:
+1. Same company/product/service
+2. Related topic (e.g., all pricing claims, all feature claims)
+3. Can be answered by a single search query
+
+Rules:
+- Maximum 5 claims per group (split if more)
+- If claims are unrelated, keep them separate
+- Create a concise combined question that covers all claims in the group
+
+Claims to group:
+${questions.map((q, i) => `${i + 1}. Claim: "${q.claim}"\n   Question: "${q.question}"`).join("\n\n")}
+
+Return a JSON array of groups with this structure:
+[
+  {
+    "claimIndexes": [0, 1, 2],
+    "groupTopic": "eesel AI pricing",
+    "combinedQuestion": "What are eesel AI's pricing plans, features, and billing options?"
+  }
+]
+
+Keep groups logical and efficient. If a claim doesn't fit with others, put it in its own group.`;
+
+        try {
+          const groupingResult = await generateText({
+            model: getModel("writer"),
+            prompt: groupingPrompt,
+            temperature: 0.3,
+          });
+
+          const jsonMatch = groupingResult.text.match(/\[[\s\S]*\]/);
+          if (!jsonMatch) {
+            console.warn(
+              "[Verify Context] Failed to parse AI grouping, falling back to individual claims"
+            );
+            claimGroups = questions.map((q) => ({
+              claims: [q],
+              combinedQuestion: q.question,
+              groupTopic: "ungrouped",
+            }));
+          } else {
+            const aiGroups: Array<{
+              claimIndexes: number[];
+              groupTopic: string;
+              combinedQuestion: string;
+            }> = JSON.parse(jsonMatch[0]);
+
+            // Convert AI groups to ClaimGroup format
+            claimGroups = aiGroups.map((group) => ({
+              claims: group.claimIndexes.map((idx) => questions[idx]),
+              combinedQuestion: group.combinedQuestion,
+              groupTopic: group.groupTopic,
+            }));
+          }
+        } catch (error) {
+          console.error("[Verify Context] Error in AI grouping:", error);
+          // Fallback: each claim in its own group
+          claimGroups = questions.map((q) => ({
+            claims: [q],
+            combinedQuestion: q.question,
+            groupTopic: "fallback",
+          }));
+        }
+      }
+
+      console.log(
+        `\n[Verify Context] AI grouped into ${claimGroups.length} verification queries (reduced from ${questions.length})\n`
+      );
+      claimGroups.forEach((group, idx) => {
+        console.log(
+          `  Group ${idx + 1} [${group.groupTopic}]: ${group.claims.length} claims`
+        );
+      });
+
+      // Step 3: Verify each group using SERP API Google AI Mode
       const serpApiKey = process.env.SERPAPI_API_KEY;
       if (!serpApiKey) {
         console.warn(
@@ -100,12 +198,14 @@ ${input.outline}`;
 
       const verifiedData: VerificationQuestion[] = [];
 
-      for (const item of questions) {
+      for (const group of claimGroups) {
         try {
           const url = new URL("https://serpapi.com/search");
           url.searchParams.append("engine", "google_ai_mode");
-          url.searchParams.append("q", item.question);
+          url.searchParams.append("q", group.combinedQuestion);
           url.searchParams.append("api_key", serpApiKey);
+
+          console.log(`\n[Verify Context] Querying: ${group.combinedQuestion}`);
 
           const response = await fetch(url.toString());
           const data = await response.json();
@@ -133,26 +233,33 @@ ${input.outline}`;
             source = data.organic_results[0].link || "";
           }
 
-          verifiedData.push({
-            claim: item.claim,
-            question: item.question,
-            answer,
-            source,
-          });
+          // Apply the same answer and source to all claims in the group
+          for (const claim of group.claims) {
+            verifiedData.push({
+              claim: claim.claim,
+              question: claim.question,
+              answer,
+              source,
+            });
 
-          console.log(`\n[Verify Context] Verified claim: ${item.claim}`);
+            console.log(`\n[Verify Context] Verified claim: ${claim.claim}`);
+          }
+
           console.log(`Answer: ${answer.substring(0, 200)}...`);
           console.log(`Source: ${source}`);
         } catch (error) {
           console.error(
-            `Failed to verify question: ${item.question}`,
+            `Failed to verify group question: ${group.combinedQuestion}`,
             error
           );
-          verifiedData.push({
-            claim: item.claim,
-            question: item.question,
-            answer: "Verification failed",
-          });
+          // Add failed verification for all claims in the group
+          for (const claim of group.claims) {
+            verifiedData.push({
+              claim: claim.claim,
+              question: claim.question,
+              answer: "Verification failed",
+            });
+          }
         }
       }
 

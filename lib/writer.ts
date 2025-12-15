@@ -193,7 +193,8 @@ export async function reviewContent(
  * @param internalLinks - List of internal links to use
  * @param externalUrls - List of external URLs to use
  * @param internalUsage - Whether this is for internal eesel AI usage
- * @returns Blog content with embedded links
+ * @param verifiedSources - List of verified source URLs to preserve
+ * @returns Object containing blog content with embedded links and the prompt used
  */
 export async function addLinkingSources(
   blogContent: string,
@@ -202,7 +203,7 @@ export async function addLinkingSources(
   externalUrls: string[],
   internalUsage?: boolean,
   verifiedSources?: string[]
-): Promise<string> {
+): Promise<{ contentWithLinks: string; prompt: string }> {
   logStep(`[Step 5/5] Adding linking sources...`);
 
   const linkingPrompt = buildLinkingSourcesPrompt({
@@ -224,7 +225,10 @@ export async function addLinkingSources(
     `[Step 5/5] Linking sources completed (${contentWithLinks.length} characters)`
   );
 
-  return contentWithLinks;
+  return {
+    contentWithLinks,
+    prompt: linkingPrompt,
+  };
 }
 
 /**

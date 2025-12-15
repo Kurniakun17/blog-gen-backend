@@ -8,7 +8,7 @@ type FinalPolishStepInput = {
 };
 
 type PolishedResult = {
-  polishedContent: string;
+  polishedContent: { result: string; prompt: string };
 };
 
 export async function finalPolishStep(
@@ -28,7 +28,7 @@ export async function finalPolishStep(
       );
       return {
         value: { polishedContent: polishedContentResult },
-        completeData: { polishedChars: polishedContentResult.length },
+        completeData: { polishedChars: polishedContentResult.result.length },
       };
     }
   );

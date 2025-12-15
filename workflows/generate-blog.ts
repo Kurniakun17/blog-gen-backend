@@ -171,8 +171,9 @@ export async function generateBlogWorkflow(
     .map((item) => item.source)
     .filter((source): source is string => !!source);
 
+  // Step 8b: Linking Sources (Internal & External Links)
   const linkingResult = await linkingSourcesStep({
-    blogContent: polishResult.value.polishedContent,
+    blogContent: polishResult.value.polishedContent.result,
     blogType: metadataResult.value.blogType || "",
     internalLinks: allInternalLinks,
     externalUrls: externalUrls,
@@ -184,6 +185,10 @@ export async function generateBlogWorkflow(
     phase: "linking-sources",
     durationMs: linkingResult.durationMs,
   });
+
+  console.log("\n========== [Linking Sources] Prompt ==========");
+  console.log(linkingResult.value.prompt.substring(0, 500) + "...");
+  console.log("==============================================\n");
 
   // Step 9: Review Flow
   const reviewResult = await reviewFlowStep({

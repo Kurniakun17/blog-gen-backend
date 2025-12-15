@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { assetsSearchStep } from "@/workflows/steps/assetsSearch";
+import { assetsSearchStep } from "@/workflows/steps/assets/assetsSearch";
 
 /**
  * Test endpoint for Assets Search step only

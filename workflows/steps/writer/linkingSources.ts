@@ -12,6 +12,7 @@ type LinkingSourcesStepInput = {
 
 type LinkedContentResult = {
   contentWithLinks: string;
+  prompt: string;
 };
 
 export async function linkingSourcesStep(
@@ -27,7 +28,7 @@ export async function linkingSourcesStep(
     },
     async () => {
       "use step";
-      const contentWithLinks = await addLinkingSources(
+      const result = await addLinkingSources(
         input.blogContent,
         input.blogType,
         input.internalLinks,
@@ -36,8 +37,8 @@ export async function linkingSourcesStep(
         input.verifiedSources
       );
       return {
-        value: { contentWithLinks },
-        completeData: { linkedContentChars: contentWithLinks.length },
+        value: { contentWithLinks: result.contentWithLinks, prompt: result.prompt },
+        completeData: { linkedContentChars: result.contentWithLinks.length },
       };
     }
   );
