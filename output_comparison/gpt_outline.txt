@@ -1,0 +1,236 @@
+Preparation
+  1) Prioritized SEO keywords
+     - Primary: best ai chatbots for your shopify store (exact match, H1 + at least one H2)
+     - Secondary / supporting: Shopify chatbot, ecommerce chatbot, AI chatbot Shopify integration, chatbot for Shopify, Gorgias AI Agent, Tidio Shopify chatbot, Juphy Shopify, Chatbase
+     - Long tail ideas to use within body: simulate AI on historical tickets, one-click helpdesk integration, no per-resolution fees
+
+  2) Logical section breakdown (high level)
+     - H1 (title) + meta/excerpt/tags
+     - Short intro (why this list matters in 2025)
+     - What we mean by \"Shopify chatbots\" (definition)
+     - Benefits and typical use cases for Shopify chatbots
+     - Criteria for picking the finalists (explicit list)
+     - Quick comparison table of all 5 apps (side-by-side)
+     - The list: 5 best AI chatbots (numbered, company first), each with:
+       - Short description
+       - Why it made the list (use case)
+       - Pros / cons (factual)
+       - Pricing (as available in the provided context; note missing pieces)
+       - Screenshot placeholder
+     - Tips for testing/rolling out a Shopify chatbot
+     - Conclusion and next steps (CTA to eesel AI)
+     - Resources / links (company pages referenced)
+
+  3) Where to integrate verified facts (URLs, pricing, limitations)
+     - eesel AI: simulation mode, one-click helpdesk integrations, pricing tiers, no per-resolution fees, Shopify actions supported, sales chatbot features and Shopify app listing. Link to https://www.eesel.ai/, pricing https://www.eesel.ai/pricing, Shopify app https://apps.shopify.com/eesel, sales chatbot preview https://www.eesel.ai/tools/sales-chatbot
+     - Gorgias AI Agent: native to Gorgias, does Shopify actions, pay-per-resolution pricing (~$1.00 per resolution monthly, $0.90/annual), no simulation mode (per context). Link to https://www.gorgias.com/ and Gorgias pricing references from context.
+     - Tidio: Shopify-specific features, pricing tiers and free plan (Starter ~$24.17/mo; Growth ~$49.17/mo; free & trials noted in context). Link to https://www.tidio.com/blog/shopify-chatbot/ and pricing pages noted in that context.
+     - Juphy: Shopify app listing pricing (Starter $19/mo, Essentials $49/mo, Scale $99/mo) from Shopify App Store content. Link to https://apps.shopify.com/juphy.
+     - Chatbase: described as simple to set up, free agent builder; context shows promotional claims but no firm multi-tier pricing in the provided excerpt. Link to https://www.chatbase.co/blog/shopify-chatbots and signup page https://chatbase.co/auth/signup. Note missing pricing details where applicable.
+
+  4) Opportunities to highlight eesel AI strengths (subtle, factual)
+     - Put eesel AI first in the list and in opening paragraph (listicle rule).
+     - Emphasize self-serve, one-click helpdesk integration, simulation mode on historical tickets, flat monthly pricing (no per-resolution fees), and Shopify-specific actions (order lookup, refunds, add-to-cart in chat).
+     - Suggest using eesel’s simulation to estimate deflection and cost before going live (factually supported).
+     - Link to eesel product/pricing/docs in CTA and resource section.
+
+  5) Required headings (H1, H2, H3) to include and key points under each
+     - H1: Best AI chatbots for your Shopify store (2025) — exact keyword match
+     - H2: Short introduction — include why 2025 matters for Shopify chatbots and what the list covers
+     - H2: what we mean by \"Shopify chatbot\" — clear definition with a one-line intro then H3s if needed
+     - H2: benefits and use cases — explain sales, support, self-serve actions
+     - H2: how we chose these chatbots — selection criteria (list)
+     - H2: comparison at a glance — table
+     - H2: the 5 best AI chatbots (numbered list) — each item H3 subsections:
+       - H3: overview (one-sentence)
+       - H3: why it made the list (one-paragraph)
+       - H3: pros / cons (bulleted, max 5 bullets)
+       - H3: pricing (facts / links; note missing info if necessary)
+       - H3: screenshot placeholder
+     - H2: practical tips for testing and rolling out a Shopify chatbot
+     - H2: conclusion and next steps — include CTA to try eesel AI and links
+     - No FAQs section
+
+- Final outline (markdown)
+
+# Best AI chatbots for your Shopify store (2025) [2000 words]
+
+Meta description (140–150 chars)
+- Compare the top AI chatbots that integrate with Shopify in 2025, including setup, pricing, and real-world use cases. Includes a recommended rollout plan.
+
+Excerpt (140–150 chars)
+- A practical list of the five best AI chatbots for Shopify in 2025, comparing integrations, pricing, pros, cons, and rollout tips.
+
+Tags
+- Ecommerce, Shopify, Customer Support, AI
+
+---
+
+## H1: Best AI chatbots for your Shopify store (2025) [Title must include exact keyword] [20–30 words / 20–30 words counted in heading; overall intro below will cover word count]
+
+## H2: introduction — why this list matters in 2025 [150 words]
+- Quick context: chatbots are now core to both support and sales for Shopify stores.
+- What this post covers: five vetted options that integrate with Shopify (company first), what to expect from each, and how to pick and test.
+- Promise: actionable comparison, pricing facts from source context, and practical rollout tips.
+
+## H2: what we mean by \"Shopify chatbot\" [definition] [150 words]
+- Short definition: embeddable AI chat or helpdesk bot trained on store data, product catalog, help docs, and optionally past tickets, that can answer questions or take actions (product lookup, order lookup, refund).
+- One-paragraph intro then:
+  - H3: typical capabilities (one short paragraph)
+    - Real-time product recommendations, order status, refunds/cancellations, add-to-cart buttons in chat, escalate to human agent.
+  - H3: what deeper integrations unlock (one short paragraph)
+    - When a bot can read Shopify product catalogs and order history it can take real actions rather than only answer questions.
+
+## H2: benefits and use cases for Shopify chatbots [150 words]
+- Bullet-list of primary benefits (each with one-sentence explanation):
+  - Increase conversions via guided selling and add-to-cart flows
+  - Reduce abandoned carts with proactive pop-ups and discounts
+  - Cut support costs by automating order lookups, returns, and tracking
+  - Improve shopper experience with 24/7 coverage and instant answers
+  - Free agents to focus on high-value queries
+- Short example: sales chatbot that recommends products and pushes a replacement order or refund flow.
+
+## H2: how we picked the finalists — selection criteria [150 words]
+- List and briefly explain each criterion used to choose the five apps:
+  - Shopify integration depth (product catalog, order lookup, refunds/actions)
+  - Helpdesk integrations and whether the bot can read past tickets
+  - Ease of setup (self-serve / one-click vs sales-assisted)
+  - Testing tools (simulation or sandbox)
+  - Pricing model predictability (flat fee vs per-resolution vs seat)
+  - Control and customization (workflow rules, tone, AI actions)
+- Short note: criteria are drawn from buyer needs (SMB vs mid-market) and from the verified contexts for each vendor.
+
+## H2: comparison at a glance — quick table [200 words equivalent; table in markdown]
+- Intro sentence: table summarizes best-for, integration depth, training on past tickets, simulation, pricing model, starting price (facts from provided context).
+
+| Product | Best for | One-click helpdesk integration | Trains on past tickets | Simulation mode | Pricing model | Starting price (from context) |
+|---|---:|---|---:|---:|---|---:|
+| eesel AI | Enhance existing Shopify + helpdesk stack | Yes — Zendesk, Freshdesk, Gorgias, Intercom (one-click) ([source](https://www.eesel.ai/integrations/all)) | Yes, trains on past tickets and macros | Yes — sandbox simulation on historical tickets ([source](https://www.eesel.ai/blog/best-ai-chatbots-that-integrate-with-shopify-and-gorgias)) | Flat monthly plans, no per-resolution fees ([source](https://www.eesel.ai/pricing)) | Team $299/mo (monthly) |
+| Gorgias AI Agent | Native Gorgias users who want tight Shopify actions | Native (inside Gorgias) | Yes — uses Gorgias help center and Shopify data | No (per context) | Pay-per-resolution (per-interaction) | ~ $1.00 per resolution (monthly plan); $0.90 on annual (per context) |
+| Tidio | Small shops starting with live chat + bots | Shopify integration for live chat & chatbots | No (does not train on past tickets per context) | No | Module-based pricing, free tier available | Free plan; Starter ~$24.17/mo (per context) |
+| Juphy | Stores that want an app embedded in Shopify admin with simple tiers | One-click Shopify app | Syncs product catalogue; not presented as training on past tickets in context | Not mentioned | Tiered monthly (Shopify app listing) | Starter $19/mo, Essentials $49/mo, Scale $99/mo ([source](https://apps.shopify.com/juphy)) |
+| Chatbase | Teams needing a simple agent builder that pulls from docs | Can be set up with files/URLs; Shopify depth not fully listed in provided context | Can train on your files/FAQs (context suggests) | Not specified in context | Not fully specified in provided content | Pricing not listed in the provided excerpt — check Chatbase site |
+
+(Note: Pricing and features are sourced from the provided context. Where the context did not supply full pricing details, the table flags that.)
+
+## H2: the 5 best AI chatbots (detailed list) [Total for list: 1100 words; ~220 words per item]
+
+- Short intro paragraph: each entry below includes a brief overview, why it made the list, pros/cons (factual from context), pricing (from provided sources) and a screenshot placeholder.
+
+### 1. eesel AI (1) [~220 words]
+- One-line overview:
+  - An AI platform built to augment existing helpdesks and Shopify stores — designed to slot in without a migration.
+- Why it made the list:
+  - Truly self-serve, one-click helpdesk integrations, trains on past tickets, robust simulation mode, flat monthly pricing (no per-resolution fees), and Shopify actions supported. See product pages: https://www.eesel.ai/product/ai-chatbot and https://www.eesel.ai/integration/shopify-ai.
+- Pros (facts):
+  - Self-serve setup — get running in minutes without mandatory sales calls.
+  - One-click integrations with Zendesk, Freshdesk, Intercom, Gorgias, and Shopify.
+  - Powerful simulation mode to test on historical tickets before going live.
+  - Flat monthly plans, predictable billing (no per-resolution fees) — pricing info: Team $299/mo, Business $799/mo (monthly); see https://www.eesel.ai/pricing.
+  - Shopify-capable sales chatbot supports order lookup, refunds, add-to-cart in chat, and guided buying flows; deep catalog sync.
+- Cons / limitations (factual):
+  - Newer compared with some incumbents so third-party review history may be shorter (context note).
+  - Focuses on enhancing an existing helpdesk rather than replacing it; if you want a single all-in-one helpdesk + bot replacement you might choose differently.
+- Pricing (facts / links):
+  - Team: $299/mo (monthly) or $239/mo billed annually; Business: $799/mo or $639/mo annually; Custom available. See https://www.eesel.ai/pricing.
+- Screenshot placeholder:
+  - [Screenshot: eesel AI Shopify chatbot product carousel and simulation dashboard — 1200x700]
+
+### 2. Gorgias AI Agent [~220 words]
+- One-line overview:
+  - Gorgias's built-in AI for users already on the Gorgias platform, with tight Shopify action support.
+- Why it made the list:
+  - Native to the Gorgias helpdesk and able to perform Shopify actions like order edits and refunds; good fit if you live in the Gorgias ecosystem.
+- Pros (facts):
+  - Deep Shopify action support (order editing, refunds).
+  - Native activation inside Gorgias, so the team stays in a familiar workflow.
+  - Designed to resolve many common ecommerce support queries automatically.
+- Cons / limitations (facts):
+  - Pricing is per automated resolution which can make costs unpredictable during spikes; context cites about $1.00 per resolution on monthly plans and $0.90 per resolution on annual plans.
+  - No pre-live simulation mode mentioned in provided context, so you cannot fully test on historical tickets in the same way as eesel AI.
+  - In-context learning limited to Gorgias data; cannot, per context, pull in external knowledge sources as flexibly as tools built to unify many knowledge sources.
+- Pricing (facts / links):
+  - Available as part of Gorgias plans with an additional per-resolution charge; see Gorgias docs and pricing referenced in context.
+- Screenshot placeholder:
+  - [Screenshot: Gorgias AI settings page showing Shopify action triggers — 1200x700]
+
+### 3. Tidio [~220 words]
+- One-line overview:
+  - All-in-one live chat platform with visual chatbot builder and Shopify integration, popular with small stores.
+- Why it made the list:
+  - Good visual builder for conversation flows, Shopify product recommendation triggers, and a free tier for experimentation.
+- Pros (facts):
+  - 30+ chatbot templates and product recommendation triggers tied to browsing behavior (per Tidio content).
+  - Free plan and 7-day free trial; accessible starting point for small stores.
+  - Integrates with social channels (Instagram, Facebook Messenger).
+- Cons / limitations (facts):
+  - Integration with helpdesks like Gorgias is mostly hand-off rather than deep two-way learning; Tidio does not train on your past helpdesk tickets per the provided context.
+  - Feature complexity may be higher for non-technical users, and advanced plans can get expensive.
+- Pricing (facts / links):
+  - Free tier available; Starter ~$24.17/mo, Growth ~$49.17/mo; higher tiers listed in the provided context. See https://www.tidio.com/blog/shopify-chatbot/ for the pricing snapshot from the article.
+- Screenshot placeholder:
+  - [Screenshot: Tidio chatbot template picker and Shopify product trigger settings — 1200x700]
+
+### 4. Juphy [~220 words]
+- One-line overview:
+  - A Shopify app built for Shopify admin users that syncs product catalog and supports AI Q&A and sales assistant flows.
+- Why it made the list:
+  - Shopify app listing, direct usage inside Shopify admin, clear tiered pricing, and features geared toward sales + support.
+- Pros (facts):
+  - One-click setup in Shopify admin, auto-sync with product catalog, and customizable branding options.
+  - Straightforward pricing tiers on the Shopify app listing: Starter $19/mo, Essentials $49/mo, Scale $99/mo.
+  - Designed to be used directly inside Shopify admin for ease of use.
+- Cons / limitations (facts):
+  - App listing describes product catalog sync and FAQ training; the context does not show simulation on historical helpdesk tickets or advanced per-resolution economics.
+  - If you want a helpdesk‑first solution that learns from past tickets (macros, ticket history), the app listing does not claim full past-ticket simulation like eesel AI.
+- Pricing (facts / links):
+  - Shopify app pricing from listing: Starter $19/mo, Essentials $49/mo, Scale $99/mo. See https://apps.shopify.com/juphy.
+- Screenshot placeholder:
+  - [Screenshot: Juphy Shopify app product sync and chat widget inside Shopify admin — 1200x700]
+
+### 5. Chatbase [~220 words]
+- One-line overview:
+  - Lightweight agent builder that lets you train an agent from files and connect to site; recommended when you want a simple, fast agent prototype.
+- Why it made the list:
+  - Focus on rapid agent creation and a simple content upload/training flow; recommended in context for getting a working agent without heavy setup.
+- Pros (facts):
+  - Simple data upload model and customizable tone and responses.
+  - Easy to get started and create a working agent quickly; Chatbase positions itself for fast, practical agents.
+- Cons / limitations (facts):
+  - The provided context does not include full pricing details or a granular breakdown of Shopify-specific actions; you should verify Shopify action depth and pricing directly with Chatbase.
+  - May require additional work to reach parity with helpdesk-integrated bots that can do refunds or order edits unless those integrations are explicitly configured.
+- Pricing (facts / links):
+  - Context points to free agent building and signup at https://chatbase.co/auth/signup, but pricing tiers were not listed in the provided excerpt. Flagged as \"check site for commercial pricing\" in the detailed blog.
+- Screenshot placeholder:
+  - [Screenshot: Chatbase agent creation screen with uploaded docs and sample chat window — 1200x700]
+
+## H2: practical tips for testing and rolling out a Shopify chatbot [100 words]
+- Suggested step-by-step mini-checklist (each as short bullet with one-sentence guidance):
+  - Start with a narrow scope (order status / returns) and route anything else to humans.
+  - Simulate on historical tickets where possible, or run a staged pilot with live chat to internal staff.
+  - Measure resolution rate, customer satisfaction, and cost impact; watch for false positives.
+  - Provide a clear human-handoff path with context to the agent.
+  - Iterate prompts, add missing knowledge to KB, and rerun simulations.
+
+## H2: conclusion and next steps [100 words]
+- Quick recap: five vetted choices depending on whether you need tight helpdesk integration, predictable billing, or a lightweight Shopify app.
+- Recommendation summary: If you want a bot that augments your existing helpdesk and Shopify store with safe testing and predictable pricing, consider trying eesel AI first (link to https://dashboard.eesel.ai/api/auth/signup?returnTo=v2). If you are fully embedded in Gorgias and want native actions, Gorgias AI Agent is a fit but check per-resolution costs.
+- Call to action: Try eesel AI’s free trial and run a simulation on your historical tickets to estimate deflection and ROI (https://dashboard.eesel.ai/api/auth/signup?returnTo=v2). Book a demo if you prefer guided onboarding (https://calendly.com/eesel/30).
+
+## H2: resources and links [short list — 30–40 words]
+- eesel AI product: https://www.eesel.ai/product/ai-chatbot
+- eesel pricing: https://www.eesel.ai/pricing
+- Gorgias: https://www.gorgias.com/
+- Tidio Shopify chatbot overview: https://www.tidio.com/blog/shopify-chatbot/
+- Juphy Shopify app: https://apps.shopify.com/juphy
+- Chatbase: https://chatbase.co/auth/signup
+
+---
+
+Notes for the writer assigned to draft:
+- Maintain conversational, professional tone.
+- Keep headings sentence case.
+- Link to the exact URLs shown above when mentioning products.
+- Use sentence casing for screenshot captions and include each screenshot placeholder as specified.
+- Where pricing or features were not present in the provided context, explicitly say \"pricing not listed in provided context — verify on vendor site\" rather than invent numbers.
+- Ensure the exact target keyword \"best ai chatbots for your shopify store\" appears in the H1 (as required) and at least once in one H2 (e.g., the intro or selection criteria heading)
