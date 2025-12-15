@@ -10,7 +10,8 @@ type WriteFirstDraftStepInput = {
 };
 
 type FirstDraftResult = {
-  firstDraft: string;
+  result: string;
+  prompt: string;
 };
 
 export async function writeFirstDraftStep(
@@ -32,9 +33,10 @@ export async function writeFirstDraftStep(
         input.blogType,
         input.tone
       );
+
       return {
-        value: { firstDraft },
-        completeData: { draftChars: firstDraft.length },
+        value: firstDraft,
+        completeData: { draftChars: firstDraft.result.length },
       };
     }
   );

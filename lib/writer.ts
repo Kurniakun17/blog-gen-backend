@@ -85,7 +85,7 @@ export async function writeFirstDraft(
   companyContext: string,
   blogType: string,
   tone?: string
-): Promise<string> {
+): Promise<{ result: string; prompt: string }> {
   logStep(`[Step 2/3] Writing first draft...`);
 
   const writeDraftPrompt = buildWriteDraftPrompt({
@@ -104,7 +104,7 @@ export async function writeFirstDraft(
   const firstDraft = draftResult.text;
   logStep(`[Step 2/3] First draft completed (${firstDraft.length} characters)`);
 
-  return firstDraft;
+  return { result: firstDraft, prompt: writeDraftPrompt };
 }
 
 /**
@@ -119,7 +119,7 @@ export async function polishContent(
   firstDraft: string,
   keyword: string,
   companyName: string
-): Promise<string> {
+): Promise<{ result: string; prompt: string }> {
   logStep(`[Step 3/3] Final polish (humanize + SEO + FAQ + Tags)...`);
 
   const polishPrompt = buildPolishPrompt({
@@ -138,7 +138,7 @@ export async function polishContent(
     `[Step 3/3] Final polish completed (${polishedContent.length} characters)`
   );
 
-  return polishedContent;
+  return { result: polishedContent, prompt: polishPrompt };
 }
 
 export async function reviewContent(
@@ -265,10 +265,14 @@ export async function generateBlogDraft(
   );
 
   // Step 3: Polish Content
-  const polishedContent = await polishContent(firstDraft, keyword, companyName);
+  const polishedContent = await polishContent(
+    firstDraft.result,
+    keyword,
+    companyName
+  );
 
   // Step 4: Review Flow
-  const reviewedResult = await reviewContent(polishedContent, keyword);
+  const reviewedResult = await reviewContent(polishedContent.result, keyword);
 
   return reviewedResult;
 }

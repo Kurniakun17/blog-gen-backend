@@ -124,7 +124,7 @@ export async function generateBlogWorkflow(
     keyword: keywordToUse,
     companyContext: companyProfileResult.value.company_profile,
     blogType: metadataResult.value.blogType || "overview",
-    tone: metadataResult.value.tone, // Pass tone to maintain consistency
+    tone: metadataResult.value.tone,
   });
   diagnostics.push({
     phase: "write-first-draft",
@@ -133,7 +133,7 @@ export async function generateBlogWorkflow(
 
   // Step 7: Final Polish (Adjust Heading, Humanize, & FAQ)
   const polishResult = await finalPolishStep({
-    firstDraft: firstDraftResult.value.firstDraft,
+    firstDraft: firstDraftResult.value.result,
     keyword: keywordToUse,
     companyName: companyProfileResult.value.company_name || "",
   });

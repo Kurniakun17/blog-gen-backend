@@ -16,9 +16,10 @@ export const buildSystemPrompt = ({
   tone?: string;
   customOutline?: string;
 }): string => {
-  const toneInstruction = tone?.toLowerCase() !== 'casual'
-    ? `\n\n**IMPORTANT: TONE OF VOICE**\nYou MUST write in the following tone: ${tone}\nThis tone is the TOP PRIORITY and should be applied throughout the entire outline and blog structure.\n`
-    : "";
+  const toneInstruction =
+    tone?.toLowerCase() !== "casual"
+      ? `\n\n**IMPORTANT: TONE OF VOICE**\nYou MUST write in the following tone: ${tone}\nThis tone is the TOP PRIORITY and should be applied throughout the entire outline and blog structure.\n`
+      : "";
 
   const customOutlineInstruction = customOutline
     ? `\n\n**CRITICAL: USER-PROVIDED OUTLINE STRUCTURE**\nThe user has provided a specific outline structure that you MUST follow as the TOP PRIORITY. Use this as your primary guide and foundation:\n\n<custom_outline>\n${customOutline}\n</custom_outline>\n\nYou should expand and refine this outline with the research context and company information, but you MUST maintain the user's specified structure, headings, and flow. Do not deviate from this outline unless absolutely necessary for SEO or factual accuracy.\n`
@@ -88,6 +89,11 @@ After preparation, create a detailed blog outline that:
 - Avoids duplicated points or redundant sections.  
 - Incorporates SEO keywords naturally and strategically.  
 - Ends with actionable next steps and a call to action.  
+${
+  blogType.toLocaleLowerCase() === "listicle"
+    ? "- MAKE SURE the PROS and CONS are mentioned as a paragraph, not a bullet point list."
+    : ""
+}
 - Does **not** include FAQs.  
 - Includes:
   - Meta description (140–150 chars)  

@@ -9,7 +9,7 @@ type VerificationQuestion = {
 };
 
 type OutlineVerifiedStepInput = {
-  outline: string;
+outline: string;
   keyword: string;
   verifiedData: VerificationQuestion[];
   researchContext: string;
