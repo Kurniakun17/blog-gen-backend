@@ -151,6 +151,7 @@ export async function reviewContent(
   faqs: { question: string; answer: string }[];
   tags: string[];
   excerpt: string;
+  prompt: string;
 }> {
   logStep(`[Step 4/4] Review flow...`);
 
@@ -182,7 +183,7 @@ export async function reviewContent(
     `[Step 4/4] Review flow completed (${reviewFlowContent.content.length} characters)`
   );
 
-  return reviewFlowContent;
+  return { ...reviewFlowContent, prompt: reviewFlowPrompt };
 }
 
 /**

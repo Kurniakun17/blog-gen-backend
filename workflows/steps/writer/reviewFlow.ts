@@ -13,6 +13,7 @@ type ReviewedResult = {
   faqs: { question: string; answer: string }[];
   excerpt: string;
   tags: string[];
+  prompt: string;
 };
 
 export async function reviewFlowStep(
@@ -26,10 +27,10 @@ export async function reviewFlowStep(
     },
     async () => {
       "use step";
-      const { metaTitle, metaDescription, content, faqs, tags, excerpt } =
+      const { metaTitle, metaDescription, content, faqs, tags, excerpt, prompt } =
         await reviewContent(input.draftBlog, input.keyword);
       return {
-        value: { metaTitle, metaDescription, content, faqs, tags, excerpt },
+        value: { metaTitle, metaDescription, content, faqs, tags, excerpt, prompt },
         completeData: {
           metaTitle,
           metaDescription,

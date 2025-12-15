@@ -23,6 +23,10 @@ export type ResearchData = {
   context: string;
   /** Raw Reddit threads to help downstream quote insertion */
   redditThreads?: string;
+  /** Successfully scraped URLs */
+  successfulUrls: string[];
+  /** Failed scrape URLs */
+  failedUrls: string[];
 };
 
 function parseRedditIds(url: string): RedditIds | null {
@@ -190,6 +194,8 @@ export async function researchTopic(keyword: string): Promise<ResearchData> {
       context:
         "<context><source>none</source><content>No search results found.</content></context>",
       redditThreads: undefined,
+      successfulUrls: [],
+      failedUrls: [],
     };
   }
 
@@ -256,12 +262,16 @@ export async function researchTopic(keyword: string): Promise<ResearchData> {
   console.log(
     `Successfully scraped ${successfulScrapes.length} out of ${selectedUrls.length} URLs`
   );
+
+  const successfulUrls = successfulScrapes.map((s) => s.url);
+  const failedUrls = selectedUrls.filter(
+    (url) => !successfulScrapes.find((s) => s.url === url)
+  );
+
   console.log("Scrape Overview:", {
     attempted: selectedUrls,
-    successful: successfulScrapes.map((s) => s.url),
-    failed: selectedUrls.filter(
-      (url) => !successfulScrapes.find((s) => s.url === url)
-    ),
+    successful: successfulUrls,
+    failed: failedUrls,
   });
 
   // Step 4: Format as XML-like string
@@ -270,6 +280,8 @@ export async function researchTopic(keyword: string): Promise<ResearchData> {
       context:
         "<context><source>none</source><content>All scraping attempts failed.</content></context>",
       redditThreads: undefined,
+      successfulUrls: [],
+      failedUrls,
     };
   }
 
@@ -291,5 +303,10 @@ export async function researchTopic(keyword: string): Promise<ResearchData> {
     })
     .join("\n\n");
 
-  return { context: xmlOutput, redditThreads: redditThreads || undefined };
+  return {
+    context: xmlOutput,
+    redditThreads: redditThreads || undefined,
+    successfulUrls,
+    failedUrls,
+  };
 }

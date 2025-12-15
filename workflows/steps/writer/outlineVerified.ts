@@ -20,6 +20,7 @@ outline: string;
 
 type OutlineVerifiedResult = {
   verifiedOutline: string;
+  prompt: string;
 };
 
 /**
@@ -109,7 +110,7 @@ Return the refined outline with accurate, verified information. Maintain the sam
       console.log("===================================================\n");
 
       return {
-        value: { verifiedOutline },
+        value: { verifiedOutline, prompt: refinementPrompt },
         completeData: {
           outlineChars: verifiedOutline.length,
           verifiedItemsUsed: input.verifiedData.length,
