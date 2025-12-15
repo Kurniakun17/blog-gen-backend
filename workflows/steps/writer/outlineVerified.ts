@@ -6,6 +6,7 @@ type VerificationQuestion = {
   claim: string;
   question: string;
   answer?: string;
+  source?: string;
 };
 
 type OutlineVerifiedStepInput = {
@@ -50,6 +51,7 @@ Claim ${index + 1}:
 Original Claim: ${item.claim}
 Question: ${item.question}
 Verified Answer: ${item.answer || "Not verified"}
+Source: ${item.source || "No source available"}
 ---`
         )
         .join("\n");
@@ -66,6 +68,8 @@ Your goal is to:
 - Review the original outline and cross-reference it with the verified data
 - Update any claims, statistics, or facts in the outline to match the verified information
 - Ensure all statements are accurate and backed by the verification data
+- When incorporating verified claims, include the source URL as a markdown link in the outline (e.g., [claim text](source_url))
+- Link directly to the specific source URLs provided in the verified data
 - Maintain the overall structure and flow of the outline
 - Keep the same keyword focus and SEO optimization
 - DO NOT remove sections unless they are factually incorrect

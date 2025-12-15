@@ -7,6 +7,7 @@ type LinkingSourcesStepInput = {
   internalLinks: string[];
   externalUrls: string[];
   internalUsage?: boolean;
+  verifiedSources?: string[];
 };
 
 type LinkedContentResult = {
@@ -31,7 +32,8 @@ export async function linkingSourcesStep(
         input.blogType,
         input.internalLinks,
         input.externalUrls,
-        input.internalUsage
+        input.internalUsage,
+        input.verifiedSources
       );
       return {
         value: { contentWithLinks },

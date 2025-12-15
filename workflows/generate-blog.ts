@@ -18,6 +18,7 @@ import { assetsSearchStep } from "./steps/assets/assetsSearch";
 import { assetsProcessTagsStep } from "./steps/assets/assetsProcessTags";
 import { verifyContextStep } from "./steps/writer/verifyContext";
 import { outlineVerifiedStep } from "./steps/writer/outlineVerified";
+import { gatherInternalLinksStep } from "./steps/writer/gatherInternalLinks";
 import { publishToWordPressStep } from "./steps/publishToWordPress";
 import { mergeResearchContext } from "./utils/context";
 import { extractAllLinks } from "@/lib/linkExtractor";
@@ -148,15 +149,35 @@ export async function generateBlogWorkflow(
     companyProfileResult.value
   );
 
-  console.log("internalLinks", internalLinks);
-  console.log("externalUrls", externalUrls);
+  // Step 8a: Gather additional internal links using SerpAPI (if company_url is provided)
+  let gatheredInternalLinks: string[] = [];
+  if (input.company_url) {
+    const gatherLinksResult = await gatherInternalLinksStep({
+      companyUrl: input.company_url,
+      keyword: keywordToUse,
+      maxResults: 10,
+    });
+    diagnostics.push({
+      phase: "gather-internal-links",
+      durationMs: gatherLinksResult.durationMs,
+    });
+    gatheredInternalLinks = gatherLinksResult.value.internalLinks;
+  }
+
+  // Combine internal links from company profile and gathered links
+  const allInternalLinks = [...internalLinks, ...gatheredInternalLinks];
+
+  const verifiedSources = verifyContextResult.value.verifiedData
+    .map((item) => item.source)
+    .filter((source): source is string => !!source);
 
   const linkingResult = await linkingSourcesStep({
     blogContent: polishResult.value.polishedContent,
     blogType: metadataResult.value.blogType || "",
-    internalLinks: internalLinks,
+    internalLinks: allInternalLinks,
     externalUrls: externalUrls,
     internalUsage: input.internalUsage,
+    verifiedSources: verifiedSources,
   });
 
   diagnostics.push({

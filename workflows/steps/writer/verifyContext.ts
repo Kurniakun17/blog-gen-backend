@@ -11,6 +11,7 @@ type VerificationQuestion = {
   claim: string;
   question: string;
   answer?: string;
+  source?: string;
 };
 
 type VerifyContextResult = {
@@ -52,6 +53,8 @@ Return your response as a JSON array with this structure:
 ]
 
 Only include claims that are factual and need verification. Skip subjective opinions or general statements.
+
+If it's containing a pricing or a subset section of a company for examp
 
 Outline:
 ${input.outline}`;
@@ -109,6 +112,7 @@ ${input.outline}`;
 
           // Extract the answer from text_blocks
           let answer = "";
+          let source = "";
           if (data.text_blocks && Array.isArray(data.text_blocks)) {
             // Combine all paragraph snippets to form the answer
             const paragraphs = data.text_blocks
@@ -119,14 +123,26 @@ ${input.outline}`;
             answer = paragraphs || "No answer found";
           }
 
+          // Extract source URL from references (Google AI Mode returns references instead of organic_results)
+          if (data.references && Array.isArray(data.references) && data.references.length > 0) {
+            // Get the first reference that has a link
+            const firstReference = data.references.find((ref: any) => ref.link);
+            source = firstReference?.link || "";
+          } else if (data.organic_results && Array.isArray(data.organic_results) && data.organic_results.length > 0) {
+            // Fallback to organic_results for standard Google search
+            source = data.organic_results[0].link || "";
+          }
+
           verifiedData.push({
             claim: item.claim,
             question: item.question,
             answer,
+            source,
           });
 
           console.log(`\n[Verify Context] Verified claim: ${item.claim}`);
           console.log(`Answer: ${answer.substring(0, 200)}...`);
+          console.log(`Source: ${source}`);
         } catch (error) {
           console.error(
             `Failed to verify question: ${item.question}`,

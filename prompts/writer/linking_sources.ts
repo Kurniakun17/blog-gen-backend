@@ -13,12 +13,14 @@ export const buildLinkingSourcesPrompt = ({
   internalLinks,
   externalUrls,
   internalUsage,
+  verifiedSources,
 }: {
   blogInput: string;
   blogType: string;
   internalLinks: string[];
   externalUrls: string[];
   internalUsage?: boolean;
+  verifiedSources?: string[];
 }): string => {
   // Build internal links section
   const internalLinksSection = internalLinks.length > 0
@@ -29,6 +31,11 @@ export const buildLinkingSourcesPrompt = ({
   const externalUrlsSection = externalUrls.length > 0
     ? externalUrls.map((url, index) => `${index + 1}. ${url}`).join("\n")
     : "No external URLs provided.";
+
+  // Build verified sources section
+  const verifiedSourcesSection = verifiedSources && verifiedSources.length > 0
+    ? verifiedSources.map((url, index) => `${index + 1}. ${url}`).join("\n")
+    : "No verified sources from context verification.";
 
   // Add eesel AI product links section only for internal usage
   const eeselProductLinksSection = internalUsage
@@ -56,6 +63,7 @@ GENERAL RULES (APPLY TO ALL LINKING)
 - NEVER change an existing link.
 - NEVER remove an existing link.
 - ONLY add links where none exist.
+- PRESERVE all verified context source links that are already in the content.
 - NEVER add links to headings (except where explicitly overridden below).
 - NEVER add links to FAQ QUESTIONS — links are allowed ONLY in FAQ ANSWERS.
 - NEVER suggest placeholder images, .pngs, mermaid flows, or any assets.
@@ -90,7 +98,20 @@ Linking examples:
 If no relevant internal link exists for a sentence or section, DO NOTHING.
 
 ------------------------------------------------------------
-PART 2 — EXTERNAL LINKING
+PART 2 — VERIFIED CONTEXT SOURCES (HIGHEST PRIORITY)
+------------------------------------------------------------
+The following URLs are from the context verification step and have been used to verify claims in the outline.
+
+CRITICAL RULES:
+- ALWAYS preserve these verified source links if they already exist in the content.
+- These links were added during the outline verification stage and MUST NOT be removed or modified.
+- If any verified claims in the content reference these sources, keep those links intact.
+
+Verified Sources:
+${verifiedSourcesSection}
+
+------------------------------------------------------------
+PART 3 — EXTERNAL LINKING
 ------------------------------------------------------------
 Your task is to strengthen credibility and SEO by embedding relevant external citations from the provided source blogs.
 

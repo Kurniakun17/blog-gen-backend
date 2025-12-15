@@ -200,7 +200,8 @@ export async function addLinkingSources(
   blogType: string,
   internalLinks: string[],
   externalUrls: string[],
-  internalUsage?: boolean
+  internalUsage?: boolean,
+  verifiedSources?: string[]
 ): Promise<string> {
   logStep(`[Step 5/5] Adding linking sources...`);
 
@@ -210,6 +211,7 @@ export async function addLinkingSources(
     internalLinks,
     externalUrls,
     internalUsage,
+    verifiedSources,
   });
 
   const linkingResult = await generateText({

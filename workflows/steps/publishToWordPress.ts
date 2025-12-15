@@ -56,10 +56,6 @@ export async function publishToWordPressStep(
         slug: input.slug,
       });
 
-      console.log("\n[Publish to WordPress] Content formatted successfully");
-      console.log("Formatted title:", formattedContent.title);
-      console.log("Formatted slug:", formattedContent.slug);
-
       const wpUsername = process.env.WP_USERNAME;
       const wpPassword = process.env.WP_APP_PASSWORD;
 
@@ -91,10 +87,14 @@ export async function publishToWordPressStep(
           (_, index) => urlPlaceholders[parseInt(index)]
         );
 
+      const formattedSlug = input.slug.endsWith("-en")
+        ? input.slug
+        : input.slug + "-en";
+
       const postData: any = {
         title: formattedContent.title,
         content: normalizedContent,
-        slug: formattedContent.slug,
+        slug: formattedSlug,
         excerpt: input.excerpt || "",
         status: postStatus,
         author: Math.random() < 0.5 ? 8 : 16,
