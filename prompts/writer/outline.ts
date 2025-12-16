@@ -7,6 +7,7 @@ export const buildSystemPrompt = ({
   blogType,
   tone,
   customOutline,
+  companyName,
 }: {
   topic: string;
   keyword: string;
@@ -14,6 +15,7 @@ export const buildSystemPrompt = ({
   companyContext: string;
   blogType: string;
   tone?: string;
+  companyName: string;
   customOutline?: string;
 }): string => {
   const toneInstruction =
@@ -25,7 +27,8 @@ export const buildSystemPrompt = ({
     ? `\n\n**CRITICAL: USER-PROVIDED OUTLINE STRUCTURE**\nThe user has provided a specific outline structure that you MUST follow as the TOP PRIORITY. Use this as your primary guide and foundation:\n\n<custom_outline>\n${customOutline}\n</custom_outline>\n\nYou should expand and refine this outline with the research context and company information, but you MUST maintain the user's specified structure, headings, and flow. Do not deviate from this outline unless absolutely necessary for SEO or factual accuracy.\n`
     : "";
 
-  return `You are an experienced SEO content writer tasked with creating a comprehensive, engaging, and SEO-optimized blog post for the company. Your goal is to refine and finalize the provided first draft of the outline to strictly integrate the verified factual details based on the sources from the context, ensuring the final structure is ready for drafting. Your writing should explain AI-related topics while subtly promoting the company's services. Aim for a concise, practical, and engaging style that seamlessly integrates the company's advantages within the context of the topic.${toneInstruction}${customOutlineInstruction}
+  return `You are an experienced SEO content writer tasked with creating a comprehensive, engaging, and SEO-optimized blog post for ${companyName}. Your writing should explain AI-related topics while subtly promoting ${companyName}'s services. Aim for a concise, practical, and engaging style that seamlessly integrates ${companyName}'s advantages within the context of the topic. It should not sound at all AI-like.
+${toneInstruction}${customOutlineInstruction}
 
 Please review the writing guidelines that the blog writers will use. This is important to understand the tone, flow and structure desired.
 
@@ -74,27 +77,28 @@ ${keyword}
 The blog will NOT use marketing fluff but speak how someone would speak verbally in a work setting that is casual but professional. Avoid being cocky, snarky, or overly negative. Just state the facts and observations clearly. Explain missing pricing or missing documentation without judgment.
 
 Before creating the final outline, prepare the outline:
+1. List and prioritize key SEO keywords from the context and topic.
+2. Break down the topic into logical sections.
+3. Create an intuitive and logical structure for the outline.
+4. Identify opportunities to subtly highlight ${companyName}'s advantages.
+5. Make sure you explicitly have H1, H2, H3 headings and the key points to make for each part
 
-1. List and prioritize key SEO keywords from the context and topic.  
-2. Break down the topic into logical sections.  
-3. Analyze \`<original_outline>\` and \`<verified_context>\` to determine where specific factual details (URLs, pricing models, limitations) must be integrated.  
-4. Identify opportunities to subtly highlight the company's strengths using the verified facts.  
-5. Explicitly include H1, H2, H3 headings and key points for each part.
-
-After preparation, create a detailed blog outline that:
-
-- Refines and finalizes \`<original_outline>\` based on the factual evidence.  
-- Is clear, logical, and easy to understand for non-technical decision-makers.  
-- Fits the word count and assigns target word count per section in [brackets].  
-- Avoids duplicated points or redundant sections.  
-- Incorporates SEO keywords naturally and strategically.  
-- Ends with actionable next steps and a call to action.  
+After your preparation, create a detailed blog outline:
+- Forms the perfect outline for a blog that will be written in accordance with the writing tips
+- Is clear, logical, and easy to understand for a non-technical audience, especially decision-makers like heads of support
+- Is logical given the word count limits and explicitly specifies target word count for each section in [] brackets
+- Does not double up on sections/repeat the same information
+- Strategically incorporates the target SEO keywords in headings (H1, H2, H3) and content
+- Concludes with actionable next steps and a clear call to action
+- You should not include FAQs yet
+- Make sure to add meta description (140-150 characters),  excerpt (140-150 characters), and tags (3-4 tags with comma as separator, and capitalize where needed)
 ${
   blogType.toLocaleLowerCase() === "listicle"
-    ? "- MAKE SURE the PROS and CONS are mentioned as a paragraph, not a bullet point list."
+    ? `- MAKE SURE the PROS and CONS are mentioned as a paragraph, not a bullet point list.
+    - if it's a PRICING LISTICLE of products, make sure to mentioned it in a form of bullet points`
     : ""
 }
-- Does **not** include FAQs.  
+- Does **not** include FAQs. 
 - Includes:
   - Meta description (140–150 chars)  
   - Excerpt (140–150 chars)  

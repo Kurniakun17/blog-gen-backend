@@ -15,13 +15,27 @@ type AssetsSearchStepInput = {
   internalUsage?: boolean;
 };
 
+type ToolCallLog = {
+  toolName: string;
+  timestamp: string;
+  input: any;
+  success: boolean;
+  message: string;
+  details?: any;
+};
+
+type AssetsSearchResult = {
+  contentWithProcessedAssets: string;
+  toolCallLogs: ToolCallLog[];
+};
+
 /**
  * Step 2: Assets Search
  * Processes <assets> tags using AI agent with screenshots and nano-banana tools
  */
 export async function assetsSearchStep(
   input: AssetsSearchStepInput
-): Promise<TimedResult<string>> {
+): Promise<TimedResult<AssetsSearchResult>> {
   return runStep("assets-search", undefined, async () => {
     "use step";
 
@@ -33,6 +47,9 @@ export async function assetsSearchStep(
     );
     console.log("Has YouTube results:", !!input.youtubeResults);
     console.log("==============================================\n");
+
+    // Initialize tool call logs array
+    const toolCallLogs: ToolCallLog[] = [];
 
     const searchPrompt = buildAssetsSearchPrompt(
       input.keyword,
@@ -46,92 +63,137 @@ export async function assetsSearchStep(
     // Build tools object - conditionally include Internal Assets Retrieval
     const tools: Record<string, any> = {
       screenshotsIntegration: {
-          description:
-            'Capture or retrieve screenshots of company landing pages. Use this tool when you encounter an <assets> block with type "screenshot". The tool will search for existing screenshots first, then capture new ones if needed.',
-          inputSchema: z.object({
-            url: z
-              .string()
-              .describe(
-                "Company landing page URL to capture (e.g., https://www.zendesk.com)"
-              ),
-            title: z
-              .string()
-              .describe(
-                "Screenshot title/description for file naming (e.g., zendesk-landing-page)"
-              ),
-            companyName: z
-              .string()
-              .describe(
-                "Company name for searching existing screenshots (e.g., Zendesk)"
-              ),
-          }),
-          execute: async ({
-            url,
-            title,
-            companyName,
-          }: {
-            url: string;
-            title: string;
-            companyName: string;
-          }) => {
-            const result = await getOrCaptureScreenshot(
-              url,
-              title,
-              companyName
-            );
-            if (!result) {
-              return {
-                success: false,
-                message:
-                  "Failed to capture/retrieve screenshot. Please keep the <assets> block as-is for manual processing.",
-              };
-            }
+        description:
+          'Capture or retrieve screenshots of company landing pages. Use this tool when you encounter an <assets> block with type "screenshot". The tool will search for existing screenshots first, then capture new ones if needed.',
+        inputSchema: z.object({
+          url: z
+            .string()
+            .describe(
+              "Company landing page URL to capture (e.g., https://www.zendesk.com)"
+            ),
+          title: z
+            .string()
+            .describe(
+              "Screenshot title/description for file naming (e.g., zendesk-landing-page)"
+            ),
+          companyName: z
+            .string()
+            .describe(
+              "Company name for searching existing screenshots (e.g., Zendesk)"
+            ),
+        }),
+        execute: async ({
+          url,
+          title,
+          companyName,
+        }: {
+          url: string;
+          title: string;
+          companyName: string;
+        }) => {
+          const logEntry: ToolCallLog = {
+            toolName: "screenshotsIntegration",
+            timestamp: new Date().toISOString(),
+            input: { url, title, companyName },
+            success: false,
+            message: "",
+          };
+
+          console.log("\n[Tool Call] Screenshots Integration");
+          console.log("  URL:", url);
+          console.log("  Title:", title);
+          console.log("  Company:", companyName);
+
+          const result = await getOrCaptureScreenshot(url, title, companyName);
+
+          if (!result) {
+            logEntry.success = false;
+            logEntry.message = "Failed to capture/retrieve screenshot";
+            console.log("  Result: FAILED - Could not capture screenshot");
+            toolCallLogs.push(logEntry);
+
             return {
-              success: true,
-              url: result.url,
-              title: result.title,
-              message: `Screenshot retrieved/captured successfully. Replace the <assets> block with: __SCREENSHOTS::${result.url}::${result.title}::[Brief alt text]__`,
+              success: false,
+              message:
+                "Failed to capture/retrieve screenshot. Please keep the <assets> block as-is for manual processing.",
             };
-          },
+          }
+
+          logEntry.success = true;
+          logEntry.message = "Screenshot retrieved/captured successfully";
+          logEntry.details = { url: result.url, title: result.title };
+          console.log("  Result: SUCCESS");
+          console.log("  Screenshot URL:", result.url);
+          toolCallLogs.push(logEntry);
+
+          return {
+            success: true,
+            url: result.url,
+            title: result.title,
+            message: `Screenshot retrieved/captured successfully. Replace the <assets> block with: __SCREENSHOTS::${result.url}::${result.title}::[Brief alt text]__`,
+          };
         },
-        nanoBananaGeneration: {
-          description:
-            'Generate visual assets (infographics, workflow diagrams, WorkflowV2) using Gemini AI. Use this tool when you encounter an <assets> block with type "workflow", "workflowV2", or "infographic".',
-          inputSchema: z.object({
-            assetDescription: z
-              .string()
-              .describe(
-                "The full description from the <assets> block, including the asset type and details."
-              ),
-          }),
-          execute: async ({
-            assetDescription,
-          }: {
-            assetDescription: string;
-          }) => {
-            const result = await generateNanoBananaAsset(assetDescription);
-            if (!result) {
-              return {
-                success: false,
-                message:
-                  "Failed to generate asset. Please keep the <assets> block as-is for manual processing.",
-              };
-            }
+      },
+      nanoBananaGeneration: {
+        description:
+          'Generate visual assets (infographics, workflow diagrams, WorkflowV2) using Gemini AI. Use this tool when you encounter an <assets> block with type "workflow", "workflowV2", or "infographic".',
+        inputSchema: z.object({
+          assetDescription: z
+            .string()
+            .describe(
+              "The full description from the <assets> block, including the asset type and details."
+            ),
+        }),
+        execute: async ({ assetDescription }: { assetDescription: string }) => {
+          const logEntry: ToolCallLog = {
+            toolName: "nanoBananaGeneration",
+            timestamp: new Date().toISOString(),
+            input: { assetDescription },
+            success: false,
+            message: "",
+          };
+
+          console.log("\n[Tool Call] Nano Banana Generation");
+          console.log("  Description:", assetDescription.substring(0, 100) + "...");
+
+          const result = await generateNanoBananaAsset(assetDescription);
+
+          if (!result) {
+            logEntry.success = false;
+            logEntry.message = "Failed to generate asset";
+            console.log("  Result: FAILED - Could not generate asset");
+            toolCallLogs.push(logEntry);
+
             return {
-              success: true,
-              url: result.url,
-              title: result.title,
-              message: `Asset generated successfully. Replace the <assets> block with: __IMAGE::${result.url}::${result.title}::[Brief caption]__`,
+              success: false,
+              message:
+                "Failed to generate asset. Please keep the <assets> block as-is for manual processing.",
             };
-          },
+          }
+
+          logEntry.success = true;
+          logEntry.message = "Asset generated successfully";
+          logEntry.details = { url: result.url, title: result.title };
+          console.log("  Result: SUCCESS");
+          console.log("  Asset URL:", result.url);
+          console.log("  Asset Title:", result.title);
+          toolCallLogs.push(logEntry);
+
+          return {
+            success: true,
+            url: result.url,
+            title: result.title,
+            message: `Asset generated successfully. Replace the <assets> block with: __IMAGE::${result.url}::${result.title}::[Brief caption]__`,
+          };
         },
+      },
     };
 
     // Add Internal Assets Retrieval tool only if internalUsage is true
     if (input.internalUsage) {
       tools.internalAssetsRetrieval = {
         description:
-          'Search for available assets on WordPress internal media library. Use this tool to find predefined images and videos related to eesel AI features (AI Copilot, AI Agent, AI Triage, etc.) or other internal assets. This tool should be used FIRST before falling back to Screenshots Integration.',
+          "Search for available assets on WordPress internal media library. Use this tool to find predefined images and videos related to eesel AI features (AI Copilot, AI Agent, AI Triage, etc.) or other internal assets. This tool should be used FIRST before falling back to Screenshots Integration.",
         inputSchema: z.object({
           searchTerm: z
             .string()
@@ -140,12 +202,30 @@ export async function assetsSearchStep(
             ),
         }),
         execute: async ({ searchTerm }: { searchTerm: string }) => {
+          const logEntry: ToolCallLog = {
+            toolName: "internalAssetsRetrieval",
+            timestamp: new Date().toISOString(),
+            input: { searchTerm },
+            success: false,
+            message: "",
+          };
+
+          console.log("\n[Tool Call] Internal Assets Retrieval");
+          console.log("  Search Term:", searchTerm);
+
           try {
-            const url = `https://website-cms.eesel.ai/wp-json/wp/v2/media?search=${encodeURIComponent(searchTerm)}&per_page=20`;
+            const url = `https://website-cms.eesel.ai/wp-json/wp/v2/media?search=${encodeURIComponent(
+              searchTerm
+            )}&per_page=20`;
             const response = await fetch(url);
             const data = await response.json();
 
             if (!Array.isArray(data) || data.length === 0) {
+              logEntry.success = false;
+              logEntry.message = `No assets found for "${searchTerm}"`;
+              console.log("  Result: NOT FOUND - No assets in WordPress media");
+              toolCallLogs.push(logEntry);
+
               return {
                 success: false,
                 message: `No assets found for "${searchTerm}". Try a different search term or use Screenshots Integration as fallback.`,
@@ -168,11 +248,26 @@ export async function assetsSearchStep(
               }));
 
             if (assets.length === 0) {
+              logEntry.success = false;
+              logEntry.message = `No relevant assets found (screenshots excluded)`;
+              console.log("  Result: NOT FOUND - Only screenshots available");
+              toolCallLogs.push(logEntry);
+
               return {
                 success: false,
                 message: `No relevant assets found for "${searchTerm}" (screenshots excluded). Try Screenshots Integration.`,
               };
             }
+
+            logEntry.success = true;
+            logEntry.message = `Found ${assets.length} asset(s)`;
+            logEntry.details = { assetCount: assets.length, assets };
+            console.log("  Result: SUCCESS");
+            console.log("  Assets Found:", assets.length);
+            assets.forEach((asset: any, idx: number) => {
+              console.log(`    ${idx + 1}. ${asset.title} (${asset.mediaType})`);
+            });
+            toolCallLogs.push(logEntry);
 
             return {
               success: true,
@@ -180,9 +275,16 @@ export async function assetsSearchStep(
               message: `Found ${assets.length} asset(s) for "${searchTerm}". Select the most relevant one and format it as:\n- For images: __IMAGE::[url]::[title]::[brief caption]__\n- For videos: __VIDEO::[url]::[title]::[brief caption]__`,
             };
           } catch (error) {
+            logEntry.success = false;
+            logEntry.message = `Error: ${error instanceof Error ? error.message : "Unknown error"}`;
+            console.log("  Result: ERROR -", logEntry.message);
+            toolCallLogs.push(logEntry);
+
             return {
               success: false,
-              message: `Error searching WordPress media: ${error instanceof Error ? error.message : "Unknown error"}`,
+              message: `Error searching WordPress media: ${
+                error instanceof Error ? error.message : "Unknown error"
+              }`,
             };
           }
         },
@@ -199,8 +301,35 @@ export async function assetsSearchStep(
 
     const contentWithProcessedAssets = assetsSearchResult.text || "";
 
+    // Log summary of tool calls
+    console.log("\n========== [Assets Search] Tool Call Summary ==========");
+    console.log("Total Tool Calls:", toolCallLogs.length);
+
+    const successCount = toolCallLogs.filter(log => log.success).length;
+    const failCount = toolCallLogs.filter(log => !log.success).length;
+
+    console.log("Successful:", successCount);
+    console.log("Failed:", failCount);
+
+    if (toolCallLogs.length > 0) {
+      console.log("\nDetailed Log:");
+      toolCallLogs.forEach((log, idx) => {
+        console.log(`\n${idx + 1}. ${log.toolName} [${log.success ? "SUCCESS" : "FAILED"}]`);
+        console.log(`   Time: ${log.timestamp}`);
+        console.log(`   Input:`, JSON.stringify(log.input, null, 2));
+        console.log(`   Message: ${log.message}`);
+        if (log.details) {
+          console.log(`   Details:`, JSON.stringify(log.details, null, 2));
+        }
+      });
+    }
+    console.log("\n=======================================================\n");
+
     return {
-      value: contentWithProcessedAssets,
+      value: {
+        contentWithProcessedAssets,
+        toolCallLogs,
+      },
       completeData: {
         contentChars: contentWithProcessedAssets.length,
         remainingAssetTags: (
@@ -208,170 +337,10 @@ export async function assetsSearchStep(
         ).length,
         manualProcessing: false,
         replacementsApplied: 0,
+        toolCallsTotal: toolCallLogs.length,
+        toolCallsSuccess: successCount,
+        toolCallsFailed: failCount,
       },
     };
   });
-}
-
-export function buildAssetsDefinerPrompt(
-  keyword: string,
-  isInternalTeam: boolean
-): string {
-  // Build the priority list based on internal team status
-  let priorityList = "";
-  if (isInternalTeam) {
-    priorityList = `1. **Eesel Internal Assets** (WordPress predefined assets)
-2. **WorkflowV2** (WordPress predefined workflows)
-3. **Screenshots**
-4. **Infographics**`;
-  } else {
-    priorityList = `1. **WorkflowV2** (WordPress predefined workflows)
-2. **Screenshots**
-3. **Infographics**`;
-  }
-
-  // Build the eesel internal section if needed
-  const eesselInternalSection = isInternalTeam
-    ? `
-
-## 1. Eesel Internal Assets
-Insert these FIRST whenever the blog mentions:
-- Eesel AI
-- AI Copilot
-- AI Agent
-- AI Triage
-- Blog generator
-- Any eesel-owned feature
-
-Placement:
-- Insert the asset block **after the first paragraph** introducing the concept.
-- If WorkflowV2 is also relevant → insert WorkflowV2 immediately after the internal asset.
-
-Format inside "<assets>":
-- Asset 1: eesel_internal_asset – [short description should reflect the exact feature]
-- Alt title: [text that includes the exact focus keyword]
-- Alt text: [text that includes the exact focus keyword]
-
-These assets come from **WordPress Media** and will be retrieved downstream.
-
----
-`
-    : "";
-
-  return `# ASSETS DEFINER — Insert Asset Suggestions Into the Draft Blog
-
-Your task is to analyze the entire blog and insert visual asset suggestions **directly into the blog content**.
-
-You must preserve the blog EXACTLY as written — wording, spacing, headings, formatting — except where infographics require a small contextual adjustment (only in the specific part that anchors the infographic).
-
-Your output MUST return:
-1. **The full draft blog**, unchanged except for inserted <assets> … </assets> blocks.
-2. Asset blocks must follow this format:
-
-<assets>
-Asset 1: [type] – [short description]
-Alt title: [text that includes the exact focus keyword]
-Alt text: [text that includes the exact focus keyword]
-</assets>
-
-You MUST insert assets into correct locations using the mapping rules below.
-
----
-
-# 🎯 PRIORITY ORDER FOR ASSET INSERTION
-When multiple asset types apply, use this strict priority:
-
-${priorityList}
-
-HOWEVER - this priority is overruled by the VARIETY rule. The VARIETY rule means that you should try and use multiple different types of assets, and use screenshots where you can.
-
----
-
-# 📌 MAPPING RULES FOR EACH ASSET TYPE
-${eesselInternalSection}
-## ${isInternalTeam ? "2" : "1"}. WorkflowV2
-Insert WorkflowV2 (WordPress) when:
-- A section explains a process
-- A step-by-step logic is described
-- A workflow is described verbally
-
-Placement:
-- If an Eesel Internal Asset exists in that section → place WorkflowV2 immediately after that internal asset
-- Otherwise → place it after the paragraph describing the steps
-
-Format inside <assets>:
-- Asset 1: workflow – [description of the workflow]
-- Alt title: [text that includes the exact focus keyword]
-- Alt text: [text that includes the exact focus keyword]
-
----
-
-## ${isInternalTeam ? "3" : "2"}. Screenshots
-Screenshots MUST ALWAYS be inserted when:
-- The blog mentions a product in a heading (e.g., "### 3. Zendesk", "### 4. Tidio")
-- The blog is a listicle and introduces a tool
-- A platform or product is being introduced for the first time, insert landing page (e.g. "What is Shopify Inbox?")
-
-Screenshots MUST NOT be inserted when:
-  1. The screenshot would show features, dashboards, or internal pages
-  2. Only landing pages are allowed because the screenshot tool can capture landing pages only
-
-Important Notes:
-  1. Do not skip required screenshots.
-  2. Do not insert screenshots in any other situation outside the rules above.
-
-Placement rule: **IF a numbered heading is introducing the product → insert the screenshot immediately AFTER that heading.**
-
-Format inside <assets>:
-- Asset 1: screenshot – [short description must describe the screenshot context]
-- Alt title: [text that includes the exact focus keyword]
-- Alt text: [text that includes the exact focus keyword]
-
----
-
-## ${isInternalTeam ? "4" : "3"}. Infographics
-Infographics are ONLY used when the content explains:
-- A complex concept
-- A multi-step reasoning
-- A comparison that benefits from visual clarity
-
-Placement:
-- Insert the infographic after the paragraph that provides contextual context.
-
-Special rule:
-Infographics are the ONLY asset where you may slightly adjust wording in that paragraph to give the infographic a natural anchor.
-This change must be **minimal and strictly contextual**.
-
-Format inside <assets>:
-- Asset 1: infographic – [description must detail what the designer should illustrate]
-- Alt title: [text that includes the exact focus keyword]
-- Alt text: [text that includes the exact focus keyword]
-
----
-
-# 📌 ASSET INSERTION RULES (GLOBAL)
-
-You must:
-- NEVER place two <assets> blocks consecutively
-- ALWAYS ensure at least one full paragraph exists between assets
-- NEVER place assets inside headings or inside paragraphs
-- NEVER modify any existing tables
-- ALWAYS include the focus keyword in alt title + alt text
-- NEVER remove or rewrite existing content (again: ONLY infographics may slightly expand the contextual paragraph)
-- NEVER use the same exact same asset more than once in the same blog.
-- DO NOT insert any assets that are not relevant to the blog content.
-
----
-
-# 📌 FOCUS KEYWORD
-The alt title and alt text MUST contain the exact focus keyword:
-
-${keyword}
-
----
-
-# ✅ FINAL INSTRUCTIONS
-YOU ARE NOT TO EDIT THE TONE OR FORMATTING OR WRITING OF THE BLOG IN ANY WAY other than to ADD suggested asset descriptions.
-This is the most important command.
-Your output will be the SAME blog but with asset suggestions (except for infographics, which may require minimal contextual additions).`;
 }

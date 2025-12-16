@@ -47,9 +47,21 @@ export async function verifyContextStep(
 
       // Step 1: Extract claims and generate verification questions
       const claimsExtractionPrompt = `You are an expert fact-checker. Analyze the following blog outline and identify all sensitive claims, statistics, facts, or statements that need verification.
-
-For each claim, generate a concise question that can be answered by a search engine to verify the information.
-
+This includes, but is not limited to:
+1. Numerical data, statistics, benchmarks, or percentages
+2. Pricing information or pricing tiers
+3. Any stated strengths and limitations of a product or platform
+4. Product or platform features
+5. Market position, adoption, availability, or usage claims
+CRITICAL: If the blog includes strengths and/or limitations of a product or platform, you must:
+1. Identify each and every strength and limitation listed
+2. Treat each one as a factual claim
+3. Include them individually if they require verification
+When multiple statements refer to the same underlying fact, feature set, policy, definition, or system behavior (example: pricing):
+1. Group closely related details into a single claim whenever they can reasonably be verified together
+2. Avoid generating repetitive or overlapping verification questions for the same concept
+3. Generate one concise verification question that covers the grouped information
+For each claim, generate a concise question that can be answered by a search engine to verify the information.Return your response as a JSON array with this structure:
 Return your response as a JSON array with this structure:
 [
   {
@@ -57,10 +69,7 @@ Return your response as a JSON array with this structure:
     "question": "A concise question to verify this claim"
   }
 ]
-
 Only include claims that are factual and need verification. Skip subjective opinions or general statements.
-
-If it's containing a pricing or a subset section of a company for examp
 
 Outline:
 ${input.outline}`;

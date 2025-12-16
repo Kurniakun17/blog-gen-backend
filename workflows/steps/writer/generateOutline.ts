@@ -9,10 +9,12 @@ type GenerateOutlineStepInput = {
   blogType: string;
   tone?: string;
   customOutline?: string;
+  companyName: string;
 };
 
 type OutlineResult = {
   outline: string;
+  prompt: string;
 };
 
 export async function generateOutlineStep(
@@ -30,20 +32,21 @@ export async function generateOutlineStep(
       "use step";
 
       // Always generate with AI, but pass custom outline as top priority instruction
-      const outline = await generateOutline(
+      const { outline, prompt } = await generateOutline(
         input.topic,
         input.keyword,
         input.researchContext,
         input.companyContext,
         input.blogType,
+        input.companyName,
         input.tone,
         input.customOutline
       );
       return {
-        value: { outline },
+        value: { outline, prompt },
         completeData: {
           outlineChars: outline.length,
-          hasCustomOutline: !!input.customOutline
+          hasCustomOutline: !!input.customOutline,
         },
       };
     }

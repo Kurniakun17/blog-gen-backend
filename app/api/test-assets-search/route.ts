@@ -49,33 +49,45 @@ export async function POST(request: NextRequest) {
       youtubeResults: input.youtubeResults,
     });
     const duration = Date.now() - startTime;
+    const { contentWithProcessedAssets, toolCallLogs } = result.value;
 
     console.log("\n========== [Test] Assets Search Complete ==========");
     console.log("Duration:", duration, "ms");
-    console.log("Output length:", result.value?.length || 0);
-    console.log("Output is empty:", !result.value || result.value.length === 0);
+    console.log("Output length:", contentWithProcessedAssets.length || 0);
+    console.log(
+      "Output is empty:",
+      !contentWithProcessedAssets || contentWithProcessedAssets.length === 0
+    );
     console.log("===================================================\n");
 
     return NextResponse.json({
-      success: !!result.value && result.value.length > 0,
+      success:
+        !!contentWithProcessedAssets && contentWithProcessedAssets.length > 0,
       result: {
         value: result.value,
         durationMs: result.durationMs,
         // Preview of the output
-        preview: result.value?.substring(0, 500) || "(empty)",
+        preview: contentWithProcessedAssets.substring(0, 500) || "(empty)",
         // Count various placeholders
-        screenshotCount: (result.value?.match(/__SCREENSHOTS::/g) || []).length,
-        imageCount: (result.value?.match(/__IMAGE::/g) || []).length,
-        remainingAssetTags: (result.value?.match(/<assets>/g) || []).length,
+        screenshotCount: (
+          result.value.contentWithProcessedAssets.match(/__SCREENSHOTS::/g) ||
+          []
+        ).length,
+        imageCount: (
+          result.value.contentWithProcessedAssets.match(/__IMAGE::/g) || []
+        ).length,
+        remainingAssetTags: (
+          result.value.contentWithProcessedAssets.match(/<assets>/g) || []
+        ).length,
       },
       stats: {
         inputLength: input.contentWithAssets.length,
-        outputLength: result.value?.length || 0,
-        isEmpty: !result.value || result.value.length === 0,
+        outputLength: contentWithProcessedAssets.length || 0,
+        isEmpty: !contentWithProcessedAssets || contentWithProcessedAssets.length === 0,
         testDurationMs: duration,
       },
       message:
-        result.value && result.value.length > 0
+        contentWithProcessedAssets && contentWithProcessedAssets.length > 0
           ? "Assets Search completed successfully"
           : "Assets Search returned empty output - check logs for details",
     });
@@ -125,10 +137,11 @@ export async function GET() {
     example: {
       input: {
         contentWithAssets:
-          '# Best Notion alternatives\\n\\n<assets>\\nAsset 1: screenshot - Confluence landing page\\nAlt title: Confluence homepage\\nAlt text: Confluence team collaboration software\\n</assets>\\n\\nConfluence is a powerful tool...',
+          "# Best Notion alternatives\\n\\n<assets>\\nAsset 1: screenshot - Confluence landing page\\nAlt title: Confluence homepage\\nAlt text: Confluence team collaboration software\\n</assets>\\n\\nConfluence is a powerful tool...",
         keyword: "Notion alternatives",
         blogType: "listicle",
-        youtubeResults: "Found 10 YouTube video(s):\n\n1. Best Notion Alternatives...",
+        youtubeResults:
+          "Found 10 YouTube video(s):\n\n1. Best Notion Alternatives...",
       },
     },
   });

@@ -42,9 +42,11 @@ export async function generateOutline(
   researchContext: string,
   companyContext: string,
   blogType: string,
+  companyName: string,
   tone?: string,
-  customOutline?: string
-): Promise<string> {
+  customOutline?: string,
+  
+): Promise<{ outline: string; prompt: string }> {
   const topicStr = String(topic);
 
   logStep(`[Step 1/3] Generating outline for topic: ${topicStr}`);
@@ -57,6 +59,7 @@ export async function generateOutline(
     blogType,
     tone,
     customOutline,
+    companyName
   });
 
   const outlineResult = await generateText({
@@ -67,7 +70,7 @@ export async function generateOutline(
   const outline = outlineResult.text;
   logStep(`[Step 1/3] Outline generated (${outline.length} characters)`);
 
-  return outline;
+  return { outline, prompt: outlinePrompt };
 }
 
 /**
@@ -255,12 +258,13 @@ export async function generateBlogDraft(
   const companyName = companyProfile.company_name || "";
 
   // Step 1: Generate Outline
-  const outline = await generateOutline(
+  const { outline } = await generateOutline(
     topic,
     keyword,
     researchContext,
     companyContext,
-    blogType
+    blogType,
+    companyName
   );
 
   // Step 2: Write First Draft

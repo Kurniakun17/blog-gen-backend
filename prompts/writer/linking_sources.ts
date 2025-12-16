@@ -70,7 +70,7 @@ GENERAL RULES (APPLY TO ALL LINKING)
 - Stick strictly to inline text and URLs provided.
 - Do NOT fabricate sources or make assumptions.
 - Avoid clutter: do NOT add too many links in a single paragraph.
-- Anchor text must be natural and concise (NO MORE THAN 7 WORDS).
+- Anchor text must be natural and concise (NO MORE THAN 5 WORDS).
 
 ------------------------------------------------------------
 PART 1 — INTERNAL LINKING

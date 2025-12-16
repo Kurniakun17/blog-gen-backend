@@ -87,8 +87,9 @@ export async function generateBlogWorkflow(
     researchContext: researchWithContext,
     companyContext: companyProfileResult.value.company_profile,
     blogType: metadataResult.value.blogType || "overview",
-    tone: metadataResult.value.tone, // Pass tone from metadata
-    customOutline: metadataResult.value.outline, // Pass custom outline if provided
+    tone: metadataResult.value.tone,
+    customOutline: metadataResult.value.outline,
+    companyName: companyProfileResult.value.company_name || "",
   });
   diagnostics.push({
     phase: "generate-outline",
@@ -113,6 +114,7 @@ export async function generateBlogWorkflow(
     researchContext: researchWithContext,
     companyContext: companyProfileResult.value.company_profile,
     blogType: metadataResult.value.blogType || "overview",
+    companyName: companyProfileResult.value.company_name || "",
   });
   diagnostics.push({
     phase: "outline-verified",
@@ -244,9 +246,14 @@ export async function generateBlogWorkflow(
     durationMs: assetsSearchResult.durationMs,
   });
 
+  // Log tool call summary
+  console.log("\n========== [Assets Search] Tool Calls Summary ==========");
+  console.log("Tool Call Logs:", JSON.stringify(assetsSearchResult.value.toolCallLogs, null, 2));
+  console.log("=========================================================\n");
+
   // Step 12: Assets Process Tags
   const assetsResult = await assetsProcessTagsStep({
-    contentWithProcessedAssets: assetsSearchResult.value,
+    contentWithProcessedAssets: assetsSearchResult.value.contentWithProcessedAssets,
     outputFormat: input.internalUsage ? "html" : "markdown",
   });
   diagnostics.push({
