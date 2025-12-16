@@ -12,6 +12,7 @@ import { publishToWordPressStep } from "@/workflows/steps/publishToWordPress";
  *   "slug": "test-blog-post",
  *   "metaDescription": "This is a test blog post",
  *   "excerpt": "Test excerpt",
+ *   "blogType": "comparison", // Optional, defaults to "comparison"
  *   "categoryId": 31,  // Optional, defaults to 0 (formatter will determine)
  *   "bannerId": 19849, // Optional, defaults to 0 (formatter will determine)
  *   "faqs": [
@@ -44,6 +45,7 @@ export async function POST(request: NextRequest) {
     const startTime = Date.now();
 
     const result = await publishToWordPressStep({
+      blogType: body.blogType || "comparison",
       content: body.content,
       title: body.title,
       slug: body.slug || body.title.toLowerCase().replace(/\s+/g, "-"),
@@ -102,6 +104,7 @@ export async function GET() {
       slug: "URL slug (auto-generated from title if not provided)",
       metaDescription: "Meta description for SEO",
       excerpt: "Blog excerpt",
+      blogType: 'Blog type (e.g., "comparison", "listicle", defaults to "comparison")',
       categoryId: "WordPress category ID (0 = auto-determine from title)",
       bannerId: "WordPress banner/featured image ID (0 = auto-determine)",
       faqs: "Array of FAQ objects with question and answer",
@@ -132,6 +135,7 @@ It publishes directly to WordPress.`,
       slug: "test-blog-post-ai-chatbots",
       metaDescription: "This is a test blog post about AI chatbots",
       excerpt: "Learn about AI chatbots in this test post",
+      blogType: "comparison",
       categoryId: 0,
       bannerId: 0,
       status: "draft",
