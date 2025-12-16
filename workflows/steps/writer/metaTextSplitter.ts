@@ -18,6 +18,13 @@ type MetaTextSplitterResult = {
   prompt: string;
 };
 
+const metaTextSchema = z.object({
+  metaTitle: z.string(),
+  metaDescription: z.string(),
+  excerpt: z.string(),
+  tags: z.array(z.string()),
+});
+
 /**
  * Step: Meta Text Splitter
  * Splits the verified outline into meta title, meta description, excerpt, and tags using AI
@@ -33,13 +40,6 @@ export async function metaTextSplitterStep(
     },
     async () => {
       "use step";
-
-      const metaTextSchema = z.object({
-        metaTitle: z.string(),
-        metaDescription: z.string(),
-        excerpt: z.string(),
-        tags: z.array(z.string()),
-      });
 
       console.log("\n========== [Meta Text Splitter] Starting ==========");
       console.log("Slug:", input.slug);

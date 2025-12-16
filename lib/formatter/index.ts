@@ -8,10 +8,6 @@
 import type { BlogDraft } from "../writer";
 import { cleanLLMJson } from "../utils";
 import {
-  convertImagePlaceholdersToHTML,
-  convertVideoPlaceholdersToShortcode,
-  convertScreenshotsPlaceholdersToHTML,
-  wrapMediaWithPre,
   adjustHeaderLevels,
   getCategoryId,
   getBannerId,
@@ -104,7 +100,7 @@ export async function formatWordPressHTML({
   const faqsJson = buildFAQBlock(faqs);
 
   // Step 5: Get category and banner IDs
-  const categoryId = getCategoryId(safeTitle);
+  const categoryId = getCategoryId(safeTitle, draft.blogType);
   const bannerId = getBannerId(categoryId);
 
   // Step 6: Construct final WordPress content

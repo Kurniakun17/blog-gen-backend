@@ -327,10 +327,11 @@ export async function generateBlogWorkflow(
         slug: metaTextResult.value.slug,
         metaDescription: draftResult.value.metaDescription || "",
         excerpt: draftResult.value.excerpt || "",
-        categoryId: 0, // Will be determined by formatter based on title
+        categoryId: 0,
         bannerId: bannerPickerResult?.value.bannerId || 0,
         faqs: draftResult.value.faqs || [],
         tags: draftResult.value.tags || [],
+        blogType: metadataResult.value.blogType || "overview",
       });
       diagnostics.push({
         phase: "publish-to-wordpress",

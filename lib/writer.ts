@@ -24,6 +24,7 @@ export interface BlogDraft {
   metaTitle?: string;
   faqs?: { question: string; answer: string }[];
   tags?: string[];
+  blogType: string;
 }
 
 /**
@@ -285,5 +286,9 @@ export async function generateBlogDraft(
   // Step 4: Review Flow
   const reviewedResult = await reviewContent(polishedContent.result, keyword);
 
-  return reviewedResult;
+  // Ensure blogType is included in the returned object
+  return {
+    ...reviewedResult,
+    blogType,
+  };
 }

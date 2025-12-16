@@ -2,14 +2,19 @@
  * Helper functions for WordPress formatter
  */
 
-import { CATEGORY_MAP, CATEGORY_BANNER_MAP, GUIDE_BANNER_IDS } from './constants';
-import type { FAQPair } from './types';
+import {
+  CATEGORY_MAP,
+  CATEGORY_BANNER_MAP,
+  GUIDE_BANNER_IDS,
+} from "./constants";
+import type { FAQPair } from "./types";
 
 /**
  * Convert __IMAGE::URL::TITLE::CAPTION__ placeholders to HTML with pre tags
  */
 export function convertImagePlaceholdersToHTML(content: string): string {
-  const imagePattern = /\*{0,}__IMAGE::(.*?)::([^:]+?)::(.+?)(?:__|(?=\n)|$)\*{0,}/g;
+  const imagePattern =
+    /\*{0,}__IMAGE::(.*?)::([^:]+?)::(.+?)(?:__|(?=\n)|$)\*{0,}/g;
 
   return content.replace(
     imagePattern,
@@ -27,7 +32,8 @@ export function convertImagePlaceholdersToHTML(content: string): string {
  * Convert __VIDEO::URL::TITLE::CAPTION__ placeholders to WordPress shortcode
  */
 export function convertVideoPlaceholdersToShortcode(content: string): string {
-  const videoPattern = /\*{0,}__VIDEO::(.*?)::([^:]+?)::(.+?)(?:__|(?=\n)|$)\*{0,}/g;
+  const videoPattern =
+    /\*{0,}__VIDEO::(.*?)::([^:]+?)::(.+?)(?:__|(?=\n)|$)\*{0,}/g;
 
   return content.replace(
     videoPattern,
@@ -44,7 +50,8 @@ export function convertVideoPlaceholdersToShortcode(content: string): string {
  * Convert __SCREENSHOTS::URL::TITLE::CAPTION__ placeholders to HTML
  */
 export function convertScreenshotsPlaceholdersToHTML(content: string): string {
-  const imagePattern = /\*{0,}__SCREENSHOTS::(.*?)::([^:]+?)::(.+?)(?:__|(?=\n)|$)\*{0,}/g;
+  const imagePattern =
+    /\*{0,}__SCREENSHOTS::(.*?)::([^:]+?)::(.+?)(?:__|(?=\n)|$)\*{0,}/g;
 
   return content.replace(
     imagePattern,
@@ -73,15 +80,15 @@ export function wrapMediaWithPre(text: string): string {
   // Clean up content inside pre tags for iframe
   result = result.replace(/<pre>([\s\S]*?)<\/pre>/g, (match, content) => {
     const cleanedContent = content
-      .replace(/(<\/iframe>)\s*\n+\s*/g, '$1')
-      .replace(/\s+/g, ' ')
+      .replace(/(<\/iframe>)\s*\n+\s*/g, "$1")
+      .replace(/\s+/g, " ")
       .trim();
 
     return `<pre>${cleanedContent}</pre>`;
   });
 
-  result = result.replace(/::\s*<\/pre>/g, '</pre>');
-  result = result.replace(/:\s*<\/pre>/g, '</pre>');
+  result = result.replace(/::\s*<\/pre>/g, "</pre>");
+  result = result.replace(/:\s*<\/pre>/g, "</pre>");
 
   return result;
 }
@@ -90,7 +97,7 @@ export function wrapMediaWithPre(text: string): string {
  * Adjust header levels if the first header is H3 or deeper
  */
 export function adjustHeaderLevels(text: string): string {
-  const lines = text.split('\n');
+  const lines = text.split("\n");
   let firstHeader: string | null = null;
 
   for (const line of lines) {
@@ -102,10 +109,13 @@ export function adjustHeaderLevels(text: string): string {
   }
 
   if (firstHeader && /^#{3,}\s+/.test(firstHeader)) {
-    return text.replace(/^(\s*)(#+)(\s+.+)$/gm, (match, whitespace, hashes, content) => {
-      const newHashes = hashes.length > 1 ? hashes.slice(1) : '#';
-      return whitespace + newHashes + content;
-    });
+    return text.replace(
+      /^(\s*)(#+)(\s+.+)$/gm,
+      (match, whitespace, hashes, content) => {
+        const newHashes = hashes.length > 1 ? hashes.slice(1) : "#";
+        return whitespace + newHashes + content;
+      }
+    );
   }
 
   return text;
@@ -114,23 +124,40 @@ export function adjustHeaderLevels(text: string): string {
 /**
  * Get WordPress Category ID based on title keywords
  */
-export function getCategoryId(title: string): number {
-  const keywords = (title || '').toLowerCase();
+export function getCategoryId(title: string, blogType: string): number {
+  const keywords = (title || "").toLowerCase();
 
-  // First priority: Check for alternatives
-  if (keywords.includes('alternatives') || keywords.includes('alternative')) {
-    return CATEGORY_MAP['alternatives'];
-  }
-
-  // Second priority: Check for software keywords
-  for (const [keyword, categoryId] of Object.entries(CATEGORY_MAP)) {
-    if (keyword !== 'alternatives' && keyword !== 'guide' && keywords.includes(keyword)) {
-      return categoryId;
+  if (blogType === "overview") {
+    // For overview: prioritize software keywords first
+    for (const [keyword, categoryId] of Object.entries(CATEGORY_MAP)) {
+      if (
+        keyword !== "alternatives" &&
+        keyword !== "guide" &&
+        keywords.includes(keyword)
+      ) {
+        return categoryId;
+      }
+    }
+    if (keywords.includes("alternatives") || keywords.includes("alternative")) {
+      return CATEGORY_MAP["alternatives"];
+    }
+  } else {
+    // For other types: prioritize alternatives first
+    if (keywords.includes("alternatives") || keywords.includes("alternative")) {
+      return CATEGORY_MAP["alternatives"];
+    }
+    for (const [keyword, categoryId] of Object.entries(CATEGORY_MAP)) {
+      if (
+        keyword !== "alternatives" &&
+        keyword !== "guide" &&
+        keywords.includes(keyword)
+      ) {
+        return categoryId;
+      }
     }
   }
 
-  // Fallback: Return guide category
-  return CATEGORY_MAP['guide'];
+  return CATEGORY_MAP["guide"];
 }
 
 /**
@@ -165,10 +192,14 @@ export function parseFAQs(faqContent: string): FAQPair[] {
   let contentWithoutHeader = faqContent;
 
   // Try to remove FAQ header - match both "FAQ" and "Frequently Asked Questions" patterns
-  const faqHeaderMatch = contentWithoutHeader.match(/^#+\s*(FAQ[:\s]?.*|.*frequently asked questions?.*)$/im);
+  const faqHeaderMatch = contentWithoutHeader.match(
+    /^#+\s*(FAQ[:\s]?.*|.*frequently asked questions?.*)$/im
+  );
   if (faqHeaderMatch) {
     // Remove the entire first line (the section header)
-    contentWithoutHeader = contentWithoutHeader.replace(faqHeaderMatch[0], '').trim();
+    contentWithoutHeader = contentWithoutHeader
+      .replace(faqHeaderMatch[0], "")
+      .trim();
   }
 
   // Try matching Q#:/A#: format first
@@ -193,33 +224,37 @@ export function parseFAQs(faqContent: string): FAQPair[] {
     for (let i = 0; i < qMatches.length; i++) {
       const question = qMatches[i][2].trim();
       const aMatchFound = aMatches.find((a) => a[1] === qMatches[i][1]);
-      const answer = aMatchFound ? aMatchFound[2].trim() : '';
+      const answer = aMatchFound ? aMatchFound[2].trim() : "";
       faqPairs.push({ question, answer });
     }
   } else {
     // Fall back to header format (H2 or H3)
     // Split by H3 headers (###) which is the primary format the LLM uses
     const faqQuestionRegex = /^###\s*(.+?)\s*$/gm;
-    const sections = contentWithoutHeader.split(faqQuestionRegex).filter((s) => s.trim());
+    const sections = contentWithoutHeader
+      .split(faqQuestionRegex)
+      .filter((s) => s.trim());
 
     if (sections.length > 1) {
       // H3 format found (### Question)
       for (let i = 0; i < sections.length; i += 2) {
         if (i + 1 < sections.length) {
           const question = sections[i].trim();
-          const answer = sections[i + 1].replace(/^A\d+:\s*/, '').trim();
+          const answer = sections[i + 1].replace(/^A\d+:\s*/, "").trim();
           faqPairs.push({ question, answer });
         }
       }
     } else {
       // Try H2 format (## Question) as final fallback
       const h2QuestionRegex = /^##\s*(.+?)\s*$/gm;
-      const h2Sections = contentWithoutHeader.split(h2QuestionRegex).filter((s) => s.trim());
+      const h2Sections = contentWithoutHeader
+        .split(h2QuestionRegex)
+        .filter((s) => s.trim());
 
       for (let i = 0; i < h2Sections.length; i += 2) {
         if (i + 1 < h2Sections.length) {
           const question = h2Sections[i].trim();
-          const answer = h2Sections[i + 1].replace(/^A\d+:\s*/, '').trim();
+          const answer = h2Sections[i + 1].replace(/^A\d+:\s*/, "").trim();
           faqPairs.push({ question, answer });
         }
       }
@@ -234,14 +269,14 @@ export function parseFAQs(faqContent: string): FAQPair[] {
  */
 export function generateSlug(title: string | null | undefined): string {
   // Guard clause: return fallback slug if title is falsy
-  if (!title || title.trim() === '') {
-    return 'default-blog-slug-' + Date.now();
+  if (!title || title.trim() === "") {
+    return "default-blog-slug-" + Date.now();
   }
 
   return title
     .toLowerCase()
-    .replace(/[^\w\s-]/g, '') // Remove special characters
-    .replace(/\s+/g, '-') // Replace spaces with hyphens
-    .replace(/--+/g, '-') // Replace multiple hyphens with single hyphen
+    .replace(/[^\w\s-]/g, "") // Remove special characters
+    .replace(/\s+/g, "-") // Replace spaces with hyphens
+    .replace(/--+/g, "-") // Replace multiple hyphens with single hyphen
     .trim();
 }

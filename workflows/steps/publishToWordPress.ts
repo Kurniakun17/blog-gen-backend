@@ -3,6 +3,7 @@ import { formatWordPressHTML, type WordPressOutput } from "@/lib/formatter";
 import { stripFAQSection } from "@/lib/utils";
 
 type PublishToWordPressInput = {
+  blogType: string;
   content: string;
   title: string;
   slug: string;
@@ -62,6 +63,7 @@ export async function publishToWordPressStep(
           metaTitle: input.title,
           faqs: input.faqs,
           tags: input.tags,
+          blogType: input.blogType,
         },
         slug: input.slug,
       });
