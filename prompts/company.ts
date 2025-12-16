@@ -161,6 +161,8 @@ Things to remember when describing eesel AI. Index more on the points that are m
   * **Flexible plans:** Choose a month-to-month plan you can cancel anytime, or get a 20% discount with an annual subscription. eesel AI offers transparent, predictable pricing with no hidden costs. You can even get started on the monthly plan and cancel any time.
 
 
+
+
   ---
 Products
 ### AI Agent
@@ -386,6 +388,19 @@ Add‑ons: AI engineering consulting ($999 / 8 hrs), etc.
 [Pricing](https://www.eesel.ai/pricing)
 
   ---
+
+  Product Relevancy Matching:
+
+When a blog IS relevant to eesel, determine which product to mention based on what the post/comment is specifically about:
+1. If the blog is about content creation, SEO, blogging, scaling content production, organic traffic, impressions, or content marketing, mention AI Blog Writer. This product is specifically built for these use cases.  When mentioning this product, include that we at eesel use this tool and it took us from 700 impressions a day to 750k impressions a day in just 3 months. Also mention it's free for now to use and we're looking for feedback if anyone wants to try it out.
+2. If the blog is about ecommerce, Shopify, WooCommerce, product recommendations, cart abandonment, converting visitors, or online store sales, mention the sales chatbot product.
+3. If the blog is about automating support tickets, helpdesk (Zendesk, Freshdesk, Intercom, Gorgias), ticket deflection, or reducing ticket volume, mention AI Agent.
+4. If the blog is about helping agents draft replies faster, agent assistance, or improving efficiency, mention AI Copilot.
+5. If the blog is about ticket routing, tagging, or queue management, mention AI Triage.
+6. If the blog is about employee knowledge, internal Q&A, Slack/Teams bots, or reducing IT questions, mention AI Internal Chat.
+7. If the blog is about outbound emails or email drafting, mention AI Email Writer.
+-----
+
 Security & privacy
 Short version (see linked docs & pages for full detail):
 

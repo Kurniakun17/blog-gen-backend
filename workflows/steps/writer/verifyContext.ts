@@ -1,11 +1,12 @@
 import { runStep, type TimedResult } from "../../utils/steps";
-import { generateText } from "ai";
-import { getModel } from "@/config/models";
-
-type VerifyContextStepInput = {
-  outline: string;
-  keyword: string;
-};
+import {
+  identifyToolsAndPages,
+  findOfficialPages,
+  scrapeUrl,
+  type ToolVerificationPage,
+  type OfficialPageResult,
+} from "@/lib/verifyContext";
+import FirecrawlApp from "firecrawl";
 
 type VerificationQuestion = {
   claim: string;
@@ -14,275 +15,299 @@ type VerificationQuestion = {
   source?: string;
 };
 
-type VerifyContextResult = {
-  questions: VerificationQuestion[];
-  verifiedData: VerificationQuestion[];
+type ScrapedPage = {
+  tool: string;
+  title: string;
+  url: string;
+  success: boolean;
+  contentLength?: number;
 };
 
-type ClaimGroup = {
-  claims: VerificationQuestion[];
-  combinedQuestion: string;
-  groupTopic: string;
+type VerifyContextResult = {
+  /** Legacy field - kept for backwards compatibility */
+  questions: VerificationQuestion[];
+  /** Legacy field - kept for backwards compatibility */
+  verifiedData: VerificationQuestion[];
+  /** List of all pages attempted to scrape with success status */
+  scrapedPages: ScrapedPage[];
+  /** Full combined context from all successfully scraped pages */
+  fullContext: string;
+  /** Successfully scraped URLs */
+  successfulUrls: string[];
+  /** Failed scrape URLs */
+  failedUrls: string[];
 };
 
 /**
- * Step: Verify Context
- * Extracts sensitive claims from the outline and verifies them using SERP API Google AI Mode
+ * Step 1: Identify Tools and Pages
+ * Analyzes the outline to identify which tools/platforms need verification
  */
-export async function verifyContextStep(
-  input: VerifyContextStepInput
-): Promise<TimedResult<VerifyContextResult>> {
+export async function identifyToolsStep(input: {
+  outline: string;
+}): Promise<TimedResult<{ tools: ToolVerificationPage[] }>> {
+  const outline = input.outline; 
+
   return runStep(
-    "verify-context",
-    {
-      keyword: input.keyword,
-    },
+    "identify-tools",
+    { outlineLength: outline.length },
     async () => {
       "use step";
 
-      console.log("\n========== [Verify Context] Starting ==========");
-      console.log("Outline length:", input.outline.length);
-      console.log("Keyword:", input.keyword);
-      console.log("===============================================\n");
+      console.log("\n[Identify Tools] Analyzing outline...");
+      const tools = await identifyToolsAndPages(outline);
 
-      // Step 1: Extract claims and generate verification questions
-      const claimsExtractionPrompt = `You are an expert fact-checker. Analyze the following blog outline and identify all sensitive claims, statistics, facts, or statements that need verification.
-This includes, but is not limited to:
-1. Numerical data, statistics, benchmarks, or percentages
-2. Pricing information or pricing tiers
-3. Any stated strengths and limitations of a product or platform
-4. Product or platform features
-5. Market position, adoption, availability, or usage claims
-CRITICAL: If the blog includes strengths and/or limitations of a product or platform, you must:
-1. Identify each and every strength and limitation listed
-2. Treat each one as a factual claim
-3. Include them individually if they require verification
-When multiple statements refer to the same underlying fact, feature set, policy, definition, or system behavior (example: pricing):
-1. Group closely related details into a single claim whenever they can reasonably be verified together
-2. Avoid generating repetitive or overlapping verification questions for the same concept
-3. Generate one concise verification question that covers the grouped information
-For each claim, generate a concise question that can be answered by a search engine to verify the information.Return your response as a JSON array with this structure:
-Return your response as a JSON array with this structure:
-[
-  {
-    "claim": "The exact claim from the outline",
-    "question": "A concise question to verify this claim"
-  }
-]
-Only include claims that are factual and need verification. Skip subjective opinions or general statements.
-
-Outline:
-${input.outline}`;
-
-      const claimsResult = await generateText({
-        model: getModel("writer"),
-        prompt: claimsExtractionPrompt,
-        temperature: 0.3,
-      });
-
-      let questions: VerificationQuestion[] = [];
-      try {
-        // Try to parse the JSON response
-        const jsonMatch = claimsResult.text.match(/\[[\s\S]*\]/);
-        if (jsonMatch) {
-          questions = JSON.parse(jsonMatch[0]);
-        }
-      } catch (error) {
-        console.error("Failed to parse claims:", error);
-        console.log("Raw response:", claimsResult.text);
-        // Return empty array if parsing fails
-        return {
-          value: { questions: [], verifiedData: [] },
-          completeData: { questionsCount: 0 },
-        };
-      }
-
-      console.log(
-        `\n[Verify Context] Extracted ${questions.length} claims to verify\n`
-      );
-
-      // Step 2: Use AI to group related claims to reduce API calls
-      let claimGroups: ClaimGroup[] = [];
-
-      if (questions.length === 0) {
-        claimGroups = [];
-      } else if (questions.length === 1) {
-        claimGroups = [
-          {
-            claims: questions,
-            combinedQuestion: questions[0].question,
-            groupTopic: "single",
-          },
-        ];
-      } else {
-        // Use AI to intelligently group claims
-        const groupingPrompt = `You are an expert at grouping related factual claims for efficient verification.
-
-Given a list of claims and their verification questions, group related claims together based on:
-1. Same company/product/service
-2. Related topic (e.g., all pricing claims, all feature claims)
-3. Can be answered by a single search query
-
-Rules:
-- Maximum 5 claims per group (split if more)
-- If claims are unrelated, keep them separate
-- Create a concise combined question that covers all claims in the group
-
-Claims to group:
-${questions.map((q, i) => `${i + 1}. Claim: "${q.claim}"\n   Question: "${q.question}"`).join("\n\n")}
-
-Return a JSON array of groups with this structure:
-[
-  {
-    "claimIndexes": [0, 1, 2],
-    "groupTopic": "eesel AI pricing",
-    "combinedQuestion": "What are eesel AI's pricing plans, features, and billing options?"
-  }
-]
-
-Keep groups logical and efficient. If a claim doesn't fit with others, put it in its own group.`;
-
-        try {
-          const groupingResult = await generateText({
-            model: getModel("writer"),
-            prompt: groupingPrompt,
-            temperature: 0.3,
-          });
-
-          const jsonMatch = groupingResult.text.match(/\[[\s\S]*\]/);
-          if (!jsonMatch) {
-            console.warn(
-              "[Verify Context] Failed to parse AI grouping, falling back to individual claims"
-            );
-            claimGroups = questions.map((q) => ({
-              claims: [q],
-              combinedQuestion: q.question,
-              groupTopic: "ungrouped",
-            }));
-          } else {
-            const aiGroups: Array<{
-              claimIndexes: number[];
-              groupTopic: string;
-              combinedQuestion: string;
-            }> = JSON.parse(jsonMatch[0]);
-
-            // Convert AI groups to ClaimGroup format
-            claimGroups = aiGroups.map((group) => ({
-              claims: group.claimIndexes.map((idx) => questions[idx]),
-              combinedQuestion: group.combinedQuestion,
-              groupTopic: group.groupTopic,
-            }));
-          }
-        } catch (error) {
-          console.error("[Verify Context] Error in AI grouping:", error);
-          // Fallback: each claim in its own group
-          claimGroups = questions.map((q) => ({
-            claims: [q],
-            combinedQuestion: q.question,
-            groupTopic: "fallback",
-          }));
-        }
-      }
-
-      console.log(
-        `\n[Verify Context] AI grouped into ${claimGroups.length} verification queries (reduced from ${questions.length})\n`
-      );
-      claimGroups.forEach((group, idx) => {
+      console.log(`[Identify Tools] Found ${tools.length} tools to verify`);
+      tools.forEach((tool) => {
         console.log(
-          `  Group ${idx + 1} [${group.groupTopic}]: ${group.claims.length} claims`
+          `  - ${tool.tool_name}: ${tool.verification_pages.length} pages`
         );
       });
-
-      // Step 3: Verify each group using SERP API Google AI Mode
-      const serpApiKey = process.env.SERPAPI_API_KEY;
-      if (!serpApiKey) {
-        console.warn(
-          "SERPAPI_API_KEY not found. Skipping verification step."
-        );
-        return {
-          value: { questions, verifiedData: [] },
-          completeData: { questionsCount: questions.length, verified: false },
-        };
-      }
-
-      const verifiedData: VerificationQuestion[] = [];
-
-      for (const group of claimGroups) {
-        try {
-          const url = new URL("https://serpapi.com/search");
-          url.searchParams.append("engine", "google_ai_mode");
-          url.searchParams.append("q", group.combinedQuestion);
-          url.searchParams.append("api_key", serpApiKey);
-
-          console.log(`\n[Verify Context] Querying: ${group.combinedQuestion}`);
-
-          const response = await fetch(url.toString());
-          const data = await response.json();
-
-          // Extract the answer from text_blocks
-          let answer = "";
-          let source = "";
-          if (data.text_blocks && Array.isArray(data.text_blocks)) {
-            // Combine all paragraph snippets to form the answer
-            const paragraphs = data.text_blocks
-              .filter((block: any) => block.type === "paragraph")
-              .map((block: any) => block.snippet)
-              .join("\n\n");
-
-            answer = paragraphs || "No answer found";
-          }
-
-          // Extract source URL from references (Google AI Mode returns references instead of organic_results)
-          if (data.references && Array.isArray(data.references) && data.references.length > 0) {
-            // Get the first reference that has a link
-            const firstReference = data.references.find((ref: any) => ref.link);
-            source = firstReference?.link || "";
-          } else if (data.organic_results && Array.isArray(data.organic_results) && data.organic_results.length > 0) {
-            // Fallback to organic_results for standard Google search
-            source = data.organic_results[0].link || "";
-          }
-
-          // Apply the same answer and source to all claims in the group
-          for (const claim of group.claims) {
-            verifiedData.push({
-              claim: claim.claim,
-              question: claim.question,
-              answer,
-              source,
-            });
-
-            console.log(`\n[Verify Context] Verified claim: ${claim.claim}`);
-          }
-
-          console.log(`Answer: ${answer.substring(0, 200)}...`);
-          console.log(`Source: ${source}`);
-        } catch (error) {
-          console.error(
-            `Failed to verify group question: ${group.combinedQuestion}`,
-            error
-          );
-          // Add failed verification for all claims in the group
-          for (const claim of group.claims) {
-            verifiedData.push({
-              claim: claim.claim,
-              question: claim.question,
-              answer: "Verification failed",
-            });
-          }
-        }
-      }
-
-      console.log(
-        `\n========== [Verify Context] Completed ==========`
-      );
-      console.log(`Verified ${verifiedData.length} claims`);
-      console.log("=================================================\n");
 
       return {
-        value: { questions, verifiedData },
+        value: { tools },
+        completeData: { toolsCount: tools.length },
+      };
+    }
+  );
+}
+
+/**
+ * Step 2: Find Official Pages
+ * Searches for official URLs for each tool's verification pages
+ */
+export async function findOfficialPagesStep(input: {
+  tools: ToolVerificationPage[];
+}): Promise<
+  TimedResult<{
+    officialPages: Array<{ tool: string; page: OfficialPageResult }>;
+  }>
+> {
+  const tools = input.tools; // Extract before runStep to avoid closure issues
+
+  return runStep(
+    "find-official-pages",
+    { toolsCount: tools.length },
+    async () => {
+      "use step";
+
+      console.log("\n[Find Official Pages] Searching for URLs...");
+      console.log(`[Find Official Pages] Processing ${tools.length} tools in parallel`);
+
+      // Process all tools in parallel
+      const results = await Promise.allSettled(
+        tools.map(async (tool, i) => {
+          console.log(
+            `[Find Official Pages] [${i + 1}/${tools.length}] Starting: ${tool.tool_name} with ${tool.verification_pages.length} pages`
+          );
+
+          try {
+            const pages = await findOfficialPages(
+              tool.tool_name,
+              tool.verification_pages
+            );
+
+            console.log(
+              `[Find Official Pages] [${i + 1}/${tools.length}] Found ${pages.length} URLs for ${tool.tool_name}`
+            );
+
+            return {
+              tool: tool.tool_name,
+              pages,
+            };
+          } catch (error) {
+            console.error(
+              `[Find Official Pages] ERROR processing ${tool.tool_name}:`,
+              {
+                toolName: tool.tool_name,
+                verificationPages: tool.verification_pages,
+                errorMessage: error instanceof Error ? error.message : String(error),
+                errorStack: error instanceof Error ? error.stack : undefined,
+                errorType: error?.constructor?.name || typeof error,
+              }
+            );
+            throw error;
+          }
+        })
+      );
+
+      // Collect all successful results
+      const allOfficialPages: Array<{
+        tool: string;
+        page: OfficialPageResult;
+      }> = [];
+
+      let successCount = 0;
+      let failureCount = 0;
+
+      results.forEach((result, i) => {
+        if (result.status === "fulfilled") {
+          successCount++;
+          result.value.pages.forEach((page) => {
+            allOfficialPages.push({ tool: result.value.tool, page });
+          });
+        } else {
+          failureCount++;
+          console.error(
+            `[Find Official Pages] Failed to process tool ${i + 1}/${tools.length}:`,
+            result.reason instanceof Error ? result.reason.message : String(result.reason)
+          );
+        }
+      });
+
+      console.log(
+        `[Find Official Pages] Complete: ${successCount}/${tools.length} tools succeeded, ${failureCount} failed`
+      );
+      console.log(
+        `[Find Official Pages] Total: ${allOfficialPages.length} URLs found`
+      );
+
+      return {
+        value: { officialPages: allOfficialPages },
+        completeData: { pagesFound: allOfficialPages.length },
+      };
+    }
+  );
+}
+
+/**
+ * Step 3: Scrape Official Pages
+ * Scrapes all identified official pages using Firecrawl
+ */
+export async function scrapeOfficialPagesStep(input: {
+  officialPages: Array<{ tool: string; page: OfficialPageResult }>;
+}): Promise<TimedResult<VerifyContextResult>> {
+  const officialPages = input.officialPages; 
+
+  return runStep(
+    "scrape-official-pages",
+    { pagesCount: officialPages.length },
+    async () => {
+      "use step";
+
+      console.log("\n[Scrape Pages] Scraping official pages...");
+
+      const firecrawlApiKey = process.env.FIRECRAWL_API_KEY;
+      if (!firecrawlApiKey) {
+        console.warn("FIRECRAWL_API_KEY not found. Skipping scraping.");
+        return {
+          value: {
+            questions: [],
+            verifiedData: [],
+            scrapedPages: [],
+            fullContext: "",
+            successfulUrls: [],
+            failedUrls: officialPages.map(({ page }) => page.link),
+          },
+          completeData: {
+            pagesScraped: 0,
+            pagesFailed: officialPages.length,
+            scraped: false,
+          },
+        };
+      }
+
+      const firecrawl = new FirecrawlApp({ apiKey: firecrawlApiKey });
+
+      const scrapeResults = await Promise.allSettled(
+        officialPages.map(async ({ tool, page }) => {
+          const content = await scrapeUrl(firecrawl, page.link);
+          return {
+            tool,
+            title: page.title,
+            url: page.link,
+            content,
+          };
+        })
+      );
+
+      const successfulScrapes = scrapeResults
+        .filter(
+          (
+            result
+          ): result is PromiseFulfilledResult<{
+            tool: string;
+            title: string;
+            url: string;
+            content: string | null;
+          }> => result.status === "fulfilled" && result.value.content !== null
+        )
+        .map((result) => result.value);
+
+      console.log(
+        `[Scrape Pages] Successfully scraped ${successfulScrapes.length}/${officialPages.length} pages`
+      );
+
+      // Build verified context from scraped data
+      const verifiedData: VerificationQuestion[] = successfulScrapes.map(
+        (scrape) => ({
+          claim: `${scrape.tool} - ${scrape.title}`,
+          question: `Official information about ${scrape.tool}`,
+          answer: scrape.content || "No content available",
+          source: scrape.url,
+        })
+      );
+
+      // Build list of all scraped pages with status
+      const scrapedPages: ScrapedPage[] = officialPages.map(
+        ({ tool, page }) => {
+          const scrapeResult = scrapeResults.find(
+            (result) =>
+              result.status === "fulfilled" && result.value.url === page.link
+          );
+
+          const success =
+            scrapeResult?.status === "fulfilled" &&
+            scrapeResult.value.content !== null;
+          const content =
+            success && scrapeResult.status === "fulfilled"
+              ? scrapeResult.value.content
+              : null;
+
+          return {
+            tool,
+            title: page.title,
+            url: page.link,
+            success,
+            contentLength: content?.length,
+          };
+        }
+      );
+
+      // Build full combined context from all scraped pages
+      const fullContext = successfulScrapes
+        .map((scrape) => {
+          return `<context>
+  <source>${scrape.url}</source>
+  <tool>${scrape.tool}</tool>
+  <title>${scrape.title}</title>
+  <content>${scrape.content?.trim() || ""}</content>
+</context>`;
+        })
+        .join("\n\n");
+
+      // Extract successful and failed URLs
+      const successfulUrls = successfulScrapes.map((s) => s.url);
+      const failedUrls = officialPages
+        .map(({ page }) => page.link)
+        .filter((url) => !successfulUrls.includes(url));
+
+      console.log(`[Scrape Pages] Success: ${successfulScrapes.length}`);
+      console.log(`[Scrape Pages] Failed: ${failedUrls.length}`);
+      console.log(`[Scrape Pages] Context length: ${fullContext.length} chars`);
+
+      return {
+        value: {
+          questions: [],
+          verifiedData,
+          scrapedPages,
+          fullContext,
+          successfulUrls,
+          failedUrls,
+        },
         completeData: {
-          questionsCount: questions.length,
-          verifiedCount: verifiedData.length,
+          pagesScraped: successfulScrapes.length,
+          pagesFailed: failedUrls.length,
+          contextLength: fullContext.length,
         },
       };
     }

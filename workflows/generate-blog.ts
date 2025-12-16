@@ -16,7 +16,11 @@ import { reviewFlowStep } from "./steps/writer/reviewFlow";
 import { assetsDefinerStep } from "./steps/assets/assetsDefiner";
 import { assetsSearchStep } from "./steps/assets/assetsSearch";
 import { assetsProcessTagsStep } from "./steps/assets/assetsProcessTags";
-import { verifyContextStep } from "./steps/writer/verifyContext";
+import {
+  identifyToolsStep,
+  findOfficialPagesStep,
+  scrapeOfficialPagesStep,
+} from "./steps/writer/verifyContext";
 import { outlineVerifiedStep } from "./steps/writer/outlineVerified";
 import { gatherInternalLinksStep } from "./steps/writer/gatherInternalLinks";
 import { publishToWordPressStep } from "./steps/publishToWordPress";
@@ -96,13 +100,30 @@ export async function generateBlogWorkflow(
     durationMs: outlineResult.durationMs,
   });
 
-  // Step 5.1: Verify Context - Extract claims and verify with SERP API
-  const verifyContextResult = await verifyContextStep({
+  // Step 5.1a: Identify tools from outline
+  const identifyToolsResult = await identifyToolsStep({
     outline: outlineResult.value.outline,
-    keyword: keywordToUse,
   });
   diagnostics.push({
-    phase: "verify-context",
+    phase: "identify-tools",
+    durationMs: identifyToolsResult.durationMs,
+  });
+
+  // Step 5.1b: Find official pages for identified tools
+  const findPagesResult = await findOfficialPagesStep({
+    tools: identifyToolsResult.value.tools,
+  });
+  diagnostics.push({
+    phase: "find-official-pages",
+    durationMs: findPagesResult.durationMs,
+  });
+
+  // Step 5.1c: Scrape official pages
+  const verifyContextResult = await scrapeOfficialPagesStep({
+    officialPages: findPagesResult.value.officialPages,
+  });
+  diagnostics.push({
+    phase: "scrape-official-pages",
     durationMs: verifyContextResult.durationMs,
   });
 
