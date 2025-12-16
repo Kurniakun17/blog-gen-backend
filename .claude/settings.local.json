@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(npm run build:*)",
-      "mcp__ide__getDiagnostics"
+      "mcp__ide__getDiagnostics",
+      "WebFetch(domain:docs.firecrawl.dev)",
+      "WebSearch"
     ],
     "deny": [],
     "ask": []

@@ -2,7 +2,6 @@ import { runStep, type TimedResult } from "../../utils/steps";
 import {
   identifyToolsAndPages,
   findOfficialPages,
-  scrapeUrl,
   type ToolVerificationPage,
   type OfficialPageResult,
 } from "@/lib/verifyContext";
@@ -45,7 +44,7 @@ type VerifyContextResult = {
 export async function identifyToolsStep(input: {
   outline: string;
 }): Promise<TimedResult<{ tools: ToolVerificationPage[] }>> {
-  const outline = input.outline; 
+  const outline = input.outline;
 
   return runStep(
     "identify-tools",
@@ -91,13 +90,17 @@ export async function findOfficialPagesStep(input: {
       "use step";
 
       console.log("\n[Find Official Pages] Searching for URLs...");
-      console.log(`[Find Official Pages] Processing ${tools.length} tools in parallel`);
+      console.log(
+        `[Find Official Pages] Processing ${tools.length} tools in parallel`
+      );
 
       // Process all tools in parallel
       const results = await Promise.allSettled(
         tools.map(async (tool, i) => {
           console.log(
-            `[Find Official Pages] [${i + 1}/${tools.length}] Starting: ${tool.tool_name} with ${tool.verification_pages.length} pages`
+            `[Find Official Pages] [${i + 1}/${tools.length}] Starting: ${
+              tool.tool_name
+            } with ${tool.verification_pages.length} pages`
           );
 
           try {
@@ -107,7 +110,9 @@ export async function findOfficialPagesStep(input: {
             );
 
             console.log(
-              `[Find Official Pages] [${i + 1}/${tools.length}] Found ${pages.length} URLs for ${tool.tool_name}`
+              `[Find Official Pages] [${i + 1}/${tools.length}] Found ${
+                pages.length
+              } URLs for ${tool.tool_name}`
             );
 
             return {
@@ -120,7 +125,8 @@ export async function findOfficialPagesStep(input: {
               {
                 toolName: tool.tool_name,
                 verificationPages: tool.verification_pages,
-                errorMessage: error instanceof Error ? error.message : String(error),
+                errorMessage:
+                  error instanceof Error ? error.message : String(error),
                 errorStack: error instanceof Error ? error.stack : undefined,
                 errorType: error?.constructor?.name || typeof error,
               }
@@ -148,8 +154,12 @@ export async function findOfficialPagesStep(input: {
         } else {
           failureCount++;
           console.error(
-            `[Find Official Pages] Failed to process tool ${i + 1}/${tools.length}:`,
-            result.reason instanceof Error ? result.reason.message : String(result.reason)
+            `[Find Official Pages] Failed to process tool ${i + 1}/${
+              tools.length
+            }:`,
+            result.reason instanceof Error
+              ? result.reason.message
+              : String(result.reason)
           );
         }
       });
@@ -171,12 +181,12 @@ export async function findOfficialPagesStep(input: {
 
 /**
  * Step 3: Scrape Official Pages
- * Scrapes all identified official pages using Firecrawl
+ * Scrapes all identified official pages using Firecrawl Batch Scrape API
  */
 export async function scrapeOfficialPagesStep(input: {
   officialPages: Array<{ tool: string; page: OfficialPageResult }>;
 }): Promise<TimedResult<VerifyContextResult>> {
-  const officialPages = input.officialPages; 
+  const officialPages = input.officialPages;
 
   return runStep(
     "scrape-official-pages",
@@ -184,7 +194,9 @@ export async function scrapeOfficialPagesStep(input: {
     async () => {
       "use step";
 
-      console.log("\n[Scrape Pages] Scraping official pages...");
+      console.log(
+        "\n[Scrape Pages] Scraping official pages using batch scrape..."
+      );
 
       const firecrawlApiKey = process.env.FIRECRAWL_API_KEY;
       if (!firecrawlApiKey) {
@@ -208,108 +220,131 @@ export async function scrapeOfficialPagesStep(input: {
 
       const firecrawl = new FirecrawlApp({ apiKey: firecrawlApiKey });
 
-      const scrapeResults = await Promise.allSettled(
-        officialPages.map(async ({ tool, page }) => {
-          const content = await scrapeUrl(firecrawl, page.link);
-          return {
-            tool,
-            title: page.title,
-            url: page.link,
-            content,
-          };
-        })
-      );
-
-      const successfulScrapes = scrapeResults
-        .filter(
-          (
-            result
-          ): result is PromiseFulfilledResult<{
-            tool: string;
-            title: string;
-            url: string;
-            content: string | null;
-          }> => result.status === "fulfilled" && result.value.content !== null
-        )
-        .map((result) => result.value);
+      // Extract all URLs for batch scraping
+      const urls = officialPages.map(({ page }) => page.link);
 
       console.log(
-        `[Scrape Pages] Successfully scraped ${successfulScrapes.length}/${officialPages.length} pages`
+        `[Scrape Pages] Starting batch scrape for ${urls.length} URLs...`
       );
 
-      // Build verified context from scraped data
-      const verifiedData: VerificationQuestion[] = successfulScrapes.map(
-        (scrape) => ({
-          claim: `${scrape.tool} - ${scrape.title}`,
-          question: `Official information about ${scrape.tool}`,
-          answer: scrape.content || "No content available",
-          source: scrape.url,
-        })
-      );
+      try {        
+        const batchResult = await firecrawl.batchScrape(urls, {});
 
-      // Build list of all scraped pages with status
-      const scrapedPages: ScrapedPage[] = officialPages.map(
-        ({ tool, page }) => {
-          const scrapeResult = scrapeResults.find(
-            (result) =>
-              result.status === "fulfilled" && result.value.url === page.link
-          );
+        console.log(`[Scrape Pages] Batch scrape completed`);
 
-          const success =
-            scrapeResult?.status === "fulfilled" &&
-            scrapeResult.value.content !== null;
-          const content =
-            success && scrapeResult.status === "fulfilled"
-              ? scrapeResult.value.content
-              : null;
+        const successfulScrapes: Array<{
+          tool: string;
+          title: string;
+          url: string;
+          content: string;
+        }> = [];
 
-          return {
-            tool,
-            title: page.title,
-            url: page.link,
-            success,
-            contentLength: content?.length,
-          };
+        const failedUrls: string[] = [];
+
+        // Process batch results
+        if (batchResult?.data && Array.isArray(batchResult.data)) {
+          batchResult.data.forEach((result: any, index: number) => {
+            const officialPage = officialPages[index];
+
+            if (result?.metadata.statusCode === 200 && result?.markdown) {
+              successfulScrapes.push({
+                tool: officialPage.tool,
+                title: result.metadata.title || "",
+                url: result.metadata.url || "",
+                content: result.markdown || "",
+              });
+            } else {
+              failedUrls.push(officialPage.page.link);
+            }
+          });
         }
-      );
 
-      // Build full combined context from all scraped pages
-      const fullContext = successfulScrapes
-        .map((scrape) => {
-          return `<context>
+        console.log(
+          `[Scrape Pages] Successfully scraped ${successfulScrapes.length}/${officialPages.length} pages`
+        );
+
+        // Build verified context from scraped data (legacy format)
+        const verifiedData: VerificationQuestion[] = successfulScrapes.map(
+          (scrape) => ({
+            claim: `${scrape.tool} - ${scrape.title}`,
+            question: `Official information about ${scrape.tool}`,
+            answer: scrape.content || "No content available",
+            source: scrape.url,
+          })
+        );
+
+        // Build list of all scraped pages with status
+        const scrapedPages: ScrapedPage[] = officialPages.map(
+          ({ tool, page }) => {
+            const scrape = successfulScrapes.find((s) => s.url === page.link);
+            const success = !!scrape;
+
+            return {
+              tool,
+              title: page.title,
+              url: page.link,
+              success,
+              contentLength: scrape?.content?.length,
+            };
+          }
+        );
+
+        // Build full combined context from all scraped pages
+        const fullContext = successfulScrapes
+          .map((scrape) => {
+            return `<context>
   <source>${scrape.url}</source>
   <tool>${scrape.tool}</tool>
   <title>${scrape.title}</title>
   <content>${scrape.content?.trim() || ""}</content>
 </context>`;
-        })
-        .join("\n\n");
+          })
+          .join("\n\n");
 
-      // Extract successful and failed URLs
-      const successfulUrls = successfulScrapes.map((s) => s.url);
-      const failedUrls = officialPages
-        .map(({ page }) => page.link)
-        .filter((url) => !successfulUrls.includes(url));
+        // Extract successful URLs
+        const successfulUrls = successfulScrapes.map((s) => s.url);
 
-      console.log(`[Scrape Pages] Success: ${successfulScrapes.length}`);
-      console.log(`[Scrape Pages] Failed: ${failedUrls.length}`);
-      console.log(`[Scrape Pages] Context length: ${fullContext.length} chars`);
+        console.log(`[Scrape Pages] Success: ${successfulScrapes.length}`);
+        console.log(`[Scrape Pages] Failed: ${failedUrls.length}`);
+        console.log(
+          `[Scrape Pages] Context length: ${fullContext.length} chars`
+        );
 
-      return {
-        value: {
-          questions: [],
-          verifiedData,
-          scrapedPages,
-          fullContext,
-          successfulUrls,
-          failedUrls,
-        },
-        completeData: {
-          pagesScraped: successfulScrapes.length,
-          pagesFailed: failedUrls.length,
-          contextLength: fullContext.length,
-        },
-      };
+        return {
+          value: {
+            questions: [],
+            verifiedData,
+            scrapedPages,
+            fullContext,
+            successfulUrls,
+            failedUrls,
+          },
+          completeData: {
+            pagesScraped: successfulScrapes.length,
+            pagesFailed: failedUrls.length,
+            contextLength: fullContext.length,
+          },
+        };
+      } catch (error) {
+        console.error("[Scrape Pages] Batch scrape failed:", error);
+
+        // Return empty results on error
+        return {
+          value: {
+            questions: [],
+            verifiedData: [],
+            scrapedPages: [],
+            fullContext: "",
+            successfulUrls: [],
+            failedUrls: urls,
+          },
+          completeData: {
+            pagesScraped: 0,
+            pagesFailed: urls.length,
+            contextLength: 0,
+          },
+        };
+      }
     }
   );
 }

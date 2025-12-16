@@ -131,7 +131,7 @@ export async function generateBlogWorkflow(
   const outlineVerifiedResult = await outlineVerifiedStep({
     outline: outlineResult.value.outline,
     keyword: keywordToUse,
-    verifiedData: verifyContextResult.value.verifiedData,
+    verifiedContext: verifyContextResult.value.fullContext,
     researchContext: researchWithContext,
     companyContext: companyProfileResult.value.company_profile,
     blogType: metadataResult.value.blogType || "overview",

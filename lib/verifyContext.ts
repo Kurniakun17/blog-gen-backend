@@ -49,6 +49,8 @@ Also note that if the tool is a specific feature / sub-tool, then consider both 
 
 Be greedy about the context you think is relevant. The more context you have the more, detailed and thorough the blog will be.
 
+Return maximum of 5 core verification pages for each tool
+
 ---
 
 <outline>${outline}</outline>`;

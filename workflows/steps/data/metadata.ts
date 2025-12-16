@@ -18,30 +18,6 @@ export async function metadataStep(
     async () => {
       "use step";
 
-      return {
-        "value": {
-          "keyword": "best ai customer support agents",
-          "blogType": "listicle",
-          "tone": "Casual",
-          "userIntent": "",
-          "outline": "",
-          "additionalContext": "",
-          "slug": "best-ai-customer-support-agents-en",
-          "raw": {
-            "keywords": "best ai customer support agents",
-            "type": "Listicle",
-            "tone_of_voice": "Casual",
-            "outline": "",
-            "additional_context": "",
-            "user_intent": ""
-          }
-        },
-        "completeData": {
-          "keyword": "best ai customer support agents",
-          "tone": "Casual"
-        }
-      }
-      
       const metadata = await deriveMetadata({
         topic: input.topic,
         additionalContext: input.additionalContext || "",

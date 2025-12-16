@@ -3,17 +3,10 @@ import { generateText } from "ai";
 import { getModel } from "@/config/models";
 import { buildOutlineVerifiedPrompt } from "@/prompts/writer/outlineVerified";
 
-type VerificationQuestion = {
-  claim: string;
-  question: string;
-  answer?: string;
-  source?: string;
-};
-
 type OutlineVerifiedStepInput = {
   outline: string;
   keyword: string;
-  verifiedData: VerificationQuestion[];
+  verifiedContext: string;
   researchContext: string;
   companyContext: string;
   blogType: string;
@@ -36,28 +29,15 @@ export async function outlineVerifiedStep(
     "outline-verified",
     {
       keyword: input.keyword,
-      verifiedDataCount: input.verifiedData.length,
+      verifiedContextLength: input.verifiedContext.length,
     },
     async () => {
       "use step";
 
       console.log("\n========== [Outline Verified] Starting ==========");
       console.log("Original outline length:", input.outline.length);
-      console.log("Verified data items:", input.verifiedData.length);
+      console.log("Verified context length:", input.verifiedContext.length);
       console.log("=================================================\n");
-
-      // Build the verified data context
-      const verifiedContext = input.verifiedData
-        .map(
-          (item, index) => `
-Claim ${index + 1}:
-Original Claim: ${item.claim}
-Question: ${item.question}
-Verified Answer: ${item.answer || "Not verified"}
-Source: ${item.source || "No source available"}
----`
-        )
-        .join("\n");
 
       const refinementPrompt = buildOutlineVerifiedPrompt({
         keyword: input.keyword,
@@ -65,7 +45,7 @@ Source: ${item.source || "No source available"}
         companyContext: input.companyContext,
         blogType: input.blogType,
         outline: input.outline,
-        verifiedContext,
+        verifiedContext: input.verifiedContext,
         companyName: input.companyName,
       });
 
@@ -89,7 +69,7 @@ Source: ${item.source || "No source available"}
         value: { verifiedOutline, prompt: refinementPrompt },
         completeData: {
           outlineChars: verifiedOutline.length,
-          verifiedItemsUsed: input.verifiedData.length,
+          verifiedContextLength: input.verifiedContext.length,
         },
       };
     }
