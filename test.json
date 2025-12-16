@@ -1,88 +1,10 @@
 {
-  "verifiedData": [
-    {
-      "claim": "82% of service professionals say customer demands have increased",
-      "question": "Salesforce State of Service research 82% customer demands increased",
-      "answer": "Salesforce's research indicates that customer demands for faster, personalized, and proactive service are higher than ever, while their vision for AI is a \"humans with agents\" approach that uses a unified AI platform to meet these demands by automating routine tasks, providing real-time insights, and ultimately transforming service into a strategic revenue driver.\n\nBased on recent \"State of the Service\" and \"State of the Connected Customer\" reports, Salesforce highlights several key customer demands and related challenges for service teams:\n\nSalesforce's vision is a future of customer service that isn't AI or humans, but AI and humans working side by side. They are positioning AI as the core engine for modern customer service to address the rising demands with fewer resources. This vision is encapsulated in their Agentforce platform, which is built on a \"trusted\" AI framework (Einstein Trust Layer) to ensure data privacy and responsible use.\n\nKey aspects of this vision include:",
-      "source": "https://www.salesforce.com/service/ai/customer-service-ai/#:~:text=AI%20in%20customer%20service%20is,up%20for%20long%2Dterm%20success."
-    },
-    {
-      "claim": "Salesforce notes, the future is about \"[AI and humans, working side by side]\"",
-      "question": "Salesforce quote AI and humans working side by side",
-      "answer": "Salesforce's research indicates that customer demands for faster, personalized, and proactive service are higher than ever, while their vision for AI is a \"humans with agents\" approach that uses a unified AI platform to meet these demands by automating routine tasks, providing real-time insights, and ultimately transforming service into a strategic revenue driver.\n\nBased on recent \"State of the Service\" and \"State of the Connected Customer\" reports, Salesforce highlights several key customer demands and related challenges for service teams:\n\nSalesforce's vision is a future of customer service that isn't AI or humans, but AI and humans working side by side. They are positioning AI as the core engine for modern customer service to address the rising demands with fewer resources. This vision is encapsulated in their Agentforce platform, which is built on a \"trusted\" AI framework (Einstein Trust Layer) to ensure data privacy and responsible use.\n\nKey aspects of this vision include:",
-      "source": "https://www.salesforce.com/service/ai/customer-service-ai/#:~:text=AI%20in%20customer%20service%20is,up%20for%20long%2Dterm%20success."
-    },
-    {
-      "claim": "According to Freshworks, their Freddy AI can handle up to 80% of routine tickets",
-      "question": "Freshworks Freddy AI 80% routine tickets handled",
-      "answer": "Freshworks claims that its Freddy AI Agent can auto-resolve up to 80% of routine requests across various channels. The AI achieves this by providing self-service options and automating responses to common queries based on its knowledge base.\n\nSpecific performance metrics claimed by Freshworks include:\n\nThese figures demonstrate the claimed ability of Freddy AI to significantly reduce agent workload by handling a majority of repetitive, low-value tasks.",
-      "source": "https://www.freshworks.com/freshdesk/omni/freddy-ai-agent/#:~:text=AI%20agents%20that%20are%20launch,and%20human%2DlikeAdaptive%20AI"
-    },
-    {
-      "claim": "Unity, a development platform, used a Zendesk AI agent to deflect 8,000 tickets, resulting in $1.3 million in savings",
-      "question": "Unity Zendesk AI case study $1.3 million savings",
-      "answer": "Zendesk AI is primarily trained on a massive, anonymized dataset of billions of real-world customer service interactions from across various industries. It also leverages large language models (LLMs) from third parties like OpenAI and is fine-tuned on a company's specific knowledge base content.\n\nUnity, a leading development platform for interactive 3D content, used Zendesk AI to manage a significant increase in ticket volume without hiring new staff. The key results were substantial:\n\nOther general performance metrics reported by Zendesk include an average 23% increase in automated resolution rates and a 20% decrease in time spent per ticket for human agents.",
-      "source": "https://support.zendesk.com/hc/en-us/articles/5729714731290-Zendesk-AI-Data-Use-Information#:~:text=No%20training%20datasets%20are%20stored,including%20as%20outlined%20in%20our:"
-    },
-    {
-      "claim": "Its AI is pre-trained on billions of real-world service interactions.",
-      "question": "Zendesk AI training data billions of interactions",
-      "answer": "Zendesk AI is primarily trained on a massive, anonymized dataset of billions of real-world customer service interactions from across various industries. It also leverages large language models (LLMs) from third parties like OpenAI and is fine-tuned on a company's specific knowledge base content.\n\nUnity, a leading development platform for interactive 3D content, used Zendesk AI to manage a significant increase in ticket volume without hiring new staff. The key results were substantial:\n\nOther general performance metrics reported by Zendesk include an average 23% increase in automated resolution rates and a 20% decrease in time spent per ticket for human agents.",
-      "source": "https://support.zendesk.com/hc/en-us/articles/5729714731290-Zendesk-AI-Data-Use-Information#:~:text=No%20training%20datasets%20are%20stored,including%20as%20outlined%20in%20our:"
-    },
-    {
-      "claim": "Zendesk’s plans with AI features start with the Suite Team plan at $69/agent/month (billed annually).",
-      "question": "Zendesk Suite Team plan pricing",
-      "answer": "In 2025, Zendesk’s AI pricing follows a multi-layered structure composed of base subscription fees, specialized add-ons, and usage-based charges for automated resolutions.\n\nAll AI features require an underlying Zendesk Suite or Support plan, billed per agent. Suite plans include \"Essential\" AI agents as standard.\n\nNote: Monthly billing is available at a higher rate (e.g., $69 for Suite Team).\n\nTo access advanced features like intelligent triage, sentiment analysis, and agent copilots, you must purchase additional packages on top of a Suite Professional or higher plan.\n\nZendesk has shifted toward an outcome-based pricing model for its AI agents. While plans include a small baseline of \"Automated Resolutions\" (ARs) per agent, excess usage is billed separately.",
-      "source": "https://www.featurebase.app/blog/zendesk-pricing#:~:text=Zendesk%20doesn't%20publicly%20disclose,($35/agent/mo)"
-    },
-    {
-      "claim": "The advanced AI features are often packaged as add-ons or are exclusive to higher-tier plans",
-      "question": "Zendesk AI features pricing add-ons",
-      "answer": "In 2025, Zendesk’s AI pricing follows a multi-layered structure composed of base subscription fees, specialized add-ons, and usage-based charges for automated resolutions.\n\nAll AI features require an underlying Zendesk Suite or Support plan, billed per agent. Suite plans include \"Essential\" AI agents as standard.\n\nNote: Monthly billing is available at a higher rate (e.g., $69 for Suite Team).\n\nTo access advanced features like intelligent triage, sentiment analysis, and agent copilots, you must purchase additional packages on top of a Suite Professional or higher plan.\n\nZendesk has shifted toward an outcome-based pricing model for its AI agents. While plans include a small baseline of \"Automated Resolutions\" (ARs) per agent, excess usage is billed separately.",
-      "source": "https://www.featurebase.app/blog/zendesk-pricing#:~:text=Zendesk%20doesn't%20publicly%20disclose,($35/agent/mo)"
-    },
-    {
-      "claim": "the platform can have a steep learning curve and a fragmented interface",
-      "question": "Zendesk platform steep learning curve reviews",
-      "answer": "Common reviews indicate that the Zendesk platform's interface is generally intuitive for basic agent tasks, but the learning curve is steep when it comes to advanced configuration, customization, and reporting.",
-      "source": "https://www.eesel.ai/blog/zendesk-pros-and-cons-review#:~:text=What%20is%20Zendesk?-,Zendesk%20pros,Zendesk%20pricing%20breakdown"
-    },
-    {
-      "claim": "Intercom is a premium, AI-first conversational platform known for its powerful chatbot, Fin, which is built on OpenAI's GPT-4.",
-      "question": "Intercom Fin chatbot built on GPT-4",
-      "answer": "Intercom's Fin AI chatbot is an advanced, conversational AI agent designed to automatically resolve customer support queries using a company's knowledge base and data sources. It is priced per resolution and requires a base subscription to an Intercom plan or a standalone Fin plan.\n\nFin AI Agent acts as an automated front-line support representative, capable of understanding context, answering complex questions, and performing actions (like checking order status via data connectors). Key features include:\n\nThe pricing for Fin AI is a two-part model: a base plan cost plus a usage-based fee for each resolution.\n\nThis per-resolution model can lead to unpredictable monthly costs, as your bill fluctuates with customer support volume.\n\nIntercom's pricing model is distinct from many competitors who offer flat-rate or per-agent pricing, making direct comparisons complex.\n\nIn general, Intercom's $0.99 per-resolution fee can result in significant, unpredictable expenses for businesses with high support volume, while alternatives may offer more cost-effective, predictable flat-rate options.",
-      "source": "https://www.intercom.com/pricing#:~:text=Essential%20plan,Includes%2050%20free%20Lite%20seats"
-    },
-    {
-      "claim": "Intercom is priced higher than most alternatives",
-      "question": "Intercom pricing vs competitors",
-      "answer": "Intercom's Fin AI chatbot is an advanced, conversational AI agent designed to automatically resolve customer support queries using a company's knowledge base and data sources. It is priced per resolution and requires a base subscription to an Intercom plan or a standalone Fin plan.\n\nFin AI Agent acts as an automated front-line support representative, capable of understanding context, answering complex questions, and performing actions (like checking order status via data connectors). Key features include:\n\nThe pricing for Fin AI is a two-part model: a base plan cost plus a usage-based fee for each resolution.\n\nThis per-resolution model can lead to unpredictable monthly costs, as your bill fluctuates with customer support volume.\n\nIntercom's pricing model is distinct from many competitors who offer flat-rate or per-agent pricing, making direct comparisons complex.\n\nIn general, Intercom's $0.99 per-resolution fee can result in significant, unpredictable expenses for businesses with high support volume, while alternatives may offer more cost-effective, predictable flat-rate options.",
-      "source": "https://www.intercom.com/pricing#:~:text=Essential%20plan,Includes%2050%20free%20Lite%20seats"
-    },
-    {
-      "claim": "Its pricing model for the Fin AI Agent is based on a per-resolution fee ($0.99 per resolution).",
-      "question": "Intercom Fin AI agent pricing per resolution",
-      "answer": "Intercom's Fin AI chatbot is an advanced, conversational AI agent designed to automatically resolve customer support queries using a company's knowledge base and data sources. It is priced per resolution and requires a base subscription to an Intercom plan or a standalone Fin plan.\n\nFin AI Agent acts as an automated front-line support representative, capable of understanding context, answering complex questions, and performing actions (like checking order status via data connectors). Key features include:\n\nThe pricing for Fin AI is a two-part model: a base plan cost plus a usage-based fee for each resolution.\n\nThis per-resolution model can lead to unpredictable monthly costs, as your bill fluctuates with customer support volume.\n\nIntercom's pricing model is distinct from many competitors who offer flat-rate or per-agent pricing, making direct comparisons complex.\n\nIn general, Intercom's $0.99 per-resolution fee can result in significant, unpredictable expenses for businesses with high support volume, while alternatives may offer more cost-effective, predictable flat-rate options.",
-      "source": "https://www.intercom.com/pricing#:~:text=Essential%20plan,Includes%2050%20free%20Lite%20seats"
-    },
-    {
-      "claim": "The Essential plan starts at $39/seat/month, with the cost of Fin AI resolutions billed separately.",
-      "question": "Intercom Essential plan pricing",
-      "answer": "Intercom's Fin AI chatbot is an advanced, conversational AI agent designed to automatically resolve customer support queries using a company's knowledge base and data sources. It is priced per resolution and requires a base subscription to an Intercom plan or a standalone Fin plan.\n\nFin AI Agent acts as an automated front-line support representative, capable of understanding context, answering complex questions, and performing actions (like checking order status via data connectors). Key features include:\n\nThe pricing for Fin AI is a two-part model: a base plan cost plus a usage-based fee for each resolution.\n\nThis per-resolution model can lead to unpredictable monthly costs, as your bill fluctuates with customer support volume.\n\nIntercom's pricing model is distinct from many competitors who offer flat-rate or per-agent pricing, making direct comparisons complex.\n\nIn general, Intercom's $0.99 per-resolution fee can result in significant, unpredictable expenses for businesses with high support volume, while alternatives may offer more cost-effective, predictable flat-rate options.",
-      "source": "https://www.intercom.com/pricing#:~:text=Essential%20plan,Includes%2050%20free%20Lite%20seats"
-    },
-    {
-      "claim": "eesel AI offers transparent, predictable pricing based on AI interactions, not per-resolution fees. Plans start with the Team tier at $299/month for up to 1,000 monthly interactions.",
-      "question": "eesel AI pricing Team plan",
-      "answer": "eesel AI uses a predictable, flat-fee, usage-based pricing model that charges based on the number of monthly \"AI interactions,\" not per agent or per resolution. The Team plan is designed for small teams starting with AI and costs $299 per month (or $239 per month when billed annually).\n\nInstead of variable costs or add-ons, eesel AI provides a set pool of monthly AI interactions for a flat rate, ensuring predictable budgeting. An \"interaction\" is defined as each AI response from a bot, including actions like looking up information or tagging a ticket.\n\nThe main plans are:\n\nThe Team plan is priced at $299/month monthly, or $239/month with annual billing, and is best for teams looking for a Copilot solution trained on their existing documentation.\n\nKey features of the Team plan include:\n\nThe Team plan does not include advanced features such as training the AI on past support tickets, automatic replies to tickets (AI Agent), or advanced triaging actions. These are available in the higher-tier Business or Custom plans.",
-      "source": "https://docs.eesel.ai/pricing-admin-and-more/pricing#:~:text=to%20choose%20from:-,Team%20Plan%20%2D%20$299/mo,to%203%2C000%20interactions%20per%20month."
-    },
-    {
-      "claim": "Forethought does not offer public pricing and requires businesses to request a demo and engage with a sales team.",
-      "question": "Forethought AI public pricing",
-      "answer": "No, Forethought AI's pricing is not publicly available. Like many enterprise software companies, they use a custom, quote-based model, and potential customers must contact the sales team for a personalized estimate.\n\nTo get an accurate understanding of the potential investment for your organization, you will need to engage with the Forethought team via their website's contact page.",
-      "source": "https://forethought.ai/pricing#:~:text=Depending%20on%20the%20usage%20you,How%20are%20deflections%20calculated?"
-    }
-  ]
+  "value": {
+    "outline": "# Bou already use.\n*   **Final CTA:** Encourage readers to [start a free trial](https://dashboard.eesel.ai/api/auth/signup?returnTo=v2) and experience the difference themselves.",
+    "prompt": "You are an - Excerpt (140–150 chars)  \n  - Tags (3–4 tags, comma-separated, capitalized where appropriate)\n\nYour output should be a cleanly formatted markdown outline only, not the full blog.\n"
+  },
+  "completeData": {
+    "outlineChars": 7556,
+    "hasCustomOutline": false
+  }
 }

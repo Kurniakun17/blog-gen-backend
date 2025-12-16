@@ -22,6 +22,7 @@ import {
   scrapeOfficialPagesStep,
 } from "./steps/writer/verifyContext";
 import { outlineVerifiedStep } from "./steps/writer/outlineVerified";
+import { metaTextSplitterStep } from "./steps/writer/metaTextSplitter";
 import { gatherInternalLinksStep } from "./steps/writer/gatherInternalLinks";
 import { publishToWordPressStep } from "./steps/publishToWordPress";
 import { mergeResearchContext } from "./utils/context";
@@ -142,6 +143,17 @@ export async function generateBlogWorkflow(
     durationMs: outlineVerifiedResult.durationMs,
   });
 
+  // Step 5.3: Meta Text Splitter - Split meta title, description, excerpt, tags from verified outline
+  const metaTextResult = await metaTextSplitterStep({
+    verifiedOutline: outlineVerifiedResult.value.verifiedOutline,
+    slug: metadataResult.value.slug,
+    topic: input.topic,
+  });
+  diagnostics.push({
+    phase: "meta-text-splitter",
+    durationMs: metaTextResult.durationMs,
+  });
+
   // Step 6: Write First Draft (using verified outline with tone)
   const firstDraftResult = await writeFirstDraftStep({
     outline: outlineVerifiedResult.value.verifiedOutline,
@@ -227,11 +239,11 @@ export async function generateBlogWorkflow(
   const draftResult = {
     value: {
       content: reviewResult.value.content,
-      metaTitle: reviewResult.value.metaTitle,
-      metaDescription: reviewResult.value.metaDescription,
-      excerpt: reviewResult.value.excerpt || "",
+      metaTitle: metaTextResult.value.metaTitle,
+      metaDescription: metaTextResult.value.metaDescription,
+      excerpt: metaTextResult.value.excerpt || "",
       faqs: reviewResult.value.faqs,
-      tags: reviewResult.value.tags,
+      tags: metaTextResult.value.tags,
     },
     durationMs:
       outlineResult.durationMs +
@@ -312,7 +324,7 @@ export async function generateBlogWorkflow(
       publishResult = await publishToWordPressStep({
         content: finalContent,
         title: draftResult.value.metaTitle || "Untitled",
-        slug: keywordToUse.toLowerCase().replace(/\s+/g, "-"),
+        slug: metaTextResult.value.slug,
         metaDescription: draftResult.value.metaDescription || "",
         excerpt: draftResult.value.excerpt || "",
         categoryId: 0, // Will be determined by formatter based on title
@@ -342,7 +354,7 @@ export async function generateBlogWorkflow(
   return {
     content: finalContent,
     title: draftResult.value.metaTitle || "Untitled",
-    slug: keywordToUse.toLowerCase().replace(/\s+/g, "-"),
+    slug: metaTextResult.value.slug,
     metaDescription: draftResult.value.metaDescription || "",
     excerpt: draftResult.value.excerpt || "",
     categoryId: publishResult?.value.categoryId || 0,

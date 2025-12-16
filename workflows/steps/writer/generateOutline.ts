@@ -29,8 +29,7 @@ export async function generateOutlineStep(
       tone: input.tone,
     },
     async () => {
-      "use step";
-
+      "use step";  
       // Always generate with AI, but pass custom outline as top priority instruction
       const { outline, prompt } = await generateOutline(
         input.topic,
