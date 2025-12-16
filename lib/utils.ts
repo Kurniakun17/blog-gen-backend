@@ -144,4 +144,45 @@ export function extractResultsFromMessages<T = unknown>(
   return results;
 }
 
+/**
+ * Strip FAQ sections from content
+ *
+ * Removes FAQ sections that start with:
+ * - ## Frequently Asked Questions
+ * - ## Frequently Asked Question
+ * - ## FAQ
+ * - ### Frequently Asked Questions
+ * - ### Frequently Asked Question
+ * - ### FAQ
+ *
+ * The function removes everything from the FAQ heading onwards.
+ *
+ * @param content - The content string that may contain FAQ sections
+ * @returns Content with FAQ sections removed
+ *
+ * @example
+ * ```typescript
+ * const content = `# Blog Post\n\nSome content here.\n\n## FAQ\n\nQ: Question?\nA: Answer.`;
+ * const cleaned = stripFAQSection(content);
+ * // Returns: "# Blog Post\n\nSome content here."
+ * ```
+ */
+export function stripFAQSection(content: string): string {
+  // Pattern matches:
+  // - ## or ### (2 or 3 hashtags)
+  // - followed by optional whitespace
+  // - followed by "FAQ" or "Frequently Asked Question" or "Frequently Asked Questions" (case-insensitive)
+  // - captures everything from that heading onwards
+  const faqPattern = /^#{2,3}\s+(FAQ|Frequently Asked Questions?)\s*$/im;
+
+  const match = content.match(faqPattern);
+
+  if (match && match.index !== undefined) {
+    // Remove everything from the FAQ heading onwards
+    return content.substring(0, match.index).trim();
+  }
+
+  return content;
+}
+
 

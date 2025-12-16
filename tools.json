@@ -1,0 +1,2940 @@
+[
+    {
+      "id": 39481,
+      "date": "2025-09-29T10:59:06",
+      "date_gmt": "2025-09-29T10:59:06",
+      "guid": {
+        "rendered": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-eeselAI-Copilot-on-Email.png"
+      },
+      "modified": "2025-09-29T10:59:39",
+      "modified_gmt": "2025-09-29T10:59:39",
+      "slug": "02-eeselai-copilot-on-email",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://www.eesel.ai//ai-email-personalization-en/02-eeselai-copilot-on-email/",
+      "title": {
+        "rendered": "02 - eeselAI - Copilot on Email"
+      },
+      "author": 14,
+      "featured_media": 0,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "meta": {
+        "_acf_changed": false
+      },
+      "class_list": [
+        "post-39481",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "acf": [],
+      "description": {
+        "rendered": "\u003Cp class=\"attachment\"\u003E\u003Ca href='https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-eeselAI-Copilot-on-Email.png'\u003E\u003Cimg loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"169\" src=\"https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-eeselAI-Copilot-on-Email-300x169.png\" class=\"attachment-medium size-medium\" alt=\"The eesel AI Copilot provides a draft response inside a customer support help desk, demonstrating AI email personalization using internal data.\" srcset=\"https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-eeselAI-Copilot-on-Email-300x169.png 300w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-eeselAI-Copilot-on-Email-1024x576.png 1024w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-eeselAI-Copilot-on-Email-768x432.png 768w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-eeselAI-Copilot-on-Email-1536x864.png 1536w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-eeselAI-Copilot-on-Email-2048x1152.png 2048w\" sizes=\"(max-width: 300px) 100vw, 300px\" /\u003E\u003C/a\u003E\u003C/p\u003E\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "The eesel AI Copilot provides a draft response inside a customer support help desk, demonstrating AI email personalization using internal data.",
+      "media_type": "image",
+      "mime_type": "image/png",
+      "media_details": {
+        "width": 2561,
+        "height": 1441,
+        "file": "2025/08/02-eeselAI-Copilot-on-Email.png",
+        "filesize": 811051,
+        "sizes": {
+          "medium": {
+            "file": "02-eeselAI-Copilot-on-Email-300x169.png",
+            "width": 300,
+            "height": 169,
+            "filesize": 36816,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-eeselAI-Copilot-on-Email-300x169.png"
+          },
+          "large": {
+            "file": "02-eeselAI-Copilot-on-Email-1024x576.png",
+            "width": 1024,
+            "height": 576,
+            "filesize": 238455,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-eeselAI-Copilot-on-Email-1024x576.png"
+          },
+          "thumbnail": {
+            "file": "02-eeselAI-Copilot-on-Email-150x150.png",
+            "width": 150,
+            "height": 150,
+            "filesize": 16865,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-eeselAI-Copilot-on-Email-150x150.png"
+          },
+          "medium_large": {
+            "file": "02-eeselAI-Copilot-on-Email-768x432.png",
+            "width": 768,
+            "height": 432,
+            "filesize": 154301,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-eeselAI-Copilot-on-Email-768x432.png"
+          },
+          "1536x1536": {
+            "file": "02-eeselAI-Copilot-on-Email-1536x864.png",
+            "width": 1536,
+            "height": 864,
+            "filesize": 445248,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-eeselAI-Copilot-on-Email-1536x864.png"
+          },
+          "2048x2048": {
+            "file": "02-eeselAI-Copilot-on-Email-2048x1152.png",
+            "width": 2048,
+            "height": 1152,
+            "filesize": 700343,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-eeselAI-Copilot-on-Email-2048x1152.png"
+          },
+          "full": {
+            "file": "02-eeselAI-Copilot-on-Email.png",
+            "width": 2561,
+            "height": 1441,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-eeselAI-Copilot-on-Email.png"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "",
+          "camera": "",
+          "caption": "",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "post": 27549,
+      "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-eeselAI-Copilot-on-Email.png",
+      "_links": {
+        "self": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media/39481"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/users/14"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/comments?post=39481"
+          }
+        ]
+      }
+    },
+    {
+      "id": 39422,
+      "date": "2025-09-29T07:27:35",
+      "date_gmt": "2025-09-29T07:27:35",
+      "guid": {
+        "rendered": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eeselAI-Copilot-Zendesk-Password-Reset-Draft-Reply.png"
+      },
+      "modified": "2025-11-07T07:15:54",
+      "modified_gmt": "2025-11-07T07:15:54",
+      "slug": "eeselai-copilot-zendesk-password-reset-draft-reply",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://www.eesel.ai//slack-ai-enterprise-search-en/eeselai-copilot-zendesk-password-reset-draft-reply/",
+      "title": {
+        "rendered": "eeselAI Copilot - Zendesk, Password Reset, Draft Reply"
+      },
+      "author": 11,
+      "featured_media": 0,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "meta": {
+        "_acf_changed": false
+      },
+      "class_list": [
+        "post-39422",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "acf": [],
+      "description": {
+        "rendered": "\u003Cp class=\"attachment\"\u003E\u003Ca href='https://website-cms.eesel.ai/wp-content/uploads/2025/09/eeselAI-Copilot-Zendesk-Password-Reset-Draft-Reply.png'\u003E\u003Cimg loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"169\" src=\"https://website-cms.eesel.ai/wp-content/uploads/2025/09/eeselAI-Copilot-Zendesk-Password-Reset-Draft-Reply-300x169.png\" class=\"attachment-medium size-medium\" alt=\"A view of the eesel AI Copilot demonstrating how it automates actions for support agents, a key limitation of Slack AI Enterprise Search.\" srcset=\"https://website-cms.eesel.ai/wp-content/uploads/2025/09/eeselAI-Copilot-Zendesk-Password-Reset-Draft-Reply-300x169.png 300w, https://website-cms.eesel.ai/wp-content/uploads/2025/09/eeselAI-Copilot-Zendesk-Password-Reset-Draft-Reply-1024x576.png 1024w, https://website-cms.eesel.ai/wp-content/uploads/2025/09/eeselAI-Copilot-Zendesk-Password-Reset-Draft-Reply-768x432.png 768w, https://website-cms.eesel.ai/wp-content/uploads/2025/09/eeselAI-Copilot-Zendesk-Password-Reset-Draft-Reply-1536x864.png 1536w, https://website-cms.eesel.ai/wp-content/uploads/2025/09/eeselAI-Copilot-Zendesk-Password-Reset-Draft-Reply-2048x1152.png 2048w\" sizes=\"(max-width: 300px) 100vw, 300px\" /\u003E\u003C/a\u003E\u003C/p\u003E\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "A view of the eesel AI Copilot demonstrating how it automates actions for support agents, a key limitation of Slack AI Enterprise Search.",
+      "media_type": "image",
+      "mime_type": "image/png",
+      "media_details": {
+        "width": 2561,
+        "height": 1441,
+        "file": "2025/09/eeselAI-Copilot-Zendesk-Password-Reset-Draft-Reply.png",
+        "filesize": 558842,
+        "sizes": {
+          "medium": {
+            "file": "eeselAI-Copilot-Zendesk-Password-Reset-Draft-Reply-300x169.png",
+            "width": 300,
+            "height": 169,
+            "filesize": 28371,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eeselAI-Copilot-Zendesk-Password-Reset-Draft-Reply-300x169.png"
+          },
+          "large": {
+            "file": "eeselAI-Copilot-Zendesk-Password-Reset-Draft-Reply-1024x576.png",
+            "width": 1024,
+            "height": 576,
+            "filesize": 182550,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eeselAI-Copilot-Zendesk-Password-Reset-Draft-Reply-1024x576.png"
+          },
+          "thumbnail": {
+            "file": "eeselAI-Copilot-Zendesk-Password-Reset-Draft-Reply-150x150.png",
+            "width": 150,
+            "height": 150,
+            "filesize": 10698,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eeselAI-Copilot-Zendesk-Password-Reset-Draft-Reply-150x150.png"
+          },
+          "medium_large": {
+            "file": "eeselAI-Copilot-Zendesk-Password-Reset-Draft-Reply-768x432.png",
+            "width": 768,
+            "height": 432,
+            "filesize": 118516,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eeselAI-Copilot-Zendesk-Password-Reset-Draft-Reply-768x432.png"
+          },
+          "1536x1536": {
+            "file": "eeselAI-Copilot-Zendesk-Password-Reset-Draft-Reply-1536x864.png",
+            "width": 1536,
+            "height": 864,
+            "filesize": 343929,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eeselAI-Copilot-Zendesk-Password-Reset-Draft-Reply-1536x864.png"
+          },
+          "2048x2048": {
+            "file": "eeselAI-Copilot-Zendesk-Password-Reset-Draft-Reply-2048x1152.png",
+            "width": 2048,
+            "height": 1152,
+            "filesize": 532654,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eeselAI-Copilot-Zendesk-Password-Reset-Draft-Reply-2048x1152.png"
+          },
+          "full": {
+            "file": "eeselAI-Copilot-Zendesk-Password-Reset-Draft-Reply.png",
+            "width": 2561,
+            "height": 1441,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eeselAI-Copilot-Zendesk-Password-Reset-Draft-Reply.png"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "",
+          "camera": "",
+          "caption": "",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "post": 51652,
+      "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eeselAI-Copilot-Zendesk-Password-Reset-Draft-Reply.png",
+      "_links": {
+        "self": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media/39422"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/users/11"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/comments?post=39422"
+          }
+        ]
+      }
+    },
+    {
+      "id": 39421,
+      "date": "2025-09-29T07:27:30",
+      "date_gmt": "2025-09-29T07:27:30",
+      "guid": {
+        "rendered": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eeselAI-Copilot-Freshdesk-Refund-Policy-Draft-Reply.png"
+      },
+      "modified": "2025-09-29T07:27:30",
+      "modified_gmt": "2025-09-29T07:27:30",
+      "slug": "eeselai-copilot-freshdesk-refund-policy-draft-reply",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://website-cms.eesel.ai/eeselai-copilot-freshdesk-refund-policy-draft-reply/",
+      "title": {
+        "rendered": "eeselAI Copilot - Freshdesk, Refund Policy, Draft Reply"
+      },
+      "author": 11,
+      "featured_media": 0,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "meta": {
+        "_acf_changed": false
+      },
+      "class_list": [
+        "post-39421",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "acf": [],
+      "description": {
+        "rendered": "\u003Cp class=\"attachment\"\u003E\u003Ca href='https://website-cms.eesel.ai/wp-content/uploads/2025/09/eeselAI-Copilot-Freshdesk-Refund-Policy-Draft-Reply.png'\u003E\u003Cimg loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"169\" src=\"https://website-cms.eesel.ai/wp-content/uploads/2025/09/eeselAI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-300x169.png\" class=\"attachment-medium size-medium\" alt=\"\" srcset=\"https://website-cms.eesel.ai/wp-content/uploads/2025/09/eeselAI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-300x169.png 300w, https://website-cms.eesel.ai/wp-content/uploads/2025/09/eeselAI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-1024x576.png 1024w, https://website-cms.eesel.ai/wp-content/uploads/2025/09/eeselAI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-768x432.png 768w, https://website-cms.eesel.ai/wp-content/uploads/2025/09/eeselAI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-1536x864.png 1536w, https://website-cms.eesel.ai/wp-content/uploads/2025/09/eeselAI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-2048x1152.png 2048w\" sizes=\"(max-width: 300px) 100vw, 300px\" /\u003E\u003C/a\u003E\u003C/p\u003E\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "",
+      "media_type": "image",
+      "mime_type": "image/png",
+      "media_details": {
+        "width": 2561,
+        "height": 1441,
+        "file": "2025/09/eeselAI-Copilot-Freshdesk-Refund-Policy-Draft-Reply.png",
+        "filesize": 533494,
+        "sizes": {
+          "medium": {
+            "file": "eeselAI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-300x169.png",
+            "width": 300,
+            "height": 169,
+            "filesize": 30178,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eeselAI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-300x169.png"
+          },
+          "large": {
+            "file": "eeselAI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-1024x576.png",
+            "width": 1024,
+            "height": 576,
+            "filesize": 187586,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eeselAI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-1024x576.png"
+          },
+          "thumbnail": {
+            "file": "eeselAI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-150x150.png",
+            "width": 150,
+            "height": 150,
+            "filesize": 12955,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eeselAI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-150x150.png"
+          },
+          "medium_large": {
+            "file": "eeselAI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-768x432.png",
+            "width": 768,
+            "height": 432,
+            "filesize": 124309,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eeselAI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-768x432.png"
+          },
+          "1536x1536": {
+            "file": "eeselAI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-1536x864.png",
+            "width": 1536,
+            "height": 864,
+            "filesize": 346351,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eeselAI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-1536x864.png"
+          },
+          "2048x2048": {
+            "file": "eeselAI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-2048x1152.png",
+            "width": 2048,
+            "height": 1152,
+            "filesize": 527329,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eeselAI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-2048x1152.png"
+          },
+          "full": {
+            "file": "eeselAI-Copilot-Freshdesk-Refund-Policy-Draft-Reply.png",
+            "width": 2561,
+            "height": 1441,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eeselAI-Copilot-Freshdesk-Refund-Policy-Draft-Reply.png"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "",
+          "camera": "",
+          "caption": "",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "post": null,
+      "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eeselAI-Copilot-Freshdesk-Refund-Policy-Draft-Reply.png",
+      "_links": {
+        "self": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media/39421"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/users/11"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/comments?post=39421"
+          }
+        ]
+      }
+    },
+    {
+      "id": 38199,
+      "date": "2025-09-19T08:28:46",
+      "date_gmt": "2025-09-19T08:28:46",
+      "guid": {
+        "rendered": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Copilot-Zendesk-Password-Reset-Draft-Reply.png"
+      },
+      "modified": "2025-09-19T08:28:46",
+      "modified_gmt": "2025-09-19T08:28:46",
+      "slug": "eesel-ai-copilot-zendesk-password-reset-draft-reply",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://website-cms.eesel.ai/eesel-ai-copilot-zendesk-password-reset-draft-reply/",
+      "title": {
+        "rendered": "eesel AI Copilot - Zendesk, Password Reset, Draft Reply"
+      },
+      "author": 11,
+      "featured_media": 0,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "meta": {
+        "_acf_changed": false
+      },
+      "class_list": [
+        "post-38199",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "acf": [],
+      "description": {
+        "rendered": "\u003Cp class=\"attachment\"\u003E\u003Ca href='https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Copilot-Zendesk-Password-Reset-Draft-Reply.png'\u003E\u003Cimg loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"169\" src=\"https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Copilot-Zendesk-Password-Reset-Draft-Reply-300x169.png\" class=\"attachment-medium size-medium\" alt=\"\" srcset=\"https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Copilot-Zendesk-Password-Reset-Draft-Reply-300x169.png 300w, https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Copilot-Zendesk-Password-Reset-Draft-Reply-1024x576.png 1024w, https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Copilot-Zendesk-Password-Reset-Draft-Reply-768x432.png 768w, https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Copilot-Zendesk-Password-Reset-Draft-Reply-1536x864.png 1536w, https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Copilot-Zendesk-Password-Reset-Draft-Reply-2048x1152.png 2048w\" sizes=\"(max-width: 300px) 100vw, 300px\" /\u003E\u003C/a\u003E\u003C/p\u003E\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "",
+      "media_type": "image",
+      "mime_type": "image/png",
+      "media_details": {
+        "width": 2561,
+        "height": 1441,
+        "file": "2025/09/eesel-AI-Copilot-Zendesk-Password-Reset-Draft-Reply.png",
+        "filesize": 558842,
+        "sizes": {
+          "medium": {
+            "file": "eesel-AI-Copilot-Zendesk-Password-Reset-Draft-Reply-300x169.png",
+            "width": 300,
+            "height": 169,
+            "filesize": 28371,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Copilot-Zendesk-Password-Reset-Draft-Reply-300x169.png"
+          },
+          "large": {
+            "file": "eesel-AI-Copilot-Zendesk-Password-Reset-Draft-Reply-1024x576.png",
+            "width": 1024,
+            "height": 576,
+            "filesize": 182550,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Copilot-Zendesk-Password-Reset-Draft-Reply-1024x576.png"
+          },
+          "thumbnail": {
+            "file": "eesel-AI-Copilot-Zendesk-Password-Reset-Draft-Reply-150x150.png",
+            "width": 150,
+            "height": 150,
+            "filesize": 10698,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Copilot-Zendesk-Password-Reset-Draft-Reply-150x150.png"
+          },
+          "medium_large": {
+            "file": "eesel-AI-Copilot-Zendesk-Password-Reset-Draft-Reply-768x432.png",
+            "width": 768,
+            "height": 432,
+            "filesize": 118516,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Copilot-Zendesk-Password-Reset-Draft-Reply-768x432.png"
+          },
+          "1536x1536": {
+            "file": "eesel-AI-Copilot-Zendesk-Password-Reset-Draft-Reply-1536x864.png",
+            "width": 1536,
+            "height": 864,
+            "filesize": 343929,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Copilot-Zendesk-Password-Reset-Draft-Reply-1536x864.png"
+          },
+          "2048x2048": {
+            "file": "eesel-AI-Copilot-Zendesk-Password-Reset-Draft-Reply-2048x1152.png",
+            "width": 2048,
+            "height": 1152,
+            "filesize": 532654,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Copilot-Zendesk-Password-Reset-Draft-Reply-2048x1152.png"
+          },
+          "full": {
+            "file": "eesel-AI-Copilot-Zendesk-Password-Reset-Draft-Reply.png",
+            "width": 2561,
+            "height": 1441,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Copilot-Zendesk-Password-Reset-Draft-Reply.png"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "",
+          "camera": "",
+          "caption": "",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "post": null,
+      "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Copilot-Zendesk-Password-Reset-Draft-Reply.png",
+      "_links": {
+        "self": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media/38199"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/users/11"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/comments?post=38199"
+          }
+        ]
+      }
+    },
+    {
+      "id": 38198,
+      "date": "2025-09-19T08:28:42",
+      "date_gmt": "2025-09-19T08:28:42",
+      "guid": {
+        "rendered": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Copilot-Freshdesk-Refund-Policy-Draft-Reply.png"
+      },
+      "modified": "2025-09-19T08:28:42",
+      "modified_gmt": "2025-09-19T08:28:42",
+      "slug": "eesel-ai-copilot-freshdesk-refund-policy-draft-reply",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://website-cms.eesel.ai/eesel-ai-copilot-freshdesk-refund-policy-draft-reply/",
+      "title": {
+        "rendered": "eesel AI Copilot - Freshdesk, Refund Policy, Draft Reply"
+      },
+      "author": 11,
+      "featured_media": 0,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "meta": {
+        "_acf_changed": false
+      },
+      "class_list": [
+        "post-38198",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "acf": [],
+      "description": {
+        "rendered": "\u003Cp class=\"attachment\"\u003E\u003Ca href='https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Copilot-Freshdesk-Refund-Policy-Draft-Reply.png'\u003E\u003Cimg loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"169\" src=\"https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-300x169.png\" class=\"attachment-medium size-medium\" alt=\"\" srcset=\"https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-300x169.png 300w, https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-1024x576.png 1024w, https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-768x432.png 768w, https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-1536x864.png 1536w, https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-2048x1152.png 2048w\" sizes=\"(max-width: 300px) 100vw, 300px\" /\u003E\u003C/a\u003E\u003C/p\u003E\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "",
+      "media_type": "image",
+      "mime_type": "image/png",
+      "media_details": {
+        "width": 2561,
+        "height": 1441,
+        "file": "2025/09/eesel-AI-Copilot-Freshdesk-Refund-Policy-Draft-Reply.png",
+        "filesize": 533494,
+        "sizes": {
+          "medium": {
+            "file": "eesel-AI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-300x169.png",
+            "width": 300,
+            "height": 169,
+            "filesize": 30178,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-300x169.png"
+          },
+          "large": {
+            "file": "eesel-AI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-1024x576.png",
+            "width": 1024,
+            "height": 576,
+            "filesize": 187586,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-1024x576.png"
+          },
+          "thumbnail": {
+            "file": "eesel-AI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-150x150.png",
+            "width": 150,
+            "height": 150,
+            "filesize": 12955,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-150x150.png"
+          },
+          "medium_large": {
+            "file": "eesel-AI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-768x432.png",
+            "width": 768,
+            "height": 432,
+            "filesize": 124309,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-768x432.png"
+          },
+          "1536x1536": {
+            "file": "eesel-AI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-1536x864.png",
+            "width": 1536,
+            "height": 864,
+            "filesize": 346351,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-1536x864.png"
+          },
+          "2048x2048": {
+            "file": "eesel-AI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-2048x1152.png",
+            "width": 2048,
+            "height": 1152,
+            "filesize": 527329,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Copilot-Freshdesk-Refund-Policy-Draft-Reply-2048x1152.png"
+          },
+          "full": {
+            "file": "eesel-AI-Copilot-Freshdesk-Refund-Policy-Draft-Reply.png",
+            "width": 2561,
+            "height": 1441,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Copilot-Freshdesk-Refund-Policy-Draft-Reply.png"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "",
+          "camera": "",
+          "caption": "",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "post": null,
+      "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Copilot-Freshdesk-Refund-Policy-Draft-Reply.png",
+      "_links": {
+        "self": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media/38198"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/users/11"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/comments?post=38198"
+          }
+        ]
+      }
+    },
+    {
+      "id": 31313,
+      "date": "2025-09-06T03:29:32",
+      "date_gmt": "2025-09-06T03:29:32",
+      "guid": {
+        "rendered": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-A-screenshot-of-the-eesel-AI-Copilot-using-GPT-5-to-assist-a-support-agent.png"
+      },
+      "modified": "2025-09-06T03:32:15",
+      "modified_gmt": "2025-09-06T03:32:15",
+      "slug": "04-a-screenshot-of-the-eesel-ai-copilot-using-gpt-5-to-assist-a-support-agent",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://www.eesel.ai//gpt-5-en/04-a-screenshot-of-the-eesel-ai-copilot-using-gpt-5-to-assist-a-support-agent/",
+      "title": {
+        "rendered": "04 - A screenshot of the eesel AI Copilot using GPT-5 to assist a support agent."
+      },
+      "author": 14,
+      "featured_media": 0,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "meta": {
+        "_acf_changed": false
+      },
+      "class_list": [
+        "post-31313",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "acf": [],
+      "description": {
+        "rendered": "\u003Cp class=\"attachment\"\u003E\u003Ca href='https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-A-screenshot-of-the-eesel-AI-Copilot-using-GPT-5-to-assist-a-support-agent.png'\u003E\u003Cimg loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"169\" src=\"https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-A-screenshot-of-the-eesel-AI-Copilot-using-GPT-5-to-assist-a-support-agent-300x169.png\" class=\"attachment-medium size-medium\" alt=\"Screenshot of a help desk interface like Zendesk. On the right side, the eesel AI Copilot sidebar shows a suggested reply to a customer&#039;s question, which was generated using the company&#039;s knowledge base and the powerful GPT-5 model.\" srcset=\"https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-A-screenshot-of-the-eesel-AI-Copilot-using-GPT-5-to-assist-a-support-agent-300x169.png 300w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-A-screenshot-of-the-eesel-AI-Copilot-using-GPT-5-to-assist-a-support-agent-1024x576.png 1024w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-A-screenshot-of-the-eesel-AI-Copilot-using-GPT-5-to-assist-a-support-agent-768x432.png 768w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-A-screenshot-of-the-eesel-AI-Copilot-using-GPT-5-to-assist-a-support-agent-1536x864.png 1536w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-A-screenshot-of-the-eesel-AI-Copilot-using-GPT-5-to-assist-a-support-agent-2048x1152.png 2048w\" sizes=\"(max-width: 300px) 100vw, 300px\" /\u003E\u003C/a\u003E\u003C/p\u003E\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "Screenshot of a help desk interface like Zendesk. On the right side, the eesel AI Copilot sidebar shows a suggested reply to a customer's question, which was generated using the company's knowledge base and the powerful GPT-5 model.",
+      "media_type": "image",
+      "mime_type": "image/png",
+      "media_details": {
+        "width": 2561,
+        "height": 1441,
+        "file": "2025/08/04-A-screenshot-of-the-eesel-AI-Copilot-using-GPT-5-to-assist-a-support-agent.png",
+        "filesize": 319098,
+        "sizes": {
+          "medium": {
+            "file": "04-A-screenshot-of-the-eesel-AI-Copilot-using-GPT-5-to-assist-a-support-agent-300x169.png",
+            "width": 300,
+            "height": 169,
+            "filesize": 21853,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-A-screenshot-of-the-eesel-AI-Copilot-using-GPT-5-to-assist-a-support-agent-300x169.png"
+          },
+          "large": {
+            "file": "04-A-screenshot-of-the-eesel-AI-Copilot-using-GPT-5-to-assist-a-support-agent-1024x576.png",
+            "width": 1024,
+            "height": 576,
+            "filesize": 139620,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-A-screenshot-of-the-eesel-AI-Copilot-using-GPT-5-to-assist-a-support-agent-1024x576.png"
+          },
+          "thumbnail": {
+            "file": "04-A-screenshot-of-the-eesel-AI-Copilot-using-GPT-5-to-assist-a-support-agent-150x150.png",
+            "width": 150,
+            "height": 150,
+            "filesize": 8794,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-A-screenshot-of-the-eesel-AI-Copilot-using-GPT-5-to-assist-a-support-agent-150x150.png"
+          },
+          "medium_large": {
+            "file": "04-A-screenshot-of-the-eesel-AI-Copilot-using-GPT-5-to-assist-a-support-agent-768x432.png",
+            "width": 768,
+            "height": 432,
+            "filesize": 91594,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-A-screenshot-of-the-eesel-AI-Copilot-using-GPT-5-to-assist-a-support-agent-768x432.png"
+          },
+          "1536x1536": {
+            "file": "04-A-screenshot-of-the-eesel-AI-Copilot-using-GPT-5-to-assist-a-support-agent-1536x864.png",
+            "width": 1536,
+            "height": 864,
+            "filesize": 253028,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-A-screenshot-of-the-eesel-AI-Copilot-using-GPT-5-to-assist-a-support-agent-1536x864.png"
+          },
+          "2048x2048": {
+            "file": "04-A-screenshot-of-the-eesel-AI-Copilot-using-GPT-5-to-assist-a-support-agent-2048x1152.png",
+            "width": 2048,
+            "height": 1152,
+            "filesize": 385932,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-A-screenshot-of-the-eesel-AI-Copilot-using-GPT-5-to-assist-a-support-agent-2048x1152.png"
+          },
+          "full": {
+            "file": "04-A-screenshot-of-the-eesel-AI-Copilot-using-GPT-5-to-assist-a-support-agent.png",
+            "width": 2561,
+            "height": 1441,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-A-screenshot-of-the-eesel-AI-Copilot-using-GPT-5-to-assist-a-support-agent.png"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "",
+          "camera": "",
+          "caption": "",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "post": 19117,
+      "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-A-screenshot-of-the-eesel-AI-Copilot-using-GPT-5-to-assist-a-support-agent.png",
+      "_links": {
+        "self": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media/31313"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/users/14"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/comments?post=31313"
+          }
+        ]
+      }
+    },
+    {
+      "id": 29823,
+      "date": "2025-09-03T03:22:06",
+      "date_gmt": "2025-09-03T03:22:06",
+      "guid": {
+        "rendered": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-A-screenshot-showing-an-AI-upselling-suggestion-from-the-eesel-AI-Copilot.png"
+      },
+      "modified": "2025-09-03T03:24:51",
+      "modified_gmt": "2025-09-03T03:24:51",
+      "slug": "03-a-screenshot-showing-an-ai-upselling-suggestion-from-the-eesel-ai-copilot",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://www.eesel.ai//ai-upselling-en/03-a-screenshot-showing-an-ai-upselling-suggestion-from-the-eesel-ai-copilot/",
+      "title": {
+        "rendered": "03 - A screenshot showing an AI upselling suggestion from the eesel AI Copilot."
+      },
+      "author": 14,
+      "featured_media": 0,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "meta": {
+        "_acf_changed": false
+      },
+      "class_list": [
+        "post-29823",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "acf": [],
+      "description": {
+        "rendered": "\u003Cp class=\"attachment\"\u003E\u003Ca href='https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-A-screenshot-showing-an-AI-upselling-suggestion-from-the-eesel-AI-Copilot.png'\u003E\u003Cimg loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"169\" src=\"https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-A-screenshot-showing-an-AI-upselling-suggestion-from-the-eesel-AI-Copilot-300x169.png\" class=\"attachment-medium size-medium\" alt=\"A screenshot of an agent-assist tool showing how AI upselling is integrated into a support ticket. The AI suggests a helpful reply that also offers a relevant plan upgrade.\" srcset=\"https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-A-screenshot-showing-an-AI-upselling-suggestion-from-the-eesel-AI-Copilot-300x169.png 300w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-A-screenshot-showing-an-AI-upselling-suggestion-from-the-eesel-AI-Copilot-1024x576.png 1024w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-A-screenshot-showing-an-AI-upselling-suggestion-from-the-eesel-AI-Copilot-768x432.png 768w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-A-screenshot-showing-an-AI-upselling-suggestion-from-the-eesel-AI-Copilot-1536x864.png 1536w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-A-screenshot-showing-an-AI-upselling-suggestion-from-the-eesel-AI-Copilot-2048x1152.png 2048w\" sizes=\"(max-width: 300px) 100vw, 300px\" /\u003E\u003C/a\u003E\u003C/p\u003E\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "A screenshot of an agent-assist tool showing how AI upselling is integrated into a support ticket. The AI suggests a helpful reply that also offers a relevant plan upgrade.",
+      "media_type": "image",
+      "mime_type": "image/png",
+      "media_details": {
+        "width": 2561,
+        "height": 1441,
+        "file": "2025/08/03-A-screenshot-showing-an-AI-upselling-suggestion-from-the-eesel-AI-Copilot.png",
+        "filesize": 294592,
+        "sizes": {
+          "medium": {
+            "file": "03-A-screenshot-showing-an-AI-upselling-suggestion-from-the-eesel-AI-Copilot-300x169.png",
+            "width": 300,
+            "height": 169,
+            "filesize": 19681,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-A-screenshot-showing-an-AI-upselling-suggestion-from-the-eesel-AI-Copilot-300x169.png"
+          },
+          "large": {
+            "file": "03-A-screenshot-showing-an-AI-upselling-suggestion-from-the-eesel-AI-Copilot-1024x576.png",
+            "width": 1024,
+            "height": 576,
+            "filesize": 125089,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-A-screenshot-showing-an-AI-upselling-suggestion-from-the-eesel-AI-Copilot-1024x576.png"
+          },
+          "thumbnail": {
+            "file": "03-A-screenshot-showing-an-AI-upselling-suggestion-from-the-eesel-AI-Copilot-150x150.png",
+            "width": 150,
+            "height": 150,
+            "filesize": 8377,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-A-screenshot-showing-an-AI-upselling-suggestion-from-the-eesel-AI-Copilot-150x150.png"
+          },
+          "medium_large": {
+            "file": "03-A-screenshot-showing-an-AI-upselling-suggestion-from-the-eesel-AI-Copilot-768x432.png",
+            "width": 768,
+            "height": 432,
+            "filesize": 82233,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-A-screenshot-showing-an-AI-upselling-suggestion-from-the-eesel-AI-Copilot-768x432.png"
+          },
+          "1536x1536": {
+            "file": "03-A-screenshot-showing-an-AI-upselling-suggestion-from-the-eesel-AI-Copilot-1536x864.png",
+            "width": 1536,
+            "height": 864,
+            "filesize": 227834,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-A-screenshot-showing-an-AI-upselling-suggestion-from-the-eesel-AI-Copilot-1536x864.png"
+          },
+          "2048x2048": {
+            "file": "03-A-screenshot-showing-an-AI-upselling-suggestion-from-the-eesel-AI-Copilot-2048x1152.png",
+            "width": 2048,
+            "height": 1152,
+            "filesize": 345594,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-A-screenshot-showing-an-AI-upselling-suggestion-from-the-eesel-AI-Copilot-2048x1152.png"
+          },
+          "full": {
+            "file": "03-A-screenshot-showing-an-AI-upselling-suggestion-from-the-eesel-AI-Copilot.png",
+            "width": 2561,
+            "height": 1441,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-A-screenshot-showing-an-AI-upselling-suggestion-from-the-eesel-AI-Copilot.png"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "",
+          "camera": "",
+          "caption": "",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "post": 22542,
+      "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-A-screenshot-showing-an-AI-upselling-suggestion-from-the-eesel-AI-Copilot.png",
+      "_links": {
+        "self": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media/29823"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/users/14"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/comments?post=29823"
+          }
+        ]
+      }
+    },
+    {
+      "id": 29546,
+      "date": "2025-09-02T04:33:11",
+      "date_gmt": "2025-09-02T04:33:11",
+      "guid": {
+        "rendered": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-Actionable-ticket-summarization-with-eesel-AI-Copilot.png"
+      },
+      "modified": "2025-09-02T04:34:44",
+      "modified_gmt": "2025-09-02T04:34:44",
+      "slug": "04-actionable-ticket-summarization-with-eesel-ai-copilot",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://www.eesel.ai//ticket-summarization-en/04-actionable-ticket-summarization-with-eesel-ai-copilot/",
+      "title": {
+        "rendered": "04 - Actionable ticket summarization with eesel AI Copilot."
+      },
+      "author": 14,
+      "featured_media": 0,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "meta": {
+        "_acf_changed": false
+      },
+      "class_list": [
+        "post-29546",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "acf": [],
+      "description": {
+        "rendered": "\u003Cp class=\"attachment\"\u003E\u003Ca href='https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-Actionable-ticket-summarization-with-eesel-AI-Copilot.png'\u003E\u003Cimg loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"169\" src=\"https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-Actionable-ticket-summarization-with-eesel-AI-Copilot-300x169.png\" class=\"attachment-medium size-medium\" alt=\"A screenshot of the eesel AI Copilot using ticket summarization context to automatically draft a relevant and accurate reply for a support agent.\" srcset=\"https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-Actionable-ticket-summarization-with-eesel-AI-Copilot-300x169.png 300w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-Actionable-ticket-summarization-with-eesel-AI-Copilot-1024x576.png 1024w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-Actionable-ticket-summarization-with-eesel-AI-Copilot-768x432.png 768w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-Actionable-ticket-summarization-with-eesel-AI-Copilot-1536x864.png 1536w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-Actionable-ticket-summarization-with-eesel-AI-Copilot-2048x1152.png 2048w\" sizes=\"(max-width: 300px) 100vw, 300px\" /\u003E\u003C/a\u003E\u003C/p\u003E\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "A screenshot of the eesel AI Copilot using ticket summarization context to automatically draft a relevant and accurate reply for a support agent.",
+      "media_type": "image",
+      "mime_type": "image/png",
+      "media_details": {
+        "width": 2561,
+        "height": 1441,
+        "file": "2025/08/04-Actionable-ticket-summarization-with-eesel-AI-Copilot.png",
+        "filesize": 325284,
+        "sizes": {
+          "medium": {
+            "file": "04-Actionable-ticket-summarization-with-eesel-AI-Copilot-300x169.png",
+            "width": 300,
+            "height": 169,
+            "filesize": 21983,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-Actionable-ticket-summarization-with-eesel-AI-Copilot-300x169.png"
+          },
+          "large": {
+            "file": "04-Actionable-ticket-summarization-with-eesel-AI-Copilot-1024x576.png",
+            "width": 1024,
+            "height": 576,
+            "filesize": 142387,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-Actionable-ticket-summarization-with-eesel-AI-Copilot-1024x576.png"
+          },
+          "thumbnail": {
+            "file": "04-Actionable-ticket-summarization-with-eesel-AI-Copilot-150x150.png",
+            "width": 150,
+            "height": 150,
+            "filesize": 9637,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-Actionable-ticket-summarization-with-eesel-AI-Copilot-150x150.png"
+          },
+          "medium_large": {
+            "file": "04-Actionable-ticket-summarization-with-eesel-AI-Copilot-768x432.png",
+            "width": 768,
+            "height": 432,
+            "filesize": 92783,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-Actionable-ticket-summarization-with-eesel-AI-Copilot-768x432.png"
+          },
+          "1536x1536": {
+            "file": "04-Actionable-ticket-summarization-with-eesel-AI-Copilot-1536x864.png",
+            "width": 1536,
+            "height": 864,
+            "filesize": 258185,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-Actionable-ticket-summarization-with-eesel-AI-Copilot-1536x864.png"
+          },
+          "2048x2048": {
+            "file": "04-Actionable-ticket-summarization-with-eesel-AI-Copilot-2048x1152.png",
+            "width": 2048,
+            "height": 1152,
+            "filesize": 394988,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-Actionable-ticket-summarization-with-eesel-AI-Copilot-2048x1152.png"
+          },
+          "full": {
+            "file": "04-Actionable-ticket-summarization-with-eesel-AI-Copilot.png",
+            "width": 2561,
+            "height": 1441,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-Actionable-ticket-summarization-with-eesel-AI-Copilot.png"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "",
+          "camera": "",
+          "caption": "",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "post": 23640,
+      "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-Actionable-ticket-summarization-with-eesel-AI-Copilot.png",
+      "_links": {
+        "self": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media/29546"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/users/14"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/comments?post=29546"
+          }
+        ]
+      }
+    },
+    {
+      "id": 28656,
+      "date": "2025-09-01T05:08:29",
+      "date_gmt": "2025-09-01T05:08:29",
+      "guid": {
+        "rendered": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/10-eesel-AI-Copilot-inside-Help-Scout-showing-an-alternative-to-the-Zendesk-vs.-Help-Scout-migration-path.png"
+      },
+      "modified": "2025-09-01T05:18:50",
+      "modified_gmt": "2025-09-01T05:18:50",
+      "slug": "10-eesel-ai-copilot-inside-help-scout-showing-an-alternative-to-the-zendesk-vs-help-scout-migration-path",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://www.eesel.ai//zendesk-vs-help-scout-en/10-eesel-ai-copilot-inside-help-scout-showing-an-alternative-to-the-zendesk-vs-help-scout-migration-path/",
+      "title": {
+        "rendered": "10 - eesel AI Copilot inside Help Scout, showing an alternative to the Zendesk vs. Help Scout migration path."
+      },
+      "author": 14,
+      "featured_media": 0,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "meta": {
+        "_acf_changed": false
+      },
+      "class_list": [
+        "post-28656",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "acf": [],
+      "description": {
+        "rendered": "\u003Cp class=\"attachment\"\u003E\u003Ca href='https://website-cms.eesel.ai/wp-content/uploads/2025/08/10-eesel-AI-Copilot-inside-Help-Scout-showing-an-alternative-to-the-Zendesk-vs.-Help-Scout-migration-path.png'\u003E\u003Cimg loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"169\" src=\"https://website-cms.eesel.ai/wp-content/uploads/2025/08/10-eesel-AI-Copilot-inside-Help-Scout-showing-an-alternative-to-the-Zendesk-vs.-Help-Scout-migration-path-300x169.png\" class=\"attachment-medium size-medium\" alt=\"Screenshot showing how a flexible AI layer works within Help Scout, providing a solution to the scalability problem in the Zendesk vs. Help Scout choice.\" srcset=\"https://website-cms.eesel.ai/wp-content/uploads/2025/08/10-eesel-AI-Copilot-inside-Help-Scout-showing-an-alternative-to-the-Zendesk-vs.-Help-Scout-migration-path-300x169.png 300w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/10-eesel-AI-Copilot-inside-Help-Scout-showing-an-alternative-to-the-Zendesk-vs.-Help-Scout-migration-path-1024x576.png 1024w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/10-eesel-AI-Copilot-inside-Help-Scout-showing-an-alternative-to-the-Zendesk-vs.-Help-Scout-migration-path-768x432.png 768w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/10-eesel-AI-Copilot-inside-Help-Scout-showing-an-alternative-to-the-Zendesk-vs.-Help-Scout-migration-path-1536x864.png 1536w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/10-eesel-AI-Copilot-inside-Help-Scout-showing-an-alternative-to-the-Zendesk-vs.-Help-Scout-migration-path-2048x1152.png 2048w\" sizes=\"(max-width: 300px) 100vw, 300px\" /\u003E\u003C/a\u003E\u003C/p\u003E\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "Screenshot showing how a flexible AI layer works within Help Scout, providing a solution to the scalability problem in the Zendesk vs. Help Scout choice.",
+      "media_type": "image",
+      "mime_type": "image/png",
+      "media_details": {
+        "width": 2561,
+        "height": 1441,
+        "file": "2025/08/10-eesel-AI-Copilot-inside-Help-Scout-showing-an-alternative-to-the-Zendesk-vs.-Help-Scout-migration-path.png",
+        "filesize": 602417,
+        "sizes": {
+          "medium": {
+            "file": "10-eesel-AI-Copilot-inside-Help-Scout-showing-an-alternative-to-the-Zendesk-vs.-Help-Scout-migration-path-300x169.png",
+            "width": 300,
+            "height": 169,
+            "filesize": 25833,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/10-eesel-AI-Copilot-inside-Help-Scout-showing-an-alternative-to-the-Zendesk-vs.-Help-Scout-migration-path-300x169.png"
+          },
+          "large": {
+            "file": "10-eesel-AI-Copilot-inside-Help-Scout-showing-an-alternative-to-the-Zendesk-vs.-Help-Scout-migration-path-1024x576.png",
+            "width": 1024,
+            "height": 576,
+            "filesize": 190425,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/10-eesel-AI-Copilot-inside-Help-Scout-showing-an-alternative-to-the-Zendesk-vs.-Help-Scout-migration-path-1024x576.png"
+          },
+          "thumbnail": {
+            "file": "10-eesel-AI-Copilot-inside-Help-Scout-showing-an-alternative-to-the-Zendesk-vs.-Help-Scout-migration-path-150x150.png",
+            "width": 150,
+            "height": 150,
+            "filesize": 12978,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/10-eesel-AI-Copilot-inside-Help-Scout-showing-an-alternative-to-the-Zendesk-vs.-Help-Scout-migration-path-150x150.png"
+          },
+          "medium_large": {
+            "file": "10-eesel-AI-Copilot-inside-Help-Scout-showing-an-alternative-to-the-Zendesk-vs.-Help-Scout-migration-path-768x432.png",
+            "width": 768,
+            "height": 432,
+            "filesize": 121215,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/10-eesel-AI-Copilot-inside-Help-Scout-showing-an-alternative-to-the-Zendesk-vs.-Help-Scout-migration-path-768x432.png"
+          },
+          "1536x1536": {
+            "file": "10-eesel-AI-Copilot-inside-Help-Scout-showing-an-alternative-to-the-Zendesk-vs.-Help-Scout-migration-path-1536x864.png",
+            "width": 1536,
+            "height": 864,
+            "filesize": 362267,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/10-eesel-AI-Copilot-inside-Help-Scout-showing-an-alternative-to-the-Zendesk-vs.-Help-Scout-migration-path-1536x864.png"
+          },
+          "2048x2048": {
+            "file": "10-eesel-AI-Copilot-inside-Help-Scout-showing-an-alternative-to-the-Zendesk-vs.-Help-Scout-migration-path-2048x1152.png",
+            "width": 2048,
+            "height": 1152,
+            "filesize": 579437,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/10-eesel-AI-Copilot-inside-Help-Scout-showing-an-alternative-to-the-Zendesk-vs.-Help-Scout-migration-path-2048x1152.png"
+          },
+          "full": {
+            "file": "10-eesel-AI-Copilot-inside-Help-Scout-showing-an-alternative-to-the-Zendesk-vs.-Help-Scout-migration-path.png",
+            "width": 2561,
+            "height": 1441,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/10-eesel-AI-Copilot-inside-Help-Scout-showing-an-alternative-to-the-Zendesk-vs.-Help-Scout-migration-path.png"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "",
+          "camera": "",
+          "caption": "",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "post": 21248,
+      "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/10-eesel-AI-Copilot-inside-Help-Scout-showing-an-alternative-to-the-Zendesk-vs.-Help-Scout-migration-path.png",
+      "_links": {
+        "self": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media/28656"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/users/14"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/comments?post=28656"
+          }
+        ]
+      }
+    },
+    {
+      "id": 28291,
+      "date": "2025-08-29T06:02:09",
+      "date_gmt": "2025-08-29T06:02:09",
+      "guid": {
+        "rendered": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-eesel-AI-Copilot-screenshot-for-this-Jira-Service-Management-review.png"
+      },
+      "modified": "2025-08-29T06:09:41",
+      "modified_gmt": "2025-08-29T06:09:41",
+      "slug": "06-eesel-ai-copilot-screenshot-for-this-jira-service-management-review",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://www.eesel.ai//jira-service-management-review-en/06-eesel-ai-copilot-screenshot-for-this-jira-service-management-review/",
+      "title": {
+        "rendered": "06 - eesel AI Copilot screenshot for this Jira Service Management review."
+      },
+      "author": 14,
+      "featured_media": 0,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "meta": {
+        "_acf_changed": false
+      },
+      "class_list": [
+        "post-28291",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "acf": [],
+      "description": {
+        "rendered": "\u003Cp class=\"attachment\"\u003E\u003Ca href='https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-eesel-AI-Copilot-screenshot-for-this-Jira-Service-Management-review.png'\u003E\u003Cimg loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"169\" src=\"https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-eesel-AI-Copilot-screenshot-for-this-Jira-Service-Management-review-300x169.png\" class=\"attachment-medium size-medium\" alt=\"A screenshot of the eesel AI Copilot helping an agent write a reply within JSM, illustrating a feature highlighted in this Jira Service Management review.\" srcset=\"https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-eesel-AI-Copilot-screenshot-for-this-Jira-Service-Management-review-300x169.png 300w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-eesel-AI-Copilot-screenshot-for-this-Jira-Service-Management-review-1024x576.png 1024w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-eesel-AI-Copilot-screenshot-for-this-Jira-Service-Management-review-768x432.png 768w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-eesel-AI-Copilot-screenshot-for-this-Jira-Service-Management-review-1536x864.png 1536w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-eesel-AI-Copilot-screenshot-for-this-Jira-Service-Management-review-2048x1152.png 2048w\" sizes=\"(max-width: 300px) 100vw, 300px\" /\u003E\u003C/a\u003E\u003C/p\u003E\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "A screenshot of the eesel AI Copilot helping an agent write a reply within JSM, illustrating a feature highlighted in this Jira Service Management review.",
+      "media_type": "image",
+      "mime_type": "image/png",
+      "media_details": {
+        "width": 2561,
+        "height": 1441,
+        "file": "2025/08/06-eesel-AI-Copilot-screenshot-for-this-Jira-Service-Management-review.png",
+        "filesize": 590870,
+        "sizes": {
+          "medium": {
+            "file": "06-eesel-AI-Copilot-screenshot-for-this-Jira-Service-Management-review-300x169.png",
+            "width": 300,
+            "height": 169,
+            "filesize": 24082,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-eesel-AI-Copilot-screenshot-for-this-Jira-Service-Management-review-300x169.png"
+          },
+          "large": {
+            "file": "06-eesel-AI-Copilot-screenshot-for-this-Jira-Service-Management-review-1024x576.png",
+            "width": 1024,
+            "height": 576,
+            "filesize": 178116,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-eesel-AI-Copilot-screenshot-for-this-Jira-Service-Management-review-1024x576.png"
+          },
+          "thumbnail": {
+            "file": "06-eesel-AI-Copilot-screenshot-for-this-Jira-Service-Management-review-150x150.png",
+            "width": 150,
+            "height": 150,
+            "filesize": 6777,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-eesel-AI-Copilot-screenshot-for-this-Jira-Service-Management-review-150x150.png"
+          },
+          "medium_large": {
+            "file": "06-eesel-AI-Copilot-screenshot-for-this-Jira-Service-Management-review-768x432.png",
+            "width": 768,
+            "height": 432,
+            "filesize": 112682,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-eesel-AI-Copilot-screenshot-for-this-Jira-Service-Management-review-768x432.png"
+          },
+          "1536x1536": {
+            "file": "06-eesel-AI-Copilot-screenshot-for-this-Jira-Service-Management-review-1536x864.png",
+            "width": 1536,
+            "height": 864,
+            "filesize": 341375,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-eesel-AI-Copilot-screenshot-for-this-Jira-Service-Management-review-1536x864.png"
+          },
+          "2048x2048": {
+            "file": "06-eesel-AI-Copilot-screenshot-for-this-Jira-Service-Management-review-2048x1152.png",
+            "width": 2048,
+            "height": 1152,
+            "filesize": 541716,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-eesel-AI-Copilot-screenshot-for-this-Jira-Service-Management-review-2048x1152.png"
+          },
+          "full": {
+            "file": "06-eesel-AI-Copilot-screenshot-for-this-Jira-Service-Management-review.png",
+            "width": 2561,
+            "height": 1441,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-eesel-AI-Copilot-screenshot-for-this-Jira-Service-Management-review.png"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "",
+          "camera": "",
+          "caption": "",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "post": 21131,
+      "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-eesel-AI-Copilot-screenshot-for-this-Jira-Service-Management-review.png",
+      "_links": {
+        "self": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media/28291"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/users/14"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/comments?post=28291"
+          }
+        ]
+      }
+    },
+    {
+      "id": 27167,
+      "date": "2025-08-27T07:15:14",
+      "date_gmt": "2025-08-27T07:15:14",
+      "guid": {
+        "rendered": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-The-eesel-AI-Copilot-a-flexible-solution-among-Gorgias-alternatives.png"
+      },
+      "modified": "2025-08-27T07:17:05",
+      "modified_gmt": "2025-08-27T07:17:05",
+      "slug": "04-the-eesel-ai-copilot-a-flexible-solution-among-gorgias-alternatives",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://www.eesel.ai//gorgias-alternatives-en/04-the-eesel-ai-copilot-a-flexible-solution-among-gorgias-alternatives/",
+      "title": {
+        "rendered": "04 - The eesel AI Copilot, a flexible solution among Gorgias alternatives."
+      },
+      "author": 14,
+      "featured_media": 0,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "meta": {
+        "_acf_changed": false
+      },
+      "class_list": [
+        "post-27167",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "acf": [],
+      "description": {
+        "rendered": "\u003Cp class=\"attachment\"\u003E\u003Ca href='https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-The-eesel-AI-Copilot-a-flexible-solution-among-Gorgias-alternatives.png'\u003E\u003Cimg loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"169\" src=\"https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-The-eesel-AI-Copilot-a-flexible-solution-among-Gorgias-alternatives-300x169.png\" class=\"attachment-medium size-medium\" alt=\"The eesel AI Copilot suggesting a response to a customer query inside a help desk interface, showing how this Gorgias alternative enhances existing tools.\" srcset=\"https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-The-eesel-AI-Copilot-a-flexible-solution-among-Gorgias-alternatives-300x169.png 300w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-The-eesel-AI-Copilot-a-flexible-solution-among-Gorgias-alternatives-1024x576.png 1024w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-The-eesel-AI-Copilot-a-flexible-solution-among-Gorgias-alternatives-768x432.png 768w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-The-eesel-AI-Copilot-a-flexible-solution-among-Gorgias-alternatives-1536x864.png 1536w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-The-eesel-AI-Copilot-a-flexible-solution-among-Gorgias-alternatives-2048x1152.png 2048w\" sizes=\"(max-width: 300px) 100vw, 300px\" /\u003E\u003C/a\u003E\u003C/p\u003E\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "The eesel AI Copilot suggesting a response to a customer query inside a help desk interface, showing how this Gorgias alternative enhances existing tools.",
+      "media_type": "image",
+      "mime_type": "image/png",
+      "media_details": {
+        "width": 2561,
+        "height": 1441,
+        "file": "2025/08/04-The-eesel-AI-Copilot-a-flexible-solution-among-Gorgias-alternatives.png",
+        "filesize": 328246,
+        "sizes": {
+          "medium": {
+            "file": "04-The-eesel-AI-Copilot-a-flexible-solution-among-Gorgias-alternatives-300x169.png",
+            "width": 300,
+            "height": 169,
+            "filesize": 21680,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-The-eesel-AI-Copilot-a-flexible-solution-among-Gorgias-alternatives-300x169.png"
+          },
+          "large": {
+            "file": "04-The-eesel-AI-Copilot-a-flexible-solution-among-Gorgias-alternatives-1024x576.png",
+            "width": 1024,
+            "height": 576,
+            "filesize": 139771,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-The-eesel-AI-Copilot-a-flexible-solution-among-Gorgias-alternatives-1024x576.png"
+          },
+          "thumbnail": {
+            "file": "04-The-eesel-AI-Copilot-a-flexible-solution-among-Gorgias-alternatives-150x150.png",
+            "width": 150,
+            "height": 150,
+            "filesize": 9739,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-The-eesel-AI-Copilot-a-flexible-solution-among-Gorgias-alternatives-150x150.png"
+          },
+          "medium_large": {
+            "file": "04-The-eesel-AI-Copilot-a-flexible-solution-among-Gorgias-alternatives-768x432.png",
+            "width": 768,
+            "height": 432,
+            "filesize": 92660,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-The-eesel-AI-Copilot-a-flexible-solution-among-Gorgias-alternatives-768x432.png"
+          },
+          "1536x1536": {
+            "file": "04-The-eesel-AI-Copilot-a-flexible-solution-among-Gorgias-alternatives-1536x864.png",
+            "width": 1536,
+            "height": 864,
+            "filesize": 255541,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-The-eesel-AI-Copilot-a-flexible-solution-among-Gorgias-alternatives-1536x864.png"
+          },
+          "2048x2048": {
+            "file": "04-The-eesel-AI-Copilot-a-flexible-solution-among-Gorgias-alternatives-2048x1152.png",
+            "width": 2048,
+            "height": 1152,
+            "filesize": 384769,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-The-eesel-AI-Copilot-a-flexible-solution-among-Gorgias-alternatives-2048x1152.png"
+          },
+          "full": {
+            "file": "04-The-eesel-AI-Copilot-a-flexible-solution-among-Gorgias-alternatives.png",
+            "width": 2561,
+            "height": 1441,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-The-eesel-AI-Copilot-a-flexible-solution-among-Gorgias-alternatives.png"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "",
+          "camera": "",
+          "caption": "",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "post": 20673,
+      "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-The-eesel-AI-Copilot-a-flexible-solution-among-Gorgias-alternatives.png",
+      "_links": {
+        "self": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media/27167"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/users/14"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/comments?post=27167"
+          }
+        ]
+      }
+    },
+    {
+      "id": 24674,
+      "date": "2025-08-22T10:17:38",
+      "date_gmt": "2025-08-22T10:17:38",
+      "guid": {
+        "rendered": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-eesel-AI-copilot-a-smart-layer-for-Freshdesk-alternatives.png"
+      },
+      "modified": "2025-08-22T10:18:42",
+      "modified_gmt": "2025-08-22T10:18:42",
+      "slug": "02-eesel-ai-copilot-a-smart-layer-for-freshdesk-alternatives",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://www.eesel.ai//freshdesk-alternatives-en/02-eesel-ai-copilot-a-smart-layer-for-freshdesk-alternatives/",
+      "title": {
+        "rendered": "02 - eesel AI copilot, a smart layer for Freshdesk alternatives."
+      },
+      "author": 14,
+      "featured_media": 0,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "meta": {
+        "_acf_changed": false
+      },
+      "class_list": [
+        "post-24674",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "acf": [],
+      "description": {
+        "rendered": "\u003Cp class=\"attachment\"\u003E\u003Ca href='https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-eesel-AI-copilot-a-smart-layer-for-Freshdesk-alternatives.png'\u003E\u003Cimg loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"169\" src=\"https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-eesel-AI-copilot-a-smart-layer-for-Freshdesk-alternatives-300x169.png\" class=\"attachment-medium size-medium\" alt=\"A screenshot of eesel AI copilot drafts a reply for the human agent to review and send in Freshdesk.\" srcset=\"https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-eesel-AI-copilot-a-smart-layer-for-Freshdesk-alternatives-300x169.png 300w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-eesel-AI-copilot-a-smart-layer-for-Freshdesk-alternatives-1024x576.png 1024w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-eesel-AI-copilot-a-smart-layer-for-Freshdesk-alternatives-768x432.png 768w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-eesel-AI-copilot-a-smart-layer-for-Freshdesk-alternatives-1536x864.png 1536w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-eesel-AI-copilot-a-smart-layer-for-Freshdesk-alternatives-2048x1152.png 2048w\" sizes=\"(max-width: 300px) 100vw, 300px\" /\u003E\u003C/a\u003E\u003C/p\u003E\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "A screenshot of eesel AI copilot drafts a reply for the human agent to review and send in Freshdesk.",
+      "media_type": "image",
+      "mime_type": "image/png",
+      "media_details": {
+        "width": 2561,
+        "height": 1441,
+        "file": "2025/08/02-eesel-AI-copilot-a-smart-layer-for-Freshdesk-alternatives.png",
+        "filesize": 538070,
+        "sizes": {
+          "medium": {
+            "file": "02-eesel-AI-copilot-a-smart-layer-for-Freshdesk-alternatives-300x169.png",
+            "width": 300,
+            "height": 169,
+            "filesize": 24329,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-eesel-AI-copilot-a-smart-layer-for-Freshdesk-alternatives-300x169.png"
+          },
+          "large": {
+            "file": "02-eesel-AI-copilot-a-smart-layer-for-Freshdesk-alternatives-1024x576.png",
+            "width": 1024,
+            "height": 576,
+            "filesize": 175059,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-eesel-AI-copilot-a-smart-layer-for-Freshdesk-alternatives-1024x576.png"
+          },
+          "thumbnail": {
+            "file": "02-eesel-AI-copilot-a-smart-layer-for-Freshdesk-alternatives-150x150.png",
+            "width": 150,
+            "height": 150,
+            "filesize": 10703,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-eesel-AI-copilot-a-smart-layer-for-Freshdesk-alternatives-150x150.png"
+          },
+          "medium_large": {
+            "file": "02-eesel-AI-copilot-a-smart-layer-for-Freshdesk-alternatives-768x432.png",
+            "width": 768,
+            "height": 432,
+            "filesize": 111939,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-eesel-AI-copilot-a-smart-layer-for-Freshdesk-alternatives-768x432.png"
+          },
+          "1536x1536": {
+            "file": "02-eesel-AI-copilot-a-smart-layer-for-Freshdesk-alternatives-1536x864.png",
+            "width": 1536,
+            "height": 864,
+            "filesize": 330349,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-eesel-AI-copilot-a-smart-layer-for-Freshdesk-alternatives-1536x864.png"
+          },
+          "2048x2048": {
+            "file": "02-eesel-AI-copilot-a-smart-layer-for-Freshdesk-alternatives-2048x1152.png",
+            "width": 2048,
+            "height": 1152,
+            "filesize": 518328,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-eesel-AI-copilot-a-smart-layer-for-Freshdesk-alternatives-2048x1152.png"
+          },
+          "full": {
+            "file": "02-eesel-AI-copilot-a-smart-layer-for-Freshdesk-alternatives.png",
+            "width": 2561,
+            "height": 1441,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-eesel-AI-copilot-a-smart-layer-for-Freshdesk-alternatives.png"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "",
+          "camera": "",
+          "caption": "",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "post": 20407,
+      "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-eesel-AI-copilot-a-smart-layer-for-Freshdesk-alternatives.png",
+      "_links": {
+        "self": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media/24674"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/users/14"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/comments?post=24674"
+          }
+        ]
+      }
+    },
+    {
+      "id": 24600,
+      "date": "2025-08-22T09:12:05",
+      "date_gmt": "2025-08-22T09:12:05",
+      "guid": {
+        "rendered": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-Intercom-Alternatives-–-Smarter-Support-with-eesel-AI-Copilot.png"
+      },
+      "modified": "2025-08-22T09:13:17",
+      "modified_gmt": "2025-08-22T09:13:17",
+      "slug": "03-intercom-alternatives-smarter-support-with-eesel-ai-copilot",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://www.eesel.ai//intercom-alternatives-en/03-intercom-alternatives-smarter-support-with-eesel-ai-copilot/",
+      "title": {
+        "rendered": "03 - Intercom Alternatives – Smarter Support with eesel AI Copilot"
+      },
+      "author": 14,
+      "featured_media": 0,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "meta": {
+        "_acf_changed": false
+      },
+      "class_list": [
+        "post-24600",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "acf": [],
+      "description": {
+        "rendered": "\u003Cp class=\"attachment\"\u003E\u003Ca href='https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-Intercom-Alternatives-–-Smarter-Support-with-eesel-AI-Copilot.png'\u003E\u003Cimg loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"169\" src=\"https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-Intercom-Alternatives-–-Smarter-Support-with-eesel-AI-Copilot-300x169.png\" class=\"attachment-medium size-medium\" alt=\"Screenshot showing eesel AI copilot drafting a customer support reply inside an Intercom ticketing system, highlighting Intercom alternatives for customer support.\" srcset=\"https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-Intercom-Alternatives-–-Smarter-Support-with-eesel-AI-Copilot-300x169.png 300w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-Intercom-Alternatives-–-Smarter-Support-with-eesel-AI-Copilot-1024x576.png 1024w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-Intercom-Alternatives-–-Smarter-Support-with-eesel-AI-Copilot-768x432.png 768w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-Intercom-Alternatives-–-Smarter-Support-with-eesel-AI-Copilot-1536x864.png 1536w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-Intercom-Alternatives-–-Smarter-Support-with-eesel-AI-Copilot-2048x1152.png 2048w\" sizes=\"(max-width: 300px) 100vw, 300px\" /\u003E\u003C/a\u003E\u003C/p\u003E\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "Screenshot showing eesel AI copilot drafting a customer support reply inside an Intercom ticketing system, highlighting Intercom alternatives for customer support.",
+      "media_type": "image",
+      "mime_type": "image/png",
+      "media_details": {
+        "width": 2561,
+        "height": 1441,
+        "file": "2025/08/03-Intercom-Alternatives-–-Smarter-Support-with-eesel-AI-Copilot.png",
+        "filesize": 690574,
+        "sizes": {
+          "medium": {
+            "file": "03-Intercom-Alternatives-–-Smarter-Support-with-eesel-AI-Copilot-300x169.png",
+            "width": 300,
+            "height": 169,
+            "filesize": 26265,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-Intercom-Alternatives-–-Smarter-Support-with-eesel-AI-Copilot-300x169.png"
+          },
+          "large": {
+            "file": "03-Intercom-Alternatives-–-Smarter-Support-with-eesel-AI-Copilot-1024x576.png",
+            "width": 1024,
+            "height": 576,
+            "filesize": 201650,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-Intercom-Alternatives-–-Smarter-Support-with-eesel-AI-Copilot-1024x576.png"
+          },
+          "thumbnail": {
+            "file": "03-Intercom-Alternatives-–-Smarter-Support-with-eesel-AI-Copilot-150x150.png",
+            "width": 150,
+            "height": 150,
+            "filesize": 16027,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-Intercom-Alternatives-–-Smarter-Support-with-eesel-AI-Copilot-150x150.png"
+          },
+          "medium_large": {
+            "file": "03-Intercom-Alternatives-–-Smarter-Support-with-eesel-AI-Copilot-768x432.png",
+            "width": 768,
+            "height": 432,
+            "filesize": 126984,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-Intercom-Alternatives-–-Smarter-Support-with-eesel-AI-Copilot-768x432.png"
+          },
+          "1536x1536": {
+            "file": "03-Intercom-Alternatives-–-Smarter-Support-with-eesel-AI-Copilot-1536x864.png",
+            "width": 1536,
+            "height": 864,
+            "filesize": 385996,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-Intercom-Alternatives-–-Smarter-Support-with-eesel-AI-Copilot-1536x864.png"
+          },
+          "2048x2048": {
+            "file": "03-Intercom-Alternatives-–-Smarter-Support-with-eesel-AI-Copilot-2048x1152.png",
+            "width": 2048,
+            "height": 1152,
+            "filesize": 605955,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-Intercom-Alternatives-–-Smarter-Support-with-eesel-AI-Copilot-2048x1152.png"
+          },
+          "full": {
+            "file": "03-Intercom-Alternatives-–-Smarter-Support-with-eesel-AI-Copilot.png",
+            "width": 2561,
+            "height": 1441,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-Intercom-Alternatives-–-Smarter-Support-with-eesel-AI-Copilot.png"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "",
+          "camera": "",
+          "caption": "",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "post": 20403,
+      "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-Intercom-Alternatives-–-Smarter-Support-with-eesel-AI-Copilot.png",
+      "_links": {
+        "self": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media/24600"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/users/14"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/comments?post=24600"
+          }
+        ]
+      }
+    },
+    {
+      "id": 23988,
+      "date": "2025-08-21T04:56:30",
+      "date_gmt": "2025-08-21T04:56:30",
+      "guid": {
+        "rendered": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-eesel-AI-Copilot-providing-assistance-inside-JSM-an-alternative-to-upgrading-your-jira-service-management-pricing-plan.png"
+      },
+      "modified": "2025-08-21T04:59:21",
+      "modified_gmt": "2025-08-21T04:59:21",
+      "slug": "06-eesel-ai-copilot-providing-assistance-inside-jsm-an-alternative-to-upgrading-your-jira-service-management-pricing-plan",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://www.eesel.ai//jira-service-management-pricing-en/06-eesel-ai-copilot-providing-assistance-inside-jsm-an-alternative-to-upgrading-your-jira-service-management-pricing-plan/",
+      "title": {
+        "rendered": "06 - eesel AI Copilot providing assistance inside JSM, an alternative to upgrading your jira service management pricing plan."
+      },
+      "author": 14,
+      "featured_media": 0,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "meta": {
+        "_acf_changed": false
+      },
+      "class_list": [
+        "post-23988",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "acf": [],
+      "description": {
+        "rendered": "\u003Cp class=\"attachment\"\u003E\u003Ca href='https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-eesel-AI-Copilot-providing-assistance-inside-JSM-an-alternative-to-upgrading-your-jira-service-management-pricing-plan.png'\u003E\u003Cimg loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"169\" src=\"https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-eesel-AI-Copilot-providing-assistance-inside-JSM-an-alternative-to-upgrading-your-jira-service-management-pricing-plan-300x169.png\" class=\"attachment-medium size-medium\" alt=\"Screenshot showing the eesel AI Copilot working within Jira, demonstrating how to add AI without changing your jira service management pricing tier.\" srcset=\"https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-eesel-AI-Copilot-providing-assistance-inside-JSM-an-alternative-to-upgrading-your-jira-service-management-pricing-plan-300x169.png 300w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-eesel-AI-Copilot-providing-assistance-inside-JSM-an-alternative-to-upgrading-your-jira-service-management-pricing-plan-1024x576.png 1024w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-eesel-AI-Copilot-providing-assistance-inside-JSM-an-alternative-to-upgrading-your-jira-service-management-pricing-plan-768x432.png 768w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-eesel-AI-Copilot-providing-assistance-inside-JSM-an-alternative-to-upgrading-your-jira-service-management-pricing-plan-1536x864.png 1536w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-eesel-AI-Copilot-providing-assistance-inside-JSM-an-alternative-to-upgrading-your-jira-service-management-pricing-plan-2048x1152.png 2048w\" sizes=\"(max-width: 300px) 100vw, 300px\" /\u003E\u003C/a\u003E\u003C/p\u003E\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "Screenshot showing the eesel AI Copilot working within Jira, demonstrating how to add AI without changing your jira service management pricing tier.",
+      "media_type": "image",
+      "mime_type": "image/png",
+      "media_details": {
+        "width": 2561,
+        "height": 1441,
+        "file": "2025/08/06-eesel-AI-Copilot-providing-assistance-inside-JSM-an-alternative-to-upgrading-your-jira-service-management-pricing-plan.png",
+        "filesize": 603160,
+        "sizes": {
+          "medium": {
+            "file": "06-eesel-AI-Copilot-providing-assistance-inside-JSM-an-alternative-to-upgrading-your-jira-service-management-pricing-plan-300x169.png",
+            "width": 300,
+            "height": 169,
+            "filesize": 24029,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-eesel-AI-Copilot-providing-assistance-inside-JSM-an-alternative-to-upgrading-your-jira-service-management-pricing-plan-300x169.png"
+          },
+          "large": {
+            "file": "06-eesel-AI-Copilot-providing-assistance-inside-JSM-an-alternative-to-upgrading-your-jira-service-management-pricing-plan-1024x576.png",
+            "width": 1024,
+            "height": 576,
+            "filesize": 179205,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-eesel-AI-Copilot-providing-assistance-inside-JSM-an-alternative-to-upgrading-your-jira-service-management-pricing-plan-1024x576.png"
+          },
+          "thumbnail": {
+            "file": "06-eesel-AI-Copilot-providing-assistance-inside-JSM-an-alternative-to-upgrading-your-jira-service-management-pricing-plan-150x150.png",
+            "width": 150,
+            "height": 150,
+            "filesize": 6646,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-eesel-AI-Copilot-providing-assistance-inside-JSM-an-alternative-to-upgrading-your-jira-service-management-pricing-plan-150x150.png"
+          },
+          "medium_large": {
+            "file": "06-eesel-AI-Copilot-providing-assistance-inside-JSM-an-alternative-to-upgrading-your-jira-service-management-pricing-plan-768x432.png",
+            "width": 768,
+            "height": 432,
+            "filesize": 114164,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-eesel-AI-Copilot-providing-assistance-inside-JSM-an-alternative-to-upgrading-your-jira-service-management-pricing-plan-768x432.png"
+          },
+          "1536x1536": {
+            "file": "06-eesel-AI-Copilot-providing-assistance-inside-JSM-an-alternative-to-upgrading-your-jira-service-management-pricing-plan-1536x864.png",
+            "width": 1536,
+            "height": 864,
+            "filesize": 343467,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-eesel-AI-Copilot-providing-assistance-inside-JSM-an-alternative-to-upgrading-your-jira-service-management-pricing-plan-1536x864.png"
+          },
+          "2048x2048": {
+            "file": "06-eesel-AI-Copilot-providing-assistance-inside-JSM-an-alternative-to-upgrading-your-jira-service-management-pricing-plan-2048x1152.png",
+            "width": 2048,
+            "height": 1152,
+            "filesize": 543256,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-eesel-AI-Copilot-providing-assistance-inside-JSM-an-alternative-to-upgrading-your-jira-service-management-pricing-plan-2048x1152.png"
+          },
+          "full": {
+            "file": "06-eesel-AI-Copilot-providing-assistance-inside-JSM-an-alternative-to-upgrading-your-jira-service-management-pricing-plan.png",
+            "width": 2561,
+            "height": 1441,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-eesel-AI-Copilot-providing-assistance-inside-JSM-an-alternative-to-upgrading-your-jira-service-management-pricing-plan.png"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "",
+          "camera": "",
+          "caption": "",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "post": 20337,
+      "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-eesel-AI-Copilot-providing-assistance-inside-JSM-an-alternative-to-upgrading-your-jira-service-management-pricing-plan.png",
+      "_links": {
+        "self": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media/23988"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/users/14"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/comments?post=23988"
+          }
+        ]
+      }
+    },
+    {
+      "id": 21941,
+      "date": "2025-08-18T01:59:55",
+      "date_gmt": "2025-08-18T01:59:55",
+      "guid": {
+        "rendered": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-The-eesel-AI-Copilot-providing-an-agent-with-AI-powered-customer-service-assistance.png"
+      },
+      "modified": "2025-08-18T02:01:16",
+      "modified_gmt": "2025-08-18T02:01:16",
+      "slug": "02-the-eesel-ai-copilot-providing-an-agent-with-ai-powered-customer-service-assistance",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://www.eesel.ai//ai-powered-customer-service-en/02-the-eesel-ai-copilot-providing-an-agent-with-ai-powered-customer-service-assistance/",
+      "title": {
+        "rendered": "02 - The eesel AI Copilot providing an agent with AI powered customer service assistance."
+      },
+      "author": 14,
+      "featured_media": 0,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "meta": {
+        "_acf_changed": false
+      },
+      "class_list": [
+        "post-21941",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "acf": [],
+      "description": {
+        "rendered": "\u003Cp class=\"attachment\"\u003E\u003Ca href='https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-The-eesel-AI-Copilot-providing-an-agent-with-AI-powered-customer-service-assistance.png'\u003E\u003Cimg loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"169\" src=\"https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-The-eesel-AI-Copilot-providing-an-agent-with-AI-powered-customer-service-assistance-300x169.png\" class=\"attachment-medium size-medium\" alt=\"A screenshot of the eesel AI Copilot drafting a reply for an agent, an example of AI powered customer service.\" srcset=\"https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-The-eesel-AI-Copilot-providing-an-agent-with-AI-powered-customer-service-assistance-300x169.png 300w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-The-eesel-AI-Copilot-providing-an-agent-with-AI-powered-customer-service-assistance-1024x576.png 1024w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-The-eesel-AI-Copilot-providing-an-agent-with-AI-powered-customer-service-assistance-768x432.png 768w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-The-eesel-AI-Copilot-providing-an-agent-with-AI-powered-customer-service-assistance-1536x864.png 1536w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-The-eesel-AI-Copilot-providing-an-agent-with-AI-powered-customer-service-assistance-2048x1152.png 2048w\" sizes=\"(max-width: 300px) 100vw, 300px\" /\u003E\u003C/a\u003E\u003C/p\u003E\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "A screenshot of the eesel AI Copilot drafting a reply for an agent, an example of AI powered customer service.",
+      "media_type": "image",
+      "mime_type": "image/png",
+      "media_details": {
+        "width": 2561,
+        "height": 1441,
+        "file": "2025/08/02-The-eesel-AI-Copilot-providing-an-agent-with-AI-powered-customer-service-assistance.png",
+        "filesize": 470089,
+        "sizes": {
+          "medium": {
+            "file": "02-The-eesel-AI-Copilot-providing-an-agent-with-AI-powered-customer-service-assistance-300x169.png",
+            "width": 300,
+            "height": 169,
+            "filesize": 22245,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-The-eesel-AI-Copilot-providing-an-agent-with-AI-powered-customer-service-assistance-300x169.png"
+          },
+          "large": {
+            "file": "02-The-eesel-AI-Copilot-providing-an-agent-with-AI-powered-customer-service-assistance-1024x576.png",
+            "width": 1024,
+            "height": 576,
+            "filesize": 158081,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-The-eesel-AI-Copilot-providing-an-agent-with-AI-powered-customer-service-assistance-1024x576.png"
+          },
+          "thumbnail": {
+            "file": "02-The-eesel-AI-Copilot-providing-an-agent-with-AI-powered-customer-service-assistance-150x150.png",
+            "width": 150,
+            "height": 150,
+            "filesize": 8428,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-The-eesel-AI-Copilot-providing-an-agent-with-AI-powered-customer-service-assistance-150x150.png"
+          },
+          "medium_large": {
+            "file": "02-The-eesel-AI-Copilot-providing-an-agent-with-AI-powered-customer-service-assistance-768x432.png",
+            "width": 768,
+            "height": 432,
+            "filesize": 98017,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-The-eesel-AI-Copilot-providing-an-agent-with-AI-powered-customer-service-assistance-768x432.png"
+          },
+          "1536x1536": {
+            "file": "02-The-eesel-AI-Copilot-providing-an-agent-with-AI-powered-customer-service-assistance-1536x864.png",
+            "width": 1536,
+            "height": 864,
+            "filesize": 301710,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-The-eesel-AI-Copilot-providing-an-agent-with-AI-powered-customer-service-assistance-1536x864.png"
+          },
+          "2048x2048": {
+            "file": "02-The-eesel-AI-Copilot-providing-an-agent-with-AI-powered-customer-service-assistance-2048x1152.png",
+            "width": 2048,
+            "height": 1152,
+            "filesize": 474720,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-The-eesel-AI-Copilot-providing-an-agent-with-AI-powered-customer-service-assistance-2048x1152.png"
+          },
+          "full": {
+            "file": "02-The-eesel-AI-Copilot-providing-an-agent-with-AI-powered-customer-service-assistance.png",
+            "width": 2561,
+            "height": 1441,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-The-eesel-AI-Copilot-providing-an-agent-with-AI-powered-customer-service-assistance.png"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "",
+          "camera": "",
+          "caption": "",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "post": 18105,
+      "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-The-eesel-AI-Copilot-providing-an-agent-with-AI-powered-customer-service-assistance.png",
+      "_links": {
+        "self": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media/21941"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/users/14"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/comments?post=21941"
+          }
+        ]
+      }
+    },
+    {
+      "id": 21103,
+      "date": "2025-08-14T00:47:30",
+      "date_gmt": "2025-08-14T00:47:30",
+      "guid": {
+        "rendered": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-The-eesel-AI-copilot-one-of-the-best-AI-tools-for-business-support-teams.png"
+      },
+      "modified": "2025-08-14T00:50:02",
+      "modified_gmt": "2025-08-14T00:50:02",
+      "slug": "03-the-eesel-ai-copilot-one-of-the-best-ai-tools-for-business-support-teams",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://www.eesel.ai//ai-tools-for-business-en/03-the-eesel-ai-copilot-one-of-the-best-ai-tools-for-business-support-teams/",
+      "title": {
+        "rendered": "03 - The eesel AI copilot, one of the best AI tools for business support teams."
+      },
+      "author": 14,
+      "featured_media": 0,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "meta": {
+        "_acf_changed": false
+      },
+      "class_list": [
+        "post-21103",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "acf": [],
+      "description": {
+        "rendered": "\u003Cp class=\"attachment\"\u003E\u003Ca href='https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-The-eesel-AI-copilot-one-of-the-best-AI-tools-for-business-support-teams.png'\u003E\u003Cimg loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"169\" src=\"https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-The-eesel-AI-copilot-one-of-the-best-AI-tools-for-business-support-teams-300x169.png\" class=\"attachment-medium size-medium\" alt=\"A screenshot showing how eesel AI tools for business work inside a help desk. The AI has drafted a response to a customer query, ready for an agent to approve.\" srcset=\"https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-The-eesel-AI-copilot-one-of-the-best-AI-tools-for-business-support-teams-300x169.png 300w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-The-eesel-AI-copilot-one-of-the-best-AI-tools-for-business-support-teams-1024x576.png 1024w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-The-eesel-AI-copilot-one-of-the-best-AI-tools-for-business-support-teams-768x432.png 768w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-The-eesel-AI-copilot-one-of-the-best-AI-tools-for-business-support-teams-1536x864.png 1536w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-The-eesel-AI-copilot-one-of-the-best-AI-tools-for-business-support-teams-2048x1152.png 2048w\" sizes=\"(max-width: 300px) 100vw, 300px\" /\u003E\u003C/a\u003E\u003C/p\u003E\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "A screenshot showing how eesel AI tools for business work inside a help desk. The AI has drafted a response to a customer query, ready for an agent to approve.",
+      "media_type": "image",
+      "mime_type": "image/png",
+      "media_details": {
+        "width": 2561,
+        "height": 1441,
+        "file": "2025/08/03-The-eesel-AI-copilot-one-of-the-best-AI-tools-for-business-support-teams.png",
+        "filesize": 470208,
+        "sizes": {
+          "medium": {
+            "file": "03-The-eesel-AI-copilot-one-of-the-best-AI-tools-for-business-support-teams-300x169.png",
+            "width": 300,
+            "height": 169,
+            "filesize": 22252,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-The-eesel-AI-copilot-one-of-the-best-AI-tools-for-business-support-teams-300x169.png"
+          },
+          "large": {
+            "file": "03-The-eesel-AI-copilot-one-of-the-best-AI-tools-for-business-support-teams-1024x576.png",
+            "width": 1024,
+            "height": 576,
+            "filesize": 158223,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-The-eesel-AI-copilot-one-of-the-best-AI-tools-for-business-support-teams-1024x576.png"
+          },
+          "thumbnail": {
+            "file": "03-The-eesel-AI-copilot-one-of-the-best-AI-tools-for-business-support-teams-150x150.png",
+            "width": 150,
+            "height": 150,
+            "filesize": 8432,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-The-eesel-AI-copilot-one-of-the-best-AI-tools-for-business-support-teams-150x150.png"
+          },
+          "medium_large": {
+            "file": "03-The-eesel-AI-copilot-one-of-the-best-AI-tools-for-business-support-teams-768x432.png",
+            "width": 768,
+            "height": 432,
+            "filesize": 98006,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-The-eesel-AI-copilot-one-of-the-best-AI-tools-for-business-support-teams-768x432.png"
+          },
+          "1536x1536": {
+            "file": "03-The-eesel-AI-copilot-one-of-the-best-AI-tools-for-business-support-teams-1536x864.png",
+            "width": 1536,
+            "height": 864,
+            "filesize": 302375,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-The-eesel-AI-copilot-one-of-the-best-AI-tools-for-business-support-teams-1536x864.png"
+          },
+          "2048x2048": {
+            "file": "03-The-eesel-AI-copilot-one-of-the-best-AI-tools-for-business-support-teams-2048x1152.png",
+            "width": 2048,
+            "height": 1152,
+            "filesize": 472436,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-The-eesel-AI-copilot-one-of-the-best-AI-tools-for-business-support-teams-2048x1152.png"
+          },
+          "full": {
+            "file": "03-The-eesel-AI-copilot-one-of-the-best-AI-tools-for-business-support-teams.png",
+            "width": 2561,
+            "height": 1441,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-The-eesel-AI-copilot-one-of-the-best-AI-tools-for-business-support-teams.png"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "",
+          "camera": "",
+          "caption": "",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "post": 17916,
+      "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-The-eesel-AI-copilot-one-of-the-best-AI-tools-for-business-support-teams.png",
+      "_links": {
+        "self": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media/21103"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/users/14"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/comments?post=21103"
+          }
+        ]
+      }
+    },
+    {
+      "id": 20587,
+      "date": "2025-08-13T05:22:30",
+      "date_gmt": "2025-08-13T05:22:30",
+      "guid": {
+        "rendered": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/AI-Copilot.mp4"
+      },
+      "modified": "2025-09-29T07:51:31",
+      "modified_gmt": "2025-09-29T07:51:31",
+      "slug": "ai-copilot",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://www.eesel.ai//ai-virtual-assistant-en/ai-copilot/",
+      "title": {
+        "rendered": "eeselAI - Video - AI Copilot"
+      },
+      "author": 14,
+      "featured_media": 0,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "meta": {
+        "_acf_changed": false
+      },
+      "class_list": [
+        "post-20587",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "acf": [],
+      "description": {
+        "rendered": "\u003Cdiv style=\"width: 2560px;\" class=\"wp-video\"\u003E\u003C!--[if lt IE 9]\u003E\u003Cscript\u003Edocument.createElement('video');\u003C/script\u003E\u003C![endif]--\u003E\n\u003Cvideo class=\"wp-video-shortcode\" id=\"video-20587-1\" width=\"2560\" height=\"1440\" preload=\"metadata\" controls=\"controls\"\u003E\u003Csource type=\"video/mp4\" src=\"https://website-cms.eesel.ai/wp-content/uploads/2025/08/AI-Copilot.mp4?_=1\" /\u003E\u003Ca href=\"https://website-cms.eesel.ai/wp-content/uploads/2025/08/AI-Copilot.mp4\"\u003Ehttps://website-cms.eesel.ai/wp-content/uploads/2025/08/AI-Copilot.mp4\u003C/a\u003E\u003C/video\u003E\u003C/div\u003E\n"
+      },
+      "caption": {
+        "rendered": "\u003Cp\u003Ehttps://website-cms.eesel.ai/wp-content/uploads/2025/08/AI-Copilot.mp4\u003C/p\u003E\n"
+      },
+      "alt_text": "",
+      "media_type": "file",
+      "mime_type": "video/mp4",
+      "media_details": {
+        "bitrate": 2676503,
+        "filesize": 4107330,
+        "mime_type": "video/quicktime",
+        "length": 12,
+        "length_formatted": "0:12",
+        "width": 2560,
+        "height": 1440,
+        "fileformat": "mp4",
+        "dataformat": "quicktime",
+        "created_timestamp": 1734638914,
+        "sizes": {
+  
+        }
+      },
+      "post": 17680,
+      "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/AI-Copilot.mp4",
+      "_links": {
+        "self": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media/20587"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/users/14"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/comments?post=20587"
+          }
+        ]
+      }
+    },
+    {
+      "id": 20309,
+      "date": "2025-08-12T09:14:31",
+      "date_gmt": "2025-08-12T09:14:31",
+      "guid": {
+        "rendered": "https://website-cms.eesel.ai/wp-content/uploads/2025/07/eesel-AI-Copilot-–-Contextual-Reply-Drafting-for-Customer-Support-Tickets-_-Sierra-AI-Alternatives.png"
+      },
+      "modified": "2025-08-12T09:17:19",
+      "modified_gmt": "2025-08-12T09:17:19",
+      "slug": "eesel-ai-copilot-contextual-reply-drafting-for-customer-support-tickets-_-sierra-ai-alternatives",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://www.eesel.ai//chatgpt-study-mode-en/eesel-ai-copilot-contextual-reply-drafting-for-customer-support-tickets-_-sierra-ai-alternatives/",
+      "title": {
+        "rendered": "eesel AI Copilot – Contextual Reply Drafting for Customer Support Tickets _ Sierra AI Alternatives"
+      },
+      "author": 14,
+      "featured_media": 0,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "meta": {
+        "_acf_changed": false
+      },
+      "class_list": [
+        "post-20309",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "acf": [],
+      "description": {
+        "rendered": "\u003Cp class=\"attachment\"\u003E\u003Ca href='https://website-cms.eesel.ai/wp-content/uploads/2025/07/eesel-AI-Copilot-–-Contextual-Reply-Drafting-for-Customer-Support-Tickets-_-Sierra-AI-Alternatives.png'\u003E\u003Cimg loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"169\" src=\"https://website-cms.eesel.ai/wp-content/uploads/2025/07/eesel-AI-Copilot-–-Contextual-Reply-Drafting-for-Customer-Support-Tickets-_-Sierra-AI-Alternatives-300x169.png\" class=\"attachment-medium size-medium\" alt=\"Screenshot of eesel AI Copilot drafting an accurate, on-brand reply to a refund request ticket, with options for the agent to send or edit before replying.\" srcset=\"https://website-cms.eesel.ai/wp-content/uploads/2025/07/eesel-AI-Copilot-–-Contextual-Reply-Drafting-for-Customer-Support-Tickets-_-Sierra-AI-Alternatives-300x169.png 300w, https://website-cms.eesel.ai/wp-content/uploads/2025/07/eesel-AI-Copilot-–-Contextual-Reply-Drafting-for-Customer-Support-Tickets-_-Sierra-AI-Alternatives-1024x576.png 1024w, https://website-cms.eesel.ai/wp-content/uploads/2025/07/eesel-AI-Copilot-–-Contextual-Reply-Drafting-for-Customer-Support-Tickets-_-Sierra-AI-Alternatives-768x432.png 768w, https://website-cms.eesel.ai/wp-content/uploads/2025/07/eesel-AI-Copilot-–-Contextual-Reply-Drafting-for-Customer-Support-Tickets-_-Sierra-AI-Alternatives-1536x864.png 1536w, https://website-cms.eesel.ai/wp-content/uploads/2025/07/eesel-AI-Copilot-–-Contextual-Reply-Drafting-for-Customer-Support-Tickets-_-Sierra-AI-Alternatives-2048x1152.png 2048w\" sizes=\"(max-width: 300px) 100vw, 300px\" /\u003E\u003C/a\u003E\u003C/p\u003E\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "Screenshot of eesel AI Copilot drafting an accurate, on-brand reply to a refund request ticket, with options for the agent to send or edit before replying.",
+      "media_type": "image",
+      "mime_type": "image/png",
+      "media_details": {
+        "width": 2561,
+        "height": 1440,
+        "file": "2025/07/eesel-AI-Copilot-–-Contextual-Reply-Drafting-for-Customer-Support-Tickets-_-Sierra-AI-Alternatives.png",
+        "filesize": 2071625,
+        "sizes": {
+          "medium": {
+            "file": "eesel-AI-Copilot-–-Contextual-Reply-Drafting-for-Customer-Support-Tickets-_-Sierra-AI-Alternatives-300x169.png",
+            "width": 300,
+            "height": 169,
+            "filesize": 39305,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/07/eesel-AI-Copilot-–-Contextual-Reply-Drafting-for-Customer-Support-Tickets-_-Sierra-AI-Alternatives-300x169.png"
+          },
+          "large": {
+            "file": "eesel-AI-Copilot-–-Contextual-Reply-Drafting-for-Customer-Support-Tickets-_-Sierra-AI-Alternatives-1024x576.png",
+            "width": 1024,
+            "height": 576,
+            "filesize": 385961,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/07/eesel-AI-Copilot-–-Contextual-Reply-Drafting-for-Customer-Support-Tickets-_-Sierra-AI-Alternatives-1024x576.png"
+          },
+          "thumbnail": {
+            "file": "eesel-AI-Copilot-–-Contextual-Reply-Drafting-for-Customer-Support-Tickets-_-Sierra-AI-Alternatives-150x150.png",
+            "width": 150,
+            "height": 150,
+            "filesize": 14283,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/07/eesel-AI-Copilot-–-Contextual-Reply-Drafting-for-Customer-Support-Tickets-_-Sierra-AI-Alternatives-150x150.png"
+          },
+          "medium_large": {
+            "file": "eesel-AI-Copilot-–-Contextual-Reply-Drafting-for-Customer-Support-Tickets-_-Sierra-AI-Alternatives-768x432.png",
+            "width": 768,
+            "height": 432,
+            "filesize": 225093,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/07/eesel-AI-Copilot-–-Contextual-Reply-Drafting-for-Customer-Support-Tickets-_-Sierra-AI-Alternatives-768x432.png"
+          },
+          "1536x1536": {
+            "file": "eesel-AI-Copilot-–-Contextual-Reply-Drafting-for-Customer-Support-Tickets-_-Sierra-AI-Alternatives-1536x864.png",
+            "width": 1536,
+            "height": 864,
+            "filesize": 826954,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/07/eesel-AI-Copilot-–-Contextual-Reply-Drafting-for-Customer-Support-Tickets-_-Sierra-AI-Alternatives-1536x864.png"
+          },
+          "2048x2048": {
+            "file": "eesel-AI-Copilot-–-Contextual-Reply-Drafting-for-Customer-Support-Tickets-_-Sierra-AI-Alternatives-2048x1152.png",
+            "width": 2048,
+            "height": 1152,
+            "filesize": 1386519,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/07/eesel-AI-Copilot-–-Contextual-Reply-Drafting-for-Customer-Support-Tickets-_-Sierra-AI-Alternatives-2048x1152.png"
+          },
+          "full": {
+            "file": "eesel-AI-Copilot-–-Contextual-Reply-Drafting-for-Customer-Support-Tickets-_-Sierra-AI-Alternatives.png",
+            "width": 2561,
+            "height": 1440,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/07/eesel-AI-Copilot-–-Contextual-Reply-Drafting-for-Customer-Support-Tickets-_-Sierra-AI-Alternatives.png"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "",
+          "camera": "",
+          "caption": "",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "post": 16899,
+      "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/07/eesel-AI-Copilot-–-Contextual-Reply-Drafting-for-Customer-Support-Tickets-_-Sierra-AI-Alternatives.png",
+      "_links": {
+        "self": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media/20309"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/users/14"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/comments?post=20309"
+          }
+        ]
+      }
+    },
+    {
+      "id": 20173,
+      "date": "2025-08-12T03:17:46",
+      "date_gmt": "2025-08-12T03:17:46",
+      "guid": {
+        "rendered": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/05-The-simulation-mode-of-the-eesel-AI-copilot-validating-performance.png"
+      },
+      "modified": "2025-08-12T03:20:41",
+      "modified_gmt": "2025-08-12T03:20:41",
+      "slug": "05-the-simulation-mode-of-the-eesel-ai-copilot-validating-performance",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://www.eesel.ai//ai-copilot-en/05-the-simulation-mode-of-the-eesel-ai-copilot-validating-performance/",
+      "title": {
+        "rendered": "05 - The simulation mode of the eesel AI copilot validating performance."
+      },
+      "author": 14,
+      "featured_media": 0,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "meta": {
+        "_acf_changed": false
+      },
+      "class_list": [
+        "post-20173",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "acf": [],
+      "description": {
+        "rendered": "\u003Cp class=\"attachment\"\u003E\u003Ca href='https://website-cms.eesel.ai/wp-content/uploads/2025/08/05-The-simulation-mode-of-the-eesel-AI-copilot-validating-performance.png'\u003E\u003Cimg loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"169\" src=\"https://website-cms.eesel.ai/wp-content/uploads/2025/08/05-The-simulation-mode-of-the-eesel-AI-copilot-validating-performance-300x169.png\" class=\"attachment-medium size-medium\" alt=\"A dashboard showing the pre-launch validation feature of an AI copilot, which runs on historical data to predict performance and savings.\" srcset=\"https://website-cms.eesel.ai/wp-content/uploads/2025/08/05-The-simulation-mode-of-the-eesel-AI-copilot-validating-performance-300x169.png 300w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/05-The-simulation-mode-of-the-eesel-AI-copilot-validating-performance-1024x576.png 1024w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/05-The-simulation-mode-of-the-eesel-AI-copilot-validating-performance-768x432.png 768w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/05-The-simulation-mode-of-the-eesel-AI-copilot-validating-performance-1536x864.png 1536w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/05-The-simulation-mode-of-the-eesel-AI-copilot-validating-performance-2048x1152.png 2048w\" sizes=\"(max-width: 300px) 100vw, 300px\" /\u003E\u003C/a\u003E\u003C/p\u003E\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "A dashboard showing the pre-launch validation feature of an AI copilot, which runs on historical data to predict performance and savings.",
+      "media_type": "image",
+      "mime_type": "image/png",
+      "media_details": {
+        "width": 2561,
+        "height": 1441,
+        "file": "2025/08/05-The-simulation-mode-of-the-eesel-AI-copilot-validating-performance.png",
+        "filesize": 246863,
+        "sizes": {
+          "medium": {
+            "file": "05-The-simulation-mode-of-the-eesel-AI-copilot-validating-performance-300x169.png",
+            "width": 300,
+            "height": 169,
+            "filesize": 14601,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/05-The-simulation-mode-of-the-eesel-AI-copilot-validating-performance-300x169.png"
+          },
+          "large": {
+            "file": "05-The-simulation-mode-of-the-eesel-AI-copilot-validating-performance-1024x576.png",
+            "width": 1024,
+            "height": 576,
+            "filesize": 85035,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/05-The-simulation-mode-of-the-eesel-AI-copilot-validating-performance-1024x576.png"
+          },
+          "thumbnail": {
+            "file": "05-The-simulation-mode-of-the-eesel-AI-copilot-validating-performance-150x150.png",
+            "width": 150,
+            "height": 150,
+            "filesize": 5936,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/05-The-simulation-mode-of-the-eesel-AI-copilot-validating-performance-150x150.png"
+          },
+          "medium_large": {
+            "file": "05-The-simulation-mode-of-the-eesel-AI-copilot-validating-performance-768x432.png",
+            "width": 768,
+            "height": 432,
+            "filesize": 56637,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/05-The-simulation-mode-of-the-eesel-AI-copilot-validating-performance-768x432.png"
+          },
+          "1536x1536": {
+            "file": "05-The-simulation-mode-of-the-eesel-AI-copilot-validating-performance-1536x864.png",
+            "width": 1536,
+            "height": 864,
+            "filesize": 153271,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/05-The-simulation-mode-of-the-eesel-AI-copilot-validating-performance-1536x864.png"
+          },
+          "2048x2048": {
+            "file": "05-The-simulation-mode-of-the-eesel-AI-copilot-validating-performance-2048x1152.png",
+            "width": 2048,
+            "height": 1152,
+            "filesize": 230750,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/05-The-simulation-mode-of-the-eesel-AI-copilot-validating-performance-2048x1152.png"
+          },
+          "full": {
+            "file": "05-The-simulation-mode-of-the-eesel-AI-copilot-validating-performance.png",
+            "width": 2561,
+            "height": 1441,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/05-The-simulation-mode-of-the-eesel-AI-copilot-validating-performance.png"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "",
+          "camera": "",
+          "caption": "",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "post": 17595,
+      "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/05-The-simulation-mode-of-the-eesel-AI-copilot-validating-performance.png",
+      "_links": {
+        "self": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media/20173"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/users/14"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/comments?post=20173"
+          }
+        ]
+      }
+    },
+    {
+      "id": 20170,
+      "date": "2025-08-12T03:17:32",
+      "date_gmt": "2025-08-12T03:17:32",
+      "guid": {
+        "rendered": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-A-specialized-workflow-integrated-AI-copilot-from-eesel-AI-inside-Zendesk.png"
+      },
+      "modified": "2025-08-12T03:19:08",
+      "modified_gmt": "2025-08-12T03:19:08",
+      "slug": "02-a-specialized-workflow-integrated-ai-copilot-from-eesel-ai-inside-zendesk",
+      "status": "inherit",
+      "type": "attachment",
+      "link": "https://www.eesel.ai//ai-copilot-en/02-a-specialized-workflow-integrated-ai-copilot-from-eesel-ai-inside-zendesk/",
+      "title": {
+        "rendered": "02 - A specialized, workflow-integrated AI copilot from eesel AI inside Zendesk."
+      },
+      "author": 14,
+      "featured_media": 0,
+      "comment_status": "open",
+      "ping_status": "closed",
+      "template": "",
+      "meta": {
+        "_acf_changed": false
+      },
+      "class_list": [
+        "post-20170",
+        "attachment",
+        "type-attachment",
+        "status-inherit",
+        "hentry"
+      ],
+      "acf": [],
+      "description": {
+        "rendered": "\u003Cp class=\"attachment\"\u003E\u003Ca href='https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-A-specialized-workflow-integrated-AI-copilot-from-eesel-AI-inside-Zendesk.png'\u003E\u003Cimg loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"169\" src=\"https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-A-specialized-workflow-integrated-AI-copilot-from-eesel-AI-inside-Zendesk-300x169.png\" class=\"attachment-medium size-medium\" alt=\"Screenshot of an agent&#039;s view in a helpdesk, where a specialized AI copilot has generated a contextual reply to a customer query.\" srcset=\"https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-A-specialized-workflow-integrated-AI-copilot-from-eesel-AI-inside-Zendesk-300x169.png 300w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-A-specialized-workflow-integrated-AI-copilot-from-eesel-AI-inside-Zendesk-1024x576.png 1024w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-A-specialized-workflow-integrated-AI-copilot-from-eesel-AI-inside-Zendesk-768x432.png 768w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-A-specialized-workflow-integrated-AI-copilot-from-eesel-AI-inside-Zendesk-1536x864.png 1536w, https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-A-specialized-workflow-integrated-AI-copilot-from-eesel-AI-inside-Zendesk-2048x1152.png 2048w\" sizes=\"(max-width: 300px) 100vw, 300px\" /\u003E\u003C/a\u003E\u003C/p\u003E\n"
+      },
+      "caption": {
+        "rendered": ""
+      },
+      "alt_text": "Screenshot of an agent's view in a helpdesk, where a specialized AI copilot has generated a contextual reply to a customer query.",
+      "media_type": "image",
+      "mime_type": "image/png",
+      "media_details": {
+        "width": 2561,
+        "height": 1441,
+        "file": "2025/08/02-A-specialized-workflow-integrated-AI-copilot-from-eesel-AI-inside-Zendesk.png",
+        "filesize": 470238,
+        "sizes": {
+          "medium": {
+            "file": "02-A-specialized-workflow-integrated-AI-copilot-from-eesel-AI-inside-Zendesk-300x169.png",
+            "width": 300,
+            "height": 169,
+            "filesize": 22265,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-A-specialized-workflow-integrated-AI-copilot-from-eesel-AI-inside-Zendesk-300x169.png"
+          },
+          "large": {
+            "file": "02-A-specialized-workflow-integrated-AI-copilot-from-eesel-AI-inside-Zendesk-1024x576.png",
+            "width": 1024,
+            "height": 576,
+            "filesize": 158105,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-A-specialized-workflow-integrated-AI-copilot-from-eesel-AI-inside-Zendesk-1024x576.png"
+          },
+          "thumbnail": {
+            "file": "02-A-specialized-workflow-integrated-AI-copilot-from-eesel-AI-inside-Zendesk-150x150.png",
+            "width": 150,
+            "height": 150,
+            "filesize": 8415,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-A-specialized-workflow-integrated-AI-copilot-from-eesel-AI-inside-Zendesk-150x150.png"
+          },
+          "medium_large": {
+            "file": "02-A-specialized-workflow-integrated-AI-copilot-from-eesel-AI-inside-Zendesk-768x432.png",
+            "width": 768,
+            "height": 432,
+            "filesize": 98077,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-A-specialized-workflow-integrated-AI-copilot-from-eesel-AI-inside-Zendesk-768x432.png"
+          },
+          "1536x1536": {
+            "file": "02-A-specialized-workflow-integrated-AI-copilot-from-eesel-AI-inside-Zendesk-1536x864.png",
+            "width": 1536,
+            "height": 864,
+            "filesize": 301567,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-A-specialized-workflow-integrated-AI-copilot-from-eesel-AI-inside-Zendesk-1536x864.png"
+          },
+          "2048x2048": {
+            "file": "02-A-specialized-workflow-integrated-AI-copilot-from-eesel-AI-inside-Zendesk-2048x1152.png",
+            "width": 2048,
+            "height": 1152,
+            "filesize": 474820,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-A-specialized-workflow-integrated-AI-copilot-from-eesel-AI-inside-Zendesk-2048x1152.png"
+          },
+          "full": {
+            "file": "02-A-specialized-workflow-integrated-AI-copilot-from-eesel-AI-inside-Zendesk.png",
+            "width": 2561,
+            "height": 1441,
+            "mime_type": "image/png",
+            "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-A-specialized-workflow-integrated-AI-copilot-from-eesel-AI-inside-Zendesk.png"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "",
+          "camera": "",
+          "caption": "",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "post": 17595,
+      "source_url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/02-A-specialized-workflow-integrated-AI-copilot-from-eesel-AI-inside-Zendesk.png",
+      "_links": {
+        "self": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media/20170"
+          }
+        ],
+        "collection": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/media"
+          }
+        ],
+        "about": [
+          {
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/types/attachment"
+          }
+        ],
+        "author": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/users/14"
+          }
+        ],
+        "replies": [
+          {
+            "embeddable": true,
+            "href": "https://website-cms.eesel.ai/wp-json/wp/v2/comments?post=20170"
+          }
+        ]
+      }
+    }
+  ]

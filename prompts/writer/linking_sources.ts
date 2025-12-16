@@ -120,7 +120,7 @@ You must:
 - Match claims, data, pricing, features, limitations, or setup complexity in the blog to supporting sources.
 - Embed links using markdown format (not HTML).
 - Use each external URL ONLY ONCE.
-- Use short, natural anchor text (≤ 7 words).
+- Use short, natural anchor text (≤ 5 words).
 - Do NOT add links to headings (unless overridden below).
 - Do NOT add links to FAQ questions — answers only.
 - NEVER add links that are not in the provided URL lists.

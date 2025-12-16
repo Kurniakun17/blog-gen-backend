@@ -8,7 +8,6 @@
  * @param isInternalTeam - Whether this is for internal eesel team usage
  */
 
-
 /**
  * Build system prompt for AI Assets Search agent
  * This agent processes existing <assets> blocks and retrieves actual assets
@@ -41,7 +40,7 @@ You MUST query first the assets via WordPress API tools. We have a list of prefi
 * infographics
 
 ### Important Tips on Internal Assets Retrieval
-* If there's no relevant predefined image in WordPress, proceed to create an assets suggestion or use Screenshots Integration
+* If there's no relevant predefined image in Internal Assets Retrieval, proceed to create an assets suggestion or use Screenshots Integration
 * Make sure to pick the image that is RELEVANT. If it's referring to product features, make sure the image title that you pick is suited for that case
 * Add descriptive captions below each image explaining its relevance & context to the photos. It MUST match the content of the asset
 * If searching for workflow assets, ALWAYS USE "WorkflowV2" Prefix. DO NOT search using "Workflow" prefix without "V2"
@@ -50,7 +49,7 @@ You MUST query first the assets via WordPress API tools. We have a list of prefi
 * On caption insertion, DO NOT add alt_text= or alt_title=. Only return the caption
 * You MUST ALWAYS follow this template, consisting of FOUR sections: \`__IMAGE::[URL]::[TITLE]::[BRIEF CAPTION]__\` - do not add any section beside that (ALWAYS remember to have THREE delimiters :: as a reference)
 * You must query with a maximum of 3 times for a keyword if it's not found, with each being shrunk down/more general keywords
-* Don't use the output that starts with "Screenshots - ", it's already being handled by other integrations
+* Don't use the output that starts with "Screenshots", it's already being handled by other integrations
 
 For example:
 1st Attempt -> eeselAI - AI Blog Writer
@@ -211,7 +210,9 @@ __VIDEO::[URL]::[TITLE (with spaces between word)]::[A BRIEF Caption of the vide
 EXCEPT if it is a SCREENSHOT Assets that is gather Via Screenshot Integrations Tools, follow this format:
 __SCREENSHOTS::[URL]::[TITLE (with spaces between word)]::[A BRIEF Caption of the image]__
 
-EXCEPT if it is a Reddit user quote, follow this format:
+${
+  internalUsage
+    ? `EXCEPT if it is a Reddit user quote, follow this format:
 <quote text="Lorem ipsum dolor sit amet" sourceIcon="https://www.iconpacks.net/icons/2/free-reddit-logo-icon-2436-thumb.png" sourceName="Reddit" sourceLink="https://reddit.com">
 </quote>
 
@@ -222,6 +223,9 @@ Important: All YouTube video suggestions MUST be verified as:
 - Publicly available
 - Embedding enabled
 - Accessible without restrictions
+`
+    : ""
+}
 
 ## Blog Input
 
@@ -248,6 +252,7 @@ If the tools return an empty URL, **do not** add the screenshot.
 ## Asset Types and Guidelines
 Here are examples of the types of suggestions you can give, and what needs to be included for each:
 
+${internalUsage? `
 ### Pro Tip
 *   If you find any sentences containing Pro Tip, you SHOULD wrap them with <protip text="Lorem ipsum dolor sit amet"> </protip>.
 *   If the text itself contains quotation mark "..." CHANGE it into '...' instead of adding &quot HTML attribute.
@@ -265,7 +270,8 @@ Here are examples of the types of suggestions you can give, and what needs to be
 *   Insert the quote directly within the blog content at the most contextually relevant point. DO NOT isolate or relocate it unnecessarily.
 *   Each Reddit quote must be standalone, NEVER embed it inside another tag or sentence.
 *   If there is "" inside the text, DO NOT use &quot; instead REPLACE the "" with ''
-
+` : ""
+}
 If you see any Reddit quote summary, you SHOULD CHANGE IT and TAKE the DIRECT Reddit quote from:
 
 ${redditThreads || "No Reddit threads available."}

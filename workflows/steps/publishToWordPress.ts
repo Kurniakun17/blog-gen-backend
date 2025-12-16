@@ -1,5 +1,6 @@
 import { runStep, type TimedResult } from "../utils/steps";
 import { formatWordPressHTML, type WordPressOutput } from "@/lib/formatter";
+import { stripFAQSection } from "@/lib/utils";
 
 type PublishToWordPressInput = {
   content: string;
@@ -46,9 +47,18 @@ export async function publishToWordPressStep(
       console.log("Banner ID:", input.bannerId);
       console.log("=====================================================\n");
 
+      // Strip FAQ sections from content before formatting
+      const contentWithoutFAQ = stripFAQSection(input.content);
+
+      if (contentWithoutFAQ.length < input.content.length) {
+        console.log("[Publish to WordPress] FAQ section detected and removed");
+        console.log(`  Original length: ${input.content.length}`);
+        console.log(`  After removal: ${contentWithoutFAQ.length}`);
+      }
+
       const formattedContent: WordPressOutput = await formatWordPressHTML({
         draft: {
-          content: input.content,
+          content: contentWithoutFAQ,
           metaTitle: input.title,
           faqs: input.faqs,
           tags: input.tags,

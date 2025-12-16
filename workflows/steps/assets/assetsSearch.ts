@@ -154,7 +154,10 @@ export async function assetsSearchStep(
           };
 
           console.log("\n[Tool Call] Nano Banana Generation");
-          console.log("  Description:", assetDescription.substring(0, 100) + "...");
+          console.log(
+            "  Description:",
+            assetDescription.substring(0, 100) + "..."
+          );
 
           const result = await generateNanoBananaAsset(assetDescription);
 
@@ -192,14 +195,55 @@ export async function assetsSearchStep(
     // Add Internal Assets Retrieval tool only if internalUsage is true
     if (input.internalUsage) {
       tools.internalAssetsRetrieval = {
-        description:
-          "Search for available assets on WordPress internal media library. Use this tool to find predefined images and videos related to eesel AI features (AI Copilot, AI Agent, AI Triage, etc.) or other internal assets. This tool should be used FIRST before falling back to Screenshots Integration.",
+        description: `# Internal Assets Retrieval
+This tool allows you to search for available assets on WordPress. Your task is to **identify the correct asset(s) based on the blog content**. You do NOT need to provide URLs; only output the **asset keyword/ID** if required.
+
+## How to Search
+1. Use the **base URL** provided in the description to query WordPress media:
+https://website-cms.eesel.ai/wp-json/wp/v2/media?search=<search-term>&per_page=20
+2. Use the **product name first** as the search term to filter available assets.
+3. Use the **title of the blog section** as a reference to select the most relevant asset from the search results.
+
+## Guidelines
+- Focus only on finding the **right asset for each part of the blog**.
+- Output **keyword/ID**, not the full URL.
+- Only include assets where they **enhance the content** (screenshots, workflows, infographics, etc.).
+- Do NOT change, rewrite, or remove any content from the blog.1
+
+## Example
+If the content is heavily mentioning about Claude Code and it's really relevant to the context, you can search for
+https://website-cms.eesel.ai/wp-json/wp/v2/media?search=Claude+Code
+Note that you should do short searches and not long ones cos the search is quite bad. For instance, don't search for https://website-cms.eesel.ai/wp-json/wp/v2/media?search=eesel+AI+agents+and+AI+Copilot cos that is quite long and unlikely to return results but do 2 searches in this case. One for https://website-cms.eesel.ai/wp-json/wp/v2/media?search=eesel+AI+agents and another search for https://website-cms.eesel.ai/wp-json/wp/v2/media?search=eesel+AI+Copilot
+
+## Output Format
+If the selected media type is an image, then use this as an output
+__IMAGE::[URL]::[TITLE (with spaces between word)]::[Caption containing the keyword and brief description of asset]__
+Or If the selected media type is a video, then use this as an output
+__IMAGE::[URL]::[TITLE (with spaces between word)]::[Caption containing the keyword and brief description of asset]__
+> Notes:
+> - Only insert assets between paragraphs.
+> - Never place two assets in a row.
+> - Always include **alt text** and **alt title** containing the focus keyword.
+> - ALWAYS make sure the caption matches the content of the asset.
+
+## Caption Requirements
+**IMPORTANT**: When creating the caption for the selected asset:
+1. **Use the alt text** from the selected image/video as your base (the \`altText\` field from the search results)
+2. **Improvise and enhance** the alt text to better match the surrounding blog content context
+3. **Keep it concise** but descriptive (1-2 sentences max)
+4. **Include relevant keywords** from the blog section where the asset will be placed
+5. **Make it natural** - the caption should flow with the blog content and provide context for readers
+
+Example:
+- Original alt text: "eesel AI dashboard interface"
+- Enhanced caption: "eesel AI's intuitive dashboard interface streamlines workflow management and team collaboration"`,
         inputSchema: z.object({
-          searchTerm: z
-            .string()
-            .describe(
-              "The search keyword to query WordPress media. Use short, specific terms like 'eesel AI Copilot', 'WorkflowV2', or product names. Avoid long search queries."
-            ),
+          searchTerm: z.string().describe(
+            `1. Use the **base URL** provided in the description to query WordPress media:
+https://website-cms.eesel.ai/wp-json/wp/v2/media?search=<search-term>&per_page=20
+2. Use the **product name first** as the search term to filter available assets.
+3. Use the **title of the blog section** as a reference to select the most relevant asset from the search results.`
+          ),
         }),
         execute: async ({ searchTerm }: { searchTerm: string }) => {
           const logEntry: ToolCallLog = {
@@ -235,9 +279,8 @@ export async function assetsSearchStep(
             // Return the list of available assets
             const assets = data
               .filter((item: any) => {
-                // Filter out screenshots that are handled by Screenshots Integration
                 const title = item.title?.rendered || "";
-                return !title.startsWith("Screenshots - ");
+                return !title.startsWith("Screenshots");
               })
               .map((item: any) => ({
                 id: item.id,
@@ -265,7 +308,9 @@ export async function assetsSearchStep(
             console.log("  Result: SUCCESS");
             console.log("  Assets Found:", assets.length);
             assets.forEach((asset: any, idx: number) => {
-              console.log(`    ${idx + 1}. ${asset.title} (${asset.mediaType})`);
+              console.log(
+                `    ${idx + 1}. ${asset.title} (${asset.mediaType})`
+              );
             });
             toolCallLogs.push(logEntry);
 
@@ -276,7 +321,9 @@ export async function assetsSearchStep(
             };
           } catch (error) {
             logEntry.success = false;
-            logEntry.message = `Error: ${error instanceof Error ? error.message : "Unknown error"}`;
+            logEntry.message = `Error: ${
+              error instanceof Error ? error.message : "Unknown error"
+            }`;
             console.log("  Result: ERROR -", logEntry.message);
             toolCallLogs.push(logEntry);
 
@@ -305,8 +352,8 @@ export async function assetsSearchStep(
     console.log("\n========== [Assets Search] Tool Call Summary ==========");
     console.log("Total Tool Calls:", toolCallLogs.length);
 
-    const successCount = toolCallLogs.filter(log => log.success).length;
-    const failCount = toolCallLogs.filter(log => !log.success).length;
+    const successCount = toolCallLogs.filter((log) => log.success).length;
+    const failCount = toolCallLogs.filter((log) => !log.success).length;
 
     console.log("Successful:", successCount);
     console.log("Failed:", failCount);
@@ -314,7 +361,11 @@ export async function assetsSearchStep(
     if (toolCallLogs.length > 0) {
       console.log("\nDetailed Log:");
       toolCallLogs.forEach((log, idx) => {
-        console.log(`\n${idx + 1}. ${log.toolName} [${log.success ? "SUCCESS" : "FAILED"}]`);
+        console.log(
+          `\n${idx + 1}. ${log.toolName} [${
+            log.success ? "SUCCESS" : "FAILED"
+          }]`
+        );
         console.log(`   Time: ${log.timestamp}`);
         console.log(`   Input:`, JSON.stringify(log.input, null, 2));
         console.log(`   Message: ${log.message}`);

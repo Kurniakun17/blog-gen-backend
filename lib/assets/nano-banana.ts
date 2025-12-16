@@ -166,7 +166,7 @@ function buildNanoBananaPrompt(assetDescription: string): string {
 Here are types of assets you can make:
 
 Infographics:
-- A vertical style infographic card in 9:16 ratio.
+- A horizontal style infographic card in 16:9 ratio.
 - At the top of the card, feature a bold, eye catching title in large writing using contrasting colours.
 - The layout should be divided into 2 to 4 clear sections.
 - Each section expresses a core idea with brief and concise info.

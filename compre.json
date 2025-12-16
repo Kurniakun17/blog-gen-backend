@@ -1,0 +1,280 @@
+{
+    "value": {
+      "contentWithProcessedAssets": "          Look, Chatbase is pretty cool for what it is. You give it a link or a PDF, and boom, you have a chatbot. It's a quick way to get something simple off the ground. But if you’re reading this, you’ve likely run into the same issue I did: [the bot can talk, but it can’t *act*](https://yourgpt.ai/yourgpt-chatbot-vs-chatbase).\n\nThat’s really why people start [hunting for Chatbase alternatives](https://www.lindy.ai/blog/chatbase-alternatives). They need a bot that does more than just share information; they need one that actually gets things done. We’re talking about tools that can connect to your help desk, check your CRM, and handle the repetitive tasks that eat up your team's day.\n\nSo, I decided to dive in and test a bunch of platforms to find the ones that are more than just a glorified FAQ. This guide is for anyone who wants to upgrade from a basic chatbot to an AI agent that’s a real part of your team.\n\n## What are Chatbase alternatives anyway?\n\nWhen I say Chatbase alternatives, I'm not just talking about another tool that can scrape a website. I'm referring to a completely different league of AI platforms. These are tools designed to plug into all the places your company knowledge is stored—not just your public website, but also your Zendesk history, your Confluence docs, and your internal Slack DMs.\n\nThe main difference is their ability to perform actions. Instead of just telling a customer their order status, a solid alternative can look up the order in real-time, tag the support ticket correctly, and maybe even kick off a return process on its own. This visual breaks down the key differences:\n\n__IMAGE::https://wmeojibgfvjvinftolho.supabase.co/storage/v1/object/public/public_assets/blog-gen/8f487d18-7579-49b2-8c41-9f9a43f66c68::Visual comparison of simple vs advanced chatbase alternatives::An infographic showing the difference between basic Q&A bots and advanced chatbase alternatives that can take action and integrate with other tools.__\n\nThe point isn't just to deflect questions anymore. It's about actually resolving customer problems from start to finish and automating whole processes to make your operation run a lot smoother.\n\n## How I tested the best Chatbase alternatives\n\nTo sort the good from the great, I put every tool through the same set of tests. I wasn't just ticking off feature boxes; I wanted to see how they’d actually hold up in a real business setting. Here’s what I cared about:\n\n* Getting started: How fast could I get a genuinely useful bot up and running? I prioritized self-serve platforms where you can get going in minutes, not those that trap you in a month of sales calls just to see a demo.\n* Deep integrations: Does it just scratch the surface, or can it properly connect with essential tools like Zendesk, Intercom, or your internal knowledge bases? A good tool should feel like a natural extension of your current setup.\n* Real automation: This was a big one for me. Can the bot only provide answers, or can it actually do stuff? I tested if it could triage tickets, update fields in other apps, or make API calls to get live data.\n* Control over the AI: How much can you actually influence what the bot does? I looked for the ability to define its personality, restrict its knowledge to certain sources, and set up clear rules for when it should handle things versus when it needs to call for a human.\n* Honest pricing: Is the pricing easy to understand, or is it full of confusing traps? I avoided platforms with weird per-resolution fees that could make your bill explode after a busy month.\n\n## A quick comparison of the top Chatbase alternatives\n\nHere’s a simple breakdown of the tools that made the final list. This table gives you a quick idea of what each one does best.\n\n| Tool | Best For | Key Integrations | Starting Price |\n| :--- | :--- | :--- | :--- |\n| eesel AI | Deep help desk & workflow automation | Zendesk, Intercom, Slack, Confluence, 100+ more | $299/month |\n| Botpress | Developers needing a flexible open-source platform | Custom APIs, CRMs, Messenger, WhatsApp | Free (Pay-as-you-go) |\n| Yuma AI | E-commerce support automation | Shopify, Gorgias, Zendesk, BigCommerce | $350/month |\n| Botsonic | User-friendly no-code branded chatbots | WhatsApp, Telegram, WordPress, Zapier | $19/month |\n| Yellow.ai | Enterprise-scale omnichannel automation | Salesforce, Zendesk, 100+ channels | Custom Quote |\n| Chatfuel | Social media bots for marketing & sales | Messenger, Instagram, WhatsApp, Stripe | ~$20/month |\n\n\n\n## The 6 best Chatbase alternatives to consider in 2025\n\nAlright, let's get into the details. Here’s a closer look at each platform, what makes it special, and where it might not be the best fit.\n\n### 1. [eesel AI](https://www.eesel.ai/)\n__SCREENSHOTS::https://wmeojibgfvjvinftolho.supabase.co/storage/v1/object/public/public_assets/blog-gen/screenshots/eeselai-dashboard::The eesel AI homepage one of the top chatbase alternatives::A screenshot of the eesel AI website landing page, a powerful platform among chatbase alternatives.__\n\nFirst on my list is [eesel AI](https://www.eesel.ai/), and for good reason. It's an AI platform made to automate support by fitting directly into your existing tools, so you don't have to change how you work. It has [over 100 one-click integrations](https://www.eesel.ai/integrations/all) with help desks like Zendesk and Intercom, chat apps like Slack, and knowledge sources like past tickets, Google Docs, and Confluence. It learns from how your business actually operates, not just a public FAQ page.\n\nWhat really sets it apart is that it’s more than just a Q&A bot. The [eesel AI Agent](https://www.eesel.ai/product/ai-agent) can actually take action—it can triage and tag new tickets, draft replies for your human agents, and even call custom APIs to check on live order information. What really got my attention was its simulation mode. Before the AI ever interacts with a real customer, you can run it against thousands of your past support tickets to see precisely how it would have handled them. This is huge for building confidence and fine-tuning its responses in a completely safe sandbox.\n\n__IMAGE::https://website-cms.eesel.ai/wp-content/uploads/2025/08/08-eesel-AI-Agent-workflow-from-the-alternative-in-this-guru-review.png::The eesel AI Agent a powerful feature for chatbase alternatives::A view of the eesel AI Agent, a key feature that makes it one of the best chatbase alternatives for workflow automation.__\n\nPros and Cons:\n\n* Pros: The self-serve setup is incredibly fast; you can honestly get a bot [live in less than five minutes](https://www.eesel.ai/). It’s fantastic at pulling scattered knowledge from all your different apps into a single brain, and its workflow engine lets you get really specific about what gets automated.\n* Cons: This is a professional tool designed for business automation. It’s probably overkill if you just want a simple chatbot for a personal website.\n\nPricing:\n\n* Team: $299/month for up to 1,000 AI interactions.\n* Business: $799/month for up to 3,000 AI interactions, which lets you train on past tickets and use advanced AI Actions.\n* A big bonus is that the [pricing is predictable and based on interactions](https://www.eesel.ai/pricing), so you won't get hit with surprise per-resolution fees.\n\n### 2. [Botpress](https://botpress.com/)\n__SCREENSHOTS::https://wmeojibgfvjvinftolho.supabase.co/storage/v1/object/public/public_assets/blog-gen/screenshots/the-botpress-homepage-an-open-source-option-for-chatbase-alternatives::The Botpress homepage an open-source option for chatbase alternatives::A screenshot of the Botpress website landing page, a flexible developer-focused platform among chatbase alternatives.__\n\nBotpress is an [open-source conversational AI platform](https://botpress.com/) that developers tend to love. It finds a nice middle ground between a visual, drag-and-drop builder for creating flows and giving you deep, code-level access for custom logic and unique integrations.\n\nIt's a great pick if you have a technical team that craves total flexibility. You can build some seriously custom bots and even host them on your own servers if you want. For bigger organizations, it has important features like version control and advanced security options that are necessary for complicated rollouts.\n\nPros and Cons:\n\n* Pros: Being open-source means the flexibility and control are pretty much endless.\n* Cons: While it's easy enough for simple bots, getting into its more advanced features definitely [requires some technical skill](https://aiflowreview.com/botpress-review-2025/). The learning curve is a lot steeper than with a pure no-code platform.\n\nPricing:\n\n* Pay-as-you-go: There's a [generous free tier to get you started](https://botpress.com/pricing), and after that, you pay based on how much you use.\n* Paid Plans (Plus, Team, Enterprise): These have a monthly base fee plus a separate cost for \"AI Spend,\" which is connected to your LLM token usage.\n\n### 3. [Yuma AI](https://yuma.ai/)\n__SCREENSHOTS::https://wmeojibgfvjvinftolho.supabase.co/storage/v1/object/public/public_assets/blog-gen/screenshots/yuma-ai-landing-page::The Yuma AI homepage an e-commerce focused choice for chatbase alternatives::A screenshot of the Yuma AI website landing page, a specialized e-commerce tool among chatbase alternatives.__\n\nYuma AI is a specialized AI agent platform built just for e-commerce businesses. It’s all-in on a deep integration with Shopify, but it also [works with BigCommerce and WooCommerce](https://yuma.ai/integration/shopify).\n\nIf you run an online store, Yuma is a compelling choice. It connects right into e-commerce platforms and help desks like Gorgias and Zendesk, which lets it do a lot more than just answer basic questions. Its \"Auto-Pilot\" agents can independently handle tasks like [processing returns, managing cancellations, and changing orders](https://yuma.ai/integration/shopify) from beginning to end.\n\nPros and Cons:\n\n* Pros: It’s built specifically for e-commerce, which means it's really good at automating the most common support headaches online stores deal with.\n* Cons: Its specialization is also its biggest weakness. It’s not a general-purpose chatbot builder, so it won’t be the right choice for businesses outside of e-commerce.\n\nPricing:\n\n* Starter: $350/month for up to 500 automated resolutions.\n* Yuma has a [performance-based pricing model](https://yuma.ai/pricing) that revolves around how many tickets it successfully resolves, which could be good or bad depending on your support volume.\n\n### 4. [Botsonic](https://writesonic.com/botsonic)\n__SCREENSHOTS::https://wmeojibgfvjvinftolho.supabase.co/storage/v1/object/public/public_assets/blog-gen/screenshots/the-botsonic-homepage-a-no-code-builder-for-chatbase-alternatives::The Botsonic homepage a no-code builder for chatbase alternatives::A screenshot of the Botsonic website landing page, a user-friendly no-code tool among chatbase alternatives.__\n\nBotsonic is a [no-code AI chatbot builder](https://writesonic.com/botsonic) from the team at Writesonic, and it’s all about being simple and fast. It uses GPT-4 and is made for anyone who wants to build a branded chatbot for their site or messaging apps without touching any code.\n\nIt's a reasonable choice if your main goal is a simple, nice-looking chatbot for your website, WhatsApp, or Telegram. It offers some decent integrations through Zapier and can connect to tools like Slack, making it a step up from a basic website widget.\n\nPros and Cons:\n\n* Pros: It’s super easy to get the hang of, and it's nice that it works with several popular messaging apps right away.\n* Cons: The free plan is very limited (only 40 messages). I also found that it [can get confused during more complex, back-and-forth conversations](https://pagergpt.ai/alternative/botsonic-review). It also doesn't have the deep, native integrations you'd need for real workflow automation.\n\nPricing:\n\n* Free: 40 message credits per month.\n* Starter: Starts at [$19/month for 1,000 message credits](https://writesonic.com/botsonic/pricing).\n\n### 5. [Yellow.ai](https://yellow.ai/)\n__SCREENSHOTS::https://wmeojibgfvjvinftolho.supabase.co/storage/v1/object/public/public_assets/blog-gen/screenshots/the-yellowai-homepage-an-enterprise-scale-platform-for-chatbase-alternatives::The Yellow.ai homepage an enterprise-scale platform for chatbase alternatives::A screenshot of the Yellow.ai website landing page, an enterprise solution among chatbase alternatives.__\n\nYellow.ai is aimed directly at big companies that need to manage customer chats at a huge scale. It's an impressive platform that can automate conversations across [more than 100 channels, including phone calls](https://yellow.ai/platform). It also uses a multi-LLM setup, meaning it can pick the right AI model for the right job.\n\nFor a global business handling millions of customer chats, Yellow.ai is a serious contender. It can manage conversations in [over 135 languages](https://yellow.ai/platform) and gives you a single view of the customer's journey across every place they interact with you.\n\nPros and Cons:\n\n* Pros: It delivers true omnichannel support at a scale that most other platforms simply can't handle.\n* Cons: All that power comes with a lot of complexity. It has a steep learning curve and is way too much for most small and medium-sized businesses. There’s also no public pricing, so you have to go through their [sales process](https://yellow.ai/) just to get a quote.\n\nPricing:\n\n* Custom pricing is only available after you talk to their sales team.\n\n### 6. [Chatfuel](https://chatfuel.com/)\n__SCREENSHOTS::https://wmeojibgfvjvinftolho.supabase.co/storage/v1/object/public/public_assets/blog-gen/screenshots/the-chatfuel-homepage-a-social-media-bot-builder-among-chatbase-alternatives::The Chatfuel homepage a social media bot builder among chatbase alternatives::A screenshot of the Chatfuel website landing page, a tool for social media automation among chatbase alternatives.__\n\nChatfuel has been in the game for a while and has established itself as a go-to no-code builder for chatbots inside the Meta world: [Facebook Messenger, Instagram, and WhatsApp](https://chatfuel.com/). It's designed specifically for marketing and sales on those channels.\n\nIf your customers spend most of their time talking to you on social media, Chatfuel is a solid option. It provides tools made for generating leads, suggesting products, and answering common questions right inside those messaging apps.\n\nPros and Cons:\n\n* Pros: It’s affordable and really easy to use for what it’s made for. You can get a decent Instagram or Messenger bot up and running fast.\n* Cons: Its features for a standard website are pretty basic. It’s [not built for deep internal knowledge management or automating help desks](https://www.tidio.com/blog/chatfuel-review/), so it’s not a great fit if your workflows happen outside of social media.\n\nPricing:\n\n* Free: Up to 50 conversations per month.\n* Business: Starts at [around $20/month](https://chatfuel.com/pricing) and goes up based on how many conversations you have.\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/z9Omb9lCqBo\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\nA YouTube video from Vadoo AI discussing a list of 10 of the best chatbase alternatives.\n\n## How to choose the right Chatbase alternatives for you\n\nFeeling a little lost in all the options? Don't sweat it. Picking the right tool just means asking a few straightforward questions about your business.\n\n* Where do your customers live? Think about where your customers actually talk to you. If 90% of your support tickets are in Zendesk or Intercom, you need a tool with deep help desk integrations. If it’s all happening on Instagram, something like Chatfuel makes more sense.\n* What's in your tech stack? A chatbot that can't communicate with your other tools is just creating another information silo. Look for platforms with solid, one-click integrations that let the AI read information and take action.\n* What are your team's skills? Be realistic about your team’s technical comfort level. Do you need a totally no-code tool like [eesel AI](https://www.eesel.ai/) that anyone can set up in minutes? Or do you have developers on hand who are ready to customize a platform like Botpress?\n* Keep an eye on pricing models. A low monthly fee might look good at first, but per-resolution or per-ticket fees can add up fast and become impossible to predict. A clear, interaction-based model (like the one eesel AI uses) is usually more transparent and easier to budget for as you automate more, as you can see in this comparison:\n\n__IMAGE::https://wmeojibgfvjvinftolho.supabase.co/storage/v1/object/public/public_assets/blog-gen/c276e297-f389-4849-8e17-6e4a78009ffa::A comparison of pricing models for chatbase alternatives::An infographic comparing the different pricing models you will find when looking for chatbase alternatives, including per-resolution and interaction-based fees.__\n\n## Getting started with one of these Chatbase alternatives\n\nWhen it all comes down to it, the best Chatbase alternatives do more than just provide answers—they solve problems. They connect to the tools you already use every day, learn from your company's specific context, and automate actual, time-consuming work.\n\nIf you’re ready to graduate from simple Q&A bots and start automating entire workflows, eesel AI is the best place to begin. It pulls in all your scattered knowledge, learns from your past support tickets to match your brand voice, and lets you test everything in a safe simulation mode before launch. It’s all the power without the headaches.\n\nWhy not check it out yourself? You can [sign up and build your first AI agent in just a few minutes](https://dashboard.eesel.ai/api/auth/signup?returnTo=v2) or [book a quick demo](https://calendly.com/eesel/30) to see how it can plug directly into your help desk.\n\n## Frequently Asked Questions\n\nQ1: What are the main limitations of Chatbase that lead people to look for Chatbase alternatives?\nA1: The biggest limitation is that Chatbase is great for answering questions but can't perform actions. People seek alternatives to automate workflows, integrate deeply with tools like Zendesk, and actually resolve customer issues instead of just deflecting them.\n\nQ2: Are most Chatbase alternatives difficult to set up for a non-technical user?\nA2: Not at all. Many modern platforms, like eesel AI, are built to be self-serve and require no code. You can often connect your tools and get a functional AI agent running in just a few minutes without needing a developer.\n\nQ3: How do the pricing models of top Chatbase alternatives typically work?\nA3: Pricing varies, but many advanced tools use a predictable, interaction-based model so you pay for the volume of AI conversations. It's important to watch out for per-resolution fees, which can make your monthly bill unpredictable and much higher than you planned.\n\nQ4: Can Chatbase alternatives integrate with internal tools like Slack or Confluence?\nA4: Yes, and that's a key advantage. The best alternatives have extensive one-click integrations that allow them to learn from all your company's knowledge, whether it's in public help docs or private Slack conversations and internal wikis.\n\nQ5: For an e-commerce store, which Chatbase alternatives would be most effective?\nA5: For e-commerce, you should look at specialized tools like Yuma AI that have deep integrations with platforms like Shopify and Gorgias. These tools are designed to handle common tasks like order modifications and returns automatically.\n\nQ6: What should I prioritize when choosing between different Chatbase alternatives?\nA6: Focus on a tool's ability to integrate with your existing help desk and other software. The goal isn't just to answer questions but to automate tasks, so look for platforms that can take action and resolve customer issues from start to finish.",
+      "toolCallLogs": [
+        {
+          "toolName": "internalAssetsRetrieval",
+          "timestamp": "2025-12-16T01:30:02.011Z",
+          "input": {
+            "searchTerm": "eesel AI Agent"
+          },
+          "success": true,
+          "message": "Found 19 asset(s)",
+          "details": {
+            "assetCount": 19,
+            "assets": [
+              {
+                "id": 73659,
+                "title": "Screenshots-eeselai-ai-agent",
+                "url": "https://website-cms.eesel.ai/wp-content/uploads/2025/11/Screenshots-eeselai-ai-agent.jpg",
+                "mediaType": "image",
+                "altText": ""
+              },
+              {
+                "id": 72578,
+                "title": "Screenshots-eesel-AI-Agent-Landing-Page",
+                "url": "https://website-cms.eesel.ai/wp-content/uploads/2025/11/Screenshots-eesel-AI-Agent-Landing-Page.jpg",
+                "mediaType": "image",
+                "altText": ""
+              },
+              {
+                "id": 60345,
+                "title": "05 - eeselAI - A self-serve implementation of a modern CRM agent",
+                "url": "https://website-cms.eesel.ai/wp-content/uploads/2025/10/05-eeselAI-Implementation-Workflow.png",
+                "mediaType": "image",
+                "altText": "A flowchart outlining the quick, self-serve implementation of eesel AI, an alternative to the more manual Freddy AI auto triage."
+              },
+              {
+                "id": 39388,
+                "title": "Zendesk - eesel AI agent in Zendesk",
+                "url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/Zendesk-eesel-AI-agent-in-Zendesk.png",
+                "mediaType": "image",
+                "altText": "Screenshot of a third-party agent for Zendesk, eesel AI."
+              },
+              {
+                "id": 39176,
+                "title": "06 - The simulation mode in eesel AI for testing subagent tools on historical data.",
+                "url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/06-The-simulation-mode-in-eesel-AI-for-testing-subagent-tools-on-historical-data.png",
+                "mediaType": "image",
+                "altText": "A screenshot of an eesel AI simulation report that allows users to test the performance of their configured subagent tools risk-free."
+              },
+              {
+                "id": 39174,
+                "title": "04 - The library of pre-built AI Actions that function as no-code subagent tools in eesel AI.",
+                "url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-The-library-of-pre-built-AI-Actions-that-function-as-no-code-subagent-tools-in-eesel-AI.png",
+                "mediaType": "image",
+                "altText": "A screenshot from eesel AI showing a gallery of customizable AI Actions that serve as specialized subagent tools for automation."
+              },
+              {
+                "id": 39173,
+                "title": "03 - The eesel AI dashboard for configuring the supervisor agent, an alternative to complex subagent tools.",
+                "url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/03-The-eesel-AI-dashboard-for-configuring-the-supervisor-agent-an-alternative-to-complex-subagent-tools.png",
+                "mediaType": "image",
+                "altText": "A screenshot of the eesel AI platform showing the no-code interface for setting up the main AI agent, which uses various subagent tools."
+              },
+              {
+                "id": 38986,
+                "title": "eeselAI - Bot Testing Screen",
+                "url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/05-Using-simulation-mode-to-test-an-AI-agent-before-launch-an-alternative-to-Replicate-AI.png",
+                "mediaType": "image",
+                "altText": "A dashboard screenshot of eesel AI's simulation feature, displaying metrics like predicted resolution rate and cost savings for an AI agent built to replace Replicate AI for support."
+              },
+              {
+                "id": 38635,
+                "title": "06 - eeselAI - Bot Testing Screen",
+                "url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/06-The-simulation-mode-of-an-AI-call-center-agent-platform-for-risk-free-testing.png",
+                "mediaType": "image",
+                "altText": "A screenshot of an AI call center agent platform's simulation mode, which shows how the AI would have responded to past customer tickets, allowing a manager to review performance before going live."
+              },
+              {
+                "id": 38159,
+                "title": "05 - Testing an AI agent with eesel AI, a no-code alternative to the Claude Code MCP integration.",
+                "url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/05-Testing-an-AI-agent-with-eesel-AI-a-no-code-alternative-to-the-Claude-Code-MCP-integration.png",
+                "mediaType": "image",
+                "altText": "A screenshot of the simulation mode in eesel AI, which allows for testing and forecasting, a key feature not available in the standard Claude Code MCP integration."
+              },
+              {
+                "id": 34870,
+                "title": "04 - The eesel AI platform showing how to test an agent before deploying, a feature lacking in Crew AI.",
+                "url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-The-eesel-AI-platform-showing-how-to-test-an-agent-before-deploying-a-feature-lacking-in-Crew-AI.png",
+                "mediaType": "image",
+                "altText": "A screenshot of the eesel AI dashboard in simulation mode, displaying metrics like \"Predicted Resolution Rate\" and \"Cost Savings\" for an AI agent being tested on past support tickets."
+              },
+              {
+                "id": 34341,
+                "title": "02 - The eesel AI bot tester testing a gpt-realtime agent.",
+                "url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/02-The-eesel-AI-simulation-mode-testing-a-gpt-realtime-agent.png",
+                "mediaType": "image",
+                "altText": "A dashboard showing the eesel AI simulation mode, which tests a gpt-realtime powered agent on historical support tickets to forecast performance before deployment."
+              },
+              {
+                "id": 33314,
+                "title": "eesel AI Actions, a feature to help Cahoot.ai agents.",
+                "url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Actions-a-feature-to-help-Cahoot.ai-agents-1.png",
+                "mediaType": "image",
+                "altText": "Screenshot of eesel AI Actions, a feature to help Cahoot.ai agents."
+              },
+              {
+                "id": 33224,
+                "title": "eesel AI Actions, a feature to help Cahoot.ai agents.",
+                "url": "https://website-cms.eesel.ai/wp-content/uploads/2025/09/eesel-AI-Actions-a-feature-to-help-Cahoot.ai-agents.png",
+                "mediaType": "image",
+                "altText": "Screenshot of eesel AI Actions, a feature to help Cahoot.ai agents."
+              },
+              {
+                "id": 31313,
+                "title": "04 - A screenshot of the eesel AI Copilot using GPT-5 to assist a support agent.",
+                "url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/04-A-screenshot-of-the-eesel-AI-Copilot-using-GPT-5-to-assist-a-support-agent.png",
+                "mediaType": "image",
+                "altText": "Screenshot of a help desk interface like Zendesk. On the right side, the eesel AI Copilot sidebar shows a suggested reply to a customer's question, which was generated using the company's knowledge base and the powerful GPT-5 model."
+              },
+              {
+                "id": 31312,
+                "title": "05 - The eesel AI simulation dashboard, used to test a GPT-5 powered agent.",
+                "url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/05-The-eesel-AI-simulation-dashboard-used-to-test-a-GPT-5-powered-agent.png",
+                "mediaType": "image",
+                "altText": "Screenshot of the eesel AI simulation dashboard. The dashboard displays key metrics like a \"Predicted Deflection Rate\" of 48% and an \"Accuracy Score\" of 99%, showing how a business can test the performance of a GPT-5 powered AI agent before launch."
+              },
+              {
+                "id": 28370,
+                "title": "08 - eesel AI Agent workflow from the alternative in this guru review.",
+                "url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/08-eesel-AI-Agent-workflow-from-the-alternative-in-this-guru-review.png",
+                "mediaType": "image",
+                "altText": "A mermaid workflow demonstrating how the eesel AI Agent automates tasks, a key point of comparison in this guru review."
+              },
+              {
+                "id": 28204,
+                "title": "09 - The eesel AI support automation simulation for a BigCommerce vs. Magento user.",
+                "url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/09-The-eesel-AI-support-automation-simulation-for-a-BigCommerce-vs.-Magento-user.png",
+                "mediaType": "image",
+                "altText": "A screenshot showing the eesel AI simulation feature, which forecasts automation potential for a store, a valuable step for any user in the BigCommerce vs. Magento landscape."
+              },
+              {
+                "id": 27807,
+                "title": "07 - A Magento review of AI-powered customer support with eesel AI.",
+                "url": "https://website-cms.eesel.ai/wp-content/uploads/2025/08/07-A-Magento-review-of-AI-powered-customer-support-with-eesel-AI.png",
+                "mediaType": "image",
+                "altText": "A screenshot for a Magento review showing the eesel AI Chatbot widget on a website, providing an instant answer to a customer's question about their order status."
+              }
+            ]
+          }
+        },
+        {
+          "toolName": "screenshotsIntegration",
+          "timestamp": "2025-12-16T01:30:02.009Z",
+          "input": {
+            "url": "https://www.eesel.ai/",
+            "title": "The eesel AI homepage, one of the top chatbase alternatives",
+            "companyName": "eesel AI"
+          },
+          "success": true,
+          "message": "Screenshot retrieved/captured successfully",
+          "details": {
+            "url": "https://wmeojibgfvjvinftolho.supabase.co/storage/v1/object/public/public_assets/blog-gen/screenshots/eeselai-dashboard",
+            "title": "The eesel AI homepage, one of the top chatbase alternatives"
+          }
+        },
+        {
+          "toolName": "screenshotsIntegration",
+          "timestamp": "2025-12-16T01:30:02.014Z",
+          "input": {
+            "url": "https://yuma.ai/",
+            "title": "The Yuma AI homepage, an e-commerce focused choice for chatbase alternatives",
+            "companyName": "Yuma AI"
+          },
+          "success": true,
+          "message": "Screenshot retrieved/captured successfully",
+          "details": {
+            "url": "https://wmeojibgfvjvinftolho.supabase.co/storage/v1/object/public/public_assets/blog-gen/screenshots/yuma-ai-landing-page",
+            "title": "The Yuma AI homepage, an e-commerce focused choice for chatbase alternatives"
+          }
+        },
+        {
+          "toolName": "screenshotsIntegration",
+          "timestamp": "2025-12-16T01:30:02.014Z",
+          "input": {
+            "url": "https://writesonic.com/botsonic",
+            "title": "The Botsonic homepage, a no-code builder for chatbase alternatives",
+            "companyName": "Botsonic"
+          },
+          "success": true,
+          "message": "Screenshot retrieved/captured successfully",
+          "details": {
+            "url": "https://wmeojibgfvjvinftolho.supabase.co/storage/v1/object/public/public_assets/blog-gen/screenshots/the-botsonic-homepage-a-no-code-builder-for-chatbase-alternatives",
+            "title": "The Botsonic homepage, a no-code builder for chatbase alternatives"
+          }
+        },
+        {
+          "toolName": "screenshotsIntegration",
+          "timestamp": "2025-12-16T01:30:02.016Z",
+          "input": {
+            "url": "https://chatfuel.com/",
+            "title": "The Chatfuel homepage, a social media bot builder among chatbase alternatives",
+            "companyName": "Chatfuel"
+          },
+          "success": true,
+          "message": "Screenshot retrieved/captured successfully",
+          "details": {
+            "url": "https://wmeojibgfvjvinftolho.supabase.co/storage/v1/object/public/public_assets/blog-gen/screenshots/the-chatfuel-homepage-a-social-media-bot-builder-among-chatbase-alternatives",
+            "title": "The Chatfuel homepage, a social media bot builder among chatbase alternatives"
+          }
+        },
+        {
+          "toolName": "screenshotsIntegration",
+          "timestamp": "2025-12-16T01:30:02.016Z",
+          "input": {
+            "url": "https://yellow.ai/",
+            "title": "The Yellow.ai homepage, an enterprise-scale platform for chatbase alternatives",
+            "companyName": "Yellow.ai"
+          },
+          "success": true,
+          "message": "Screenshot retrieved/captured successfully",
+          "details": {
+            "url": "https://wmeojibgfvjvinftolho.supabase.co/storage/v1/object/public/public_assets/blog-gen/screenshots/the-yellowai-homepage-an-enterprise-scale-platform-for-chatbase-alternatives",
+            "title": "The Yellow.ai homepage, an enterprise-scale platform for chatbase alternatives"
+          }
+        },
+        {
+          "toolName": "screenshotsIntegration",
+          "timestamp": "2025-12-16T01:30:02.012Z",
+          "input": {
+            "url": "https://botpress.com/",
+            "title": "The Botpress homepage, an open-source option for chatbase alternatives",
+            "companyName": "Botpress"
+          },
+          "success": true,
+          "message": "Screenshot retrieved/captured successfully",
+          "details": {
+            "url": "https://wmeojibgfvjvinftolho.supabase.co/storage/v1/object/public/public_assets/blog-gen/screenshots/the-botpress-homepage-an-open-source-option-for-chatbase-alternatives",
+            "title": "The Botpress homepage, an open-source option for chatbase alternatives"
+          }
+        },
+        {
+          "toolName": "nanoBananaGeneration",
+          "timestamp": "2025-12-16T01:30:02.008Z",
+          "input": {
+            "assetDescription": "Asset 1: [infographic] – A side-by-side comparison of a simple Chatbase-style bot and an advanced AI agent. Left side: \"Simple Q&A Bot\" with icons for \"Answers from a doc\" and \"Deflects questions\". Right side: \"AI Action Agent\" with icons for \"Connects to tools (Zendesk, Shopify)\", \"Looks up live data\", \"Takes action (e.g., process return)\", and \"Resolves issues\".\nAlt title: Visual comparison of simple vs. advanced chatbase alternatives.\nAlt text: An infographic showing the difference between basic Q&A bots and advanced chatbase alternatives that can take action and integrate with other tools."
+          },
+          "success": true,
+          "message": "Asset generated successfully",
+          "details": {
+            "url": "https://wmeojibgfvjvinftolho.supabase.co/storage/v1/object/public/public_assets/blog-gen/8f487d18-7579-49b2-8c41-9f9a43f66c68",
+            "title": "[infographic]"
+          }
+        },
+        {
+          "toolName": "nanoBananaGeneration",
+          "timestamp": "2025-12-16T01:30:02.017Z",
+          "input": {
+            "assetDescription": "Asset 9: [infographic] – An infographic comparing different chatbot pricing models. It should show three columns: \"Per-Resolution\" (with a graphic of a money bag that can unexpectedly grow larger), \"Interaction-Based\" (with a clear, predictable bar chart), and \"Seat-Based\" (with icons of people). Each column should have a short pro/con list. For \"Per-Resolution,\" a con is \"Unpredictable costs.\" For \"Interaction-Based,\" a pro is \"Transparent and scalable.\"\nAlt title: A comparison of pricing models for chatbase alternatives.\nAlt text: An infographic comparing the different pricing models you'll find when looking for chatbase alternatives, including per-resolution and interaction-based fees."
+          },
+          "success": true,
+          "message": "Asset generated successfully",
+          "details": {
+            "url": "https://wmeojibgfvjvinftolho.supabase.co/storage/v1/object/public/public_assets/blog-gen/c276e297-f389-4849-8e17-6e4a78009ffa",
+            "title": "[infographic]"
+          }
+        }
+      ]
+    },
+    "completeData": {
+      "contentChars": 20175,
+      "remainingAssetTags": 0,
+      "manualProcessing": false,
+      "replacementsApplied": 0,
+      "toolCallsTotal": 9,
+      "toolCallsSuccess": 9,
+      "toolCallsFailed": 0
+    }
+  }
+  

@@ -31,6 +31,8 @@ Here is a list of the things you are going to update:
 4. Change all \` to "
 5. Change bullet points with '-' format to '*'
 6. Make sure that the table markdown is in a proper format
+7. Shorten the anchor text to 5 words or less if it is more than 5 words, but make sure the link is still valid and the text is still natural.
+8. Make sure that there are no broken links or text that is not natural
 
 NONE of the above changes should ever be done within YouTube embeds or URLs at all - just actual blog text.
 
