@@ -35,29 +35,65 @@ export async function identifyToolsAndPages(
     ),
   });
 
-  const prompt = `You are a content research analyst.
+  const prompt = `# Role
+You are a content research analyst.
 
-Analyze the following blog post outline/draft. Your goal is to identify the primary tools or platforms and define the key kinds of content and pages that should be researched.
+# Objective
+Analyze the following blog post outline or draft and identify ONLY the tools or platforms that are the **primary subjects of the blog’s main argument**.
 
+Your task is to extract the tools that form the **core comparison, evaluation, or positioning** of the article — not tools that are merely mentioned as integrations, examples, or supporting context.
+
+# Definition: "Primary Tool"
+A tool qualifies as a Primary Tool ONLY if it meets at least ONE of the following criteria:
+
+1. It is the main product whose pricing, features, limitations, or value proposition are being analyzed in depth.
+2. It is explicitly positioned as an alternative, competitor, or counter-proposal central to the blog’s thesis.
+3. Multiple sections (H2/H3) are dedicated to evaluating or comparing it.
+
+A tool is NOT a Primary Tool if it is:
+- Mentioned only as an integration (e.g. “integrates with Zendesk”)
+- Used as an example, reference point, or ecosystem context
+- Listed incidentally without dedicated sections or analysis
+
+If a tool fails the criteria above, it must be excluded entirely.
+
+# Output Requirements
 For each **Primary Tool**, provide:
-1. The official name of the tool.
-2. A list of the **page types** (not actual URLs) that must be consulted on the tool's official domain or help center for factual accuracy.
 
-Note that if the blog is for "alternatives" for a tool, then also consider the tool being compared against as a "primary tool" for which context is needed. e.g. for "zendesk alternatives", "zendesk" is still a tool
+1. **Official product name**
+2. **Core verification page types** (NOT URLs) that should be researched on the tool’s official site or help center to ensure factual accuracy
 
-Also note that if the tool is a specific feature / sub-tool, then consider both as separate e.g. if the draft is on "Gorgias Ai agents", it's interesting to look up "Gorgias AI agent pricing" but also "Gorgias pricing" and other Gorgias context too to have a holistic understanding.
+Examples of valid page types:
+- Pricing page
+- Plan comparison page
+- Product overview page
+- Feature documentation
+- Help center articles defining billing units or usage limits
+- Enterprise or security documentation (SOC 2, compliance), if relevant
 
-Be greedy about the context you think is relevant. The more context you have the more, detailed and thorough the blog will be.
+# Constraints
+- Return ONLY tools that are central to the blog’s main outline and positioning
+- Do NOT include secondary tools, integrations, or ecosystems
+- Maximum **5 verification page types per tool**
+- Maximum **3 primary tools total**
+- If the blog is an “X pricing” or “X alternatives” post, X must always be included
 
-Return maximum of 5 core verification pages for each tool
+# Output Format
+Return a concise list structured as:
 
----
+Primary Tool:
+- tool_name:
+- verification_pages:
+  - Page type 1
+  - Page type 2
+  - Page type 3
+  (etc.)
+
+Do not add commentary, explanations, or analysis outside this structure.
 
 <outline>${outline}</outline>`;
 
   try {
-
-
     const result = await generateObject({
       model: getModel("writer"),
       schema,
@@ -75,7 +111,7 @@ Return maximum of 5 core verification pages for each tool
 /**
  * Helper: Call OpenAI Chat API with web search capability
  */
-async function callOpenAIWithSearch(
+export async function callOpenAIWithSearch(
   system: string,
   prompt: string,
   retries = 3
@@ -152,7 +188,7 @@ async function callOpenAIWithSearch(
       lastError = error instanceof Error ? error : new Error(String(error));
 
       if (attempt < retries - 1) {
-        const backoffMs = Math.pow(2, attempt) * 1000; // Exponential backoff: 1s, 2s, 4s
+        const backoffMs = Math.pow(2, attempt) * 1000;
         console.warn(
           `[callOpenAIWithSearch] Attempt ${
             attempt + 1
@@ -165,6 +201,30 @@ async function callOpenAIWithSearch(
   }
 
   throw lastError || new Error("All retry attempts failed");
+}
+
+/**
+ * Helper: Parse search results using GPT-4o-mini with structured output via AI SDK
+ */
+async function parseSearchResultsWithSchema(
+  searchResponse: string,
+  schema: z.ZodType<any>
+): Promise<any> {
+  const parsePrompt = `Extract the search results from the following text and format them according to the schema.
+
+The text may contain introductory phrases, markdown formatting, or extra content. Your job is to extract ONLY the relevant search results with title, link, and snippet information.
+
+Search response text:
+${searchResponse}`;
+
+  const result = await generateObject({
+    model: getModel("parser"),
+    schema,
+    prompt: parsePrompt,
+    temperature: 0.1,
+  });
+
+  return result.object;
 }
 
 /**
@@ -223,39 +283,18 @@ Return your response as a JSON object with this structure:
     const responseText = await callOpenAIWithSearch(systemPrompt, userPrompt);
 
     console.log(
-      `[Find Official Pages] Got response for ${toolName}:`,
+      `[Find Official Pages] Got search response for ${toolName}:`,
       responseText.substring(0, 300)
     );
 
-    // Parse JSON from response - handle introductory text and markdown code blocks
-    let jsonText = responseText.trim();
+    console.log(
+      `[Find Official Pages] Parsing with GPT-4o-mini for ${toolName}...`
+    );
+    const validated = await parseSearchResultsWithSchema(responseText, schema);
 
-    // First, try to extract JSON from markdown code blocks (with or without introductory text)
-    const jsonCodeBlockMatch = jsonText.match(/```json\s*\n([\s\S]*?)\n```/);
-    const codeBlockMatch = jsonText.match(/```\s*\n([\s\S]*?)\n```/);
-
-    if (jsonCodeBlockMatch) {
-      jsonText = jsonCodeBlockMatch[1].trim();
-    } else if (codeBlockMatch) {
-      jsonText = codeBlockMatch[1].trim();
-    } else {
-      // No code blocks found, try to extract JSON object directly
-      // Look for the first { and last } to extract JSON
-      const firstBrace = jsonText.indexOf('{');
-      const lastBrace = jsonText.lastIndexOf('}');
-
-      if (firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace) {
-        jsonText = jsonText.substring(firstBrace, lastBrace + 1);
-      }
-    }
-
-    jsonText = jsonText.trim();
-
-    console.log(`[Find Official Pages] Parsing JSON for ${toolName}...`);
-    const parsed = JSON.parse(jsonText);
-    const validated = schema.parse(parsed);
-
-    console.log(`[Find Official Pages] Successfully found ${validated.results.length} URLs for ${toolName}`);
+    console.log(
+      `[Find Official Pages] Successfully found ${validated.results.length} URLs for ${toolName}`
+    );
     return validated.results;
   } catch (error) {
     console.error(
@@ -267,7 +306,9 @@ Return your response as a JSON object with this structure:
     }
 
     // Return empty array instead of throwing to prevent step failure
-    console.warn(`[Find Official Pages] Returning empty results for ${toolName}`);
+    console.warn(
+      `[Find Official Pages] Returning empty results for ${toolName}`
+    );
     return [];
   }
 }

@@ -1,10 +1,29 @@
 {
-  "value": {
-    "outline": "# Bou already use.\n*   **Final CTA:** Encourage readers to [start a free trial](https://dashboard.eesel.ai/api/auth/signup?returnTo=v2) and experience the difference themselves.",
-    "prompt": "You are an - Excerpt (140–150 chars)  \n  - Tags (3–4 tags, comma-separated, capitalized where appropriate)\n\nYour output should be a cleanly formatted markdown outline only, not the full blog.\n"
-  },
-  "completeData": {
-    "outlineChars": 7556,
-    "hasCustomOutline": false
-  }
+  "results": [
+    {
+      "title": "My AskAI Pricing",
+      "link": "https://myaskai.com/pricing",
+      "snippet": "Details about pricing plans for My AskAI including Pro, Enterprise, free trial, cost per ticket, etc."
+    },
+    {
+      "title": "My AskAI Features / Channels (Integrations)",
+      "link": "https://support.myaskai.com/features/channels",
+      "snippet": "List of channels & integrations available: Zendesk, Intercom, Freshchat, HubSpot, etc."
+    },
+    {
+      "title": "My AskAI Integrations: Website AI Assistant",
+      "link": "https://myaskai.com/integrations/website-ai-assistant",
+      "snippet": "Overview of integrating My AskAI with your website and other tools."
+    },
+    {
+      "title": "My AskAI Help Center / Support Documentation",
+      "link": "https://support.myaskai.com/",
+      "snippet": "Main Help / Support for My AskAI: guides, FAQs, API docs, features."
+    },
+    {
+      "title": "My AskAI API Documentation (API Docs Introduction)",
+      "link": "https://support.myaskai.com/api-documentation/api-docs-introduction",
+      "snippet": "Introduction to My AskAI APIs, authentication, usage."
+    }
+  ]
 }

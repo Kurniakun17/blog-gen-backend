@@ -1,131 +1,98 @@
-  Trying to figure out Intercom Fin's pricing can feel like a bit of a maze. On the surface, \"$0.99 per resolution\" sounds refreshingly simple. But once you start digging in, many teams find their final bill is way more complicated, and frankly, more expensive than they first thought.
-
-So, let's clear the air. This guide will give you a straightforward breakdown of the Intercom AI pricing model. We'll pull back the curtain on the hidden costs, platform limitations, and what you’re *actually* paying for. By the end, you'll have all the info you need to make a smart decision, no surprises attached.
-
-## Understanding Intercom Fin before looking at Intercom AI pricing
-
-So, what exactly is Intercom Fin? It’s Intercom's AI agent designed to handle frontline customer support. Its main gig is giving customers quick answers by pulling information from your company’s knowledge sources, like your help center or FAQ pages.
-
-Intercom positions Fin as a smart bot that can tackle complex questions, match your brand's voice, and integrate into the Intercom Messenger to automate all those common, repetitive queries. The idea is to solve customer issues fast, without a human needing to jump in.
-
-## A complete breakdown of Intercom AI pricing
-
-To get the full picture of what Intercom Fin will cost you, you need to look at three different parts: the per-resolution fee, the mandatory seat licenses for the platform, and any extra add-ons you might tack on. Let's unpack each one.
-
-### The per-resolution model and its effect on Intercom AI pricing
-
-The core of Intercom Fin's cost is its pay-per-resolution model, priced at [$0.99 per resolution](https://www.intercom.com/help/en/articles/8205718-fin-ai-agent-resolutions#:~:text=please%20contact%20Sales.-,Resolution%20definition,to%20speak%20with%20a%20person.). But what does Intercom consider a \"resolution\"?
-
-According to them, a resolution happens whenever [Fin answers a customer's question successfully without a human agent needing to get involved](https://www.intercom.com/help/en/articles/8205718-fin-ai-agent-resolutions#:~:text=please%20contact%20Sales.-,Resolution%20definition,to%20speak%20with%20a%20person.). This can occur in two ways:
-
-*   **Confirmed Resolution:** The customer actually clicks a button or types a message saying their problem is solved.
-*   **Assumed Resolution:** The customer simply stops responding after Fin gives an answer, so the system assumes the job is done.
-
-This distinction is key to understanding your bill, as both types of resolutions contribute to your monthly costs, as illustrated below:
-
-<pre><img class=\"alignnone size-medium wp-image\" src=\"https://wmeojibgfvjvinftolho.supabase.co/storage/v1/object/public/public_assets/blog-gen/3a9061db-7536-4200-b6a5-36f982a436ee\" alt=\"Infographic explaining the two resolution types that affect your Intercom AI pricing, showing a user confirming a solution versus a user abandoning the chat.\" width=\"300\" height=\"169\" />Infographic explaining the two resolution types that affect your Intercom AI pricing, showing a user confirming a solution versus a user abandoning the chat.</pre>
-
-It's also important to know there’s a required minimum of [50 resolutions per month for the standalone version](https://www.intercom.com/pricing). That means you're on the hook for at least **$49.50 per month**, even during a slow month.
-
-Here’s a quick look at how those costs can stack up:
-
-| Number of Monthly Resolutions | Estimated Cost (at $0.99/resolution) |
-| :--- | :--- |
-| 50 (Minimum) | $49.50 |
-| 500 | $495.00 |
-| 1,000 | $990.00 |
-| 5,000 | $4,950.00 |
 
 
+- **Meta description:** Get a clear breakdown of MyAskAI pricing for 2025. We analyze their plans, hidden costs, and compare it to predictable alternatives like eesel AI.
+- **Excerpt:** Trying to understand MyAskAI pricing? This guide breaks down their per-conversation plans, overage fees, and key limitations for scaling support teams.
+- **Tags:** MyAskAI, AI Customer Support, Chatbot Pricing, eesel AI Alternative
 
-### The hidden costs in your Intercom AI pricing plan: Seat licenses and add-ons
+## H2: Introduction [~150 words]
+- Start by acknowledging the challenge of choosing the right AI support agent, especially when it comes to understanding the true cost.
+- Introduce the purpose of the blog: to provide a straightforward, no-fluff guide to MyAskAI pricing.
+- State that the post will cover their plans, what’s included, potential hidden costs, and how it compares to other options.
+- **Image Placeholder:** Screenshot of the MyAskAI homepage showing their main value proposition.
 
-This is where that simple $0.99 price tag starts to get fuzzy. To use Fin within Intercom's helpdesk, you also have to pay for their core platform plans. These come with seat licenses that can go from [$29 to $132 per agent, per month](https://www.eesel.ai/blog/intercom-copilot#:~:text=you%20pay%20annually).-,The%20hidden%20Intercom%20Copilot%20cost:%20The%20mandatory%20Intercom%20plan,$161%20per%20agent%20per%20month), and that’s if you pay annually.
+## H2: What is MyAskAI? [~150 words]
+- Explain what MyAskAI does in simple terms: it’s an AI customer support agent that integrates with existing helpdesks like Zendesk, Intercom, and Freshdesk.
+- Describe its core function: training on a company's knowledge base (help articles, internal docs) to provide instant answers to common customer questions.
+- Mention the primary goal is to reduce repetitive tickets, freeing up human agents for more complex issues.
 
-And if you want your human agents to get some AI assistance too (like reply suggestions or conversation summaries), you'll need the Copilot add-on. That's an extra [$29 per agent per month](https://www.eesel.ai/blog/intercom-copilot#:~:text=you%20pay%20annually).-,The%20hidden%20Intercom%20Copilot%20cost:%20The%20mandatory%20Intercom%20plan,$161%20per%20agent%20per%20month) on top of it all.
+## H2: A full breakdown of MyAskAI pricing plans [~600 words]
+- Briefly introduce the different AI pricing models to provide context: per-conversation, per-resolution, and capacity-based.
 
-Let's imagine what a monthly bill might look like for a small team with two agents:
+### H3: The MyAskAI pricing model explained
+- State clearly that MyAskAI uses a **per-conversation pricing model**.
+- Explain what this means: you are charged for every support ticket the AI engages with, regardless of whether it fully resolves the issue.
+- **Crucially, detail the confusing definition of a \"conversation\" from their support docs**:
+    - For helpdesk integrations (Zendesk, Intercom), a conversation is every 2.5 AI responses.
+    - For email/tickets, the first AI reply is 1 conversation, and subsequent replies are 0.4 conversations.
+- Highlight how this complexity can make costs hard to predict.
+- **Image Placeholder:** Screenshot of the MyAskAI pricing page showing the Pro and Enterprise plans.
 
-| Cost Component | Description | Monthly Price |
-| :--- | :--- | :--- |
-| Intercom Suite (Advanced Plan) | 2 agent seats @ $85/mo each (annual billing) | $170.00 |
-| Fin AI Agent Resolutions | 500 resolutions @ $0.99 each | $495.00 |
-| Copilot Add-on | AI assistance for 2 agents @ $29/mo each | $58.00 |
-| **Estimated Total Monthly Cost** | | **$723.00** |
+### H3: MyAskAI Pro plan
+- **Price:** $149 per month, or about $99 per month with an annual commitment (33% discount).
+- **Included Capacity:** 1,000 conversations per month.
+- **Overage Cost:** $0.10 for every conversation over the 1,000 limit.
+- **Core Features Table:** Use a markdown table to list the key features included in the Pro plan.
 
+| Feature                                      | Availability on Pro Plan |
+| -------------------------------------------- | ------------------------ |
+| Helpdesk Integrations (Zendesk, Intercom)    | Yes                      |
+| Unlimited Help Center & Document Sync        | Yes                      |
+| Connections (Google Drive, Notion)           | Yes                      |
+| Chrome Extension AI Copilot                  | Yes                      |
+| AI CSAT Scores & Analytics                   | Yes                      |
+| Live User Data Connection                    | Yes                      |
+| Advanced Actions & Tasks                     | Yes                      |
+| Multi-lingual Support (95+ languages)        | Yes                      |
+| Unlimited Team Seats                         | Yes                      |
 
+### H3: MyAskAI Enterprise plan
+- **Price:** Starts from $999/mo, but requires contacting their sales team for a custom quote.
+- **Included Capacity:** Custom-tailored to volume needs.
+- **Core Features:** Everything in Pro, plus extras like discounted volume pricing, invoice billing, a dedicated success manager, priority support, and SOC 2 certification.
 
-All of a sudden, that $0.99 feels like just one piece of a much larger puzzle.
+### H3: Are there any hidden costs with MyAskAI pricing?
+- Emphasize the **$0.10 overage fee** as the main variable cost that can lead to surprisingly high bills during busy periods.
+- List the paid add-ons:
+    - **API, Slack & Teams access:** $49 per month extra.
+    - **Remove \"Powered by\" branding:** $49 per month extra.
 
-### The full Intercom AI pricing plans
+## H2: Key limitations of MyAskAI [~500 words]
+- Frame this section as important considerations for teams before committing to the platform.
 
-So, you have two main options for buying Intercom Fin:
+### H3: Unpredictable pricing that punishes growth
+- Explain how the per-conversation model ties costs directly to ticket volume. As your business grows, your AI bill grows with it, which can undermine the cost savings.
+- Contrast this with platforms like [eesel AI](https://www.eesel.ai/pricing), which offers predictable, capacity-based pricing. With a fixed monthly bill for a set number of interactions, you're never penalized for having a busy month.
 
-**Option 1: Fin with Intercom's Helpdesk**
+### H3: Limited native integrations for enterprise knowledge
+- Acknowledge their integrations with common tools like Google Drive and Notion.
+- Point out that this may not be sufficient for businesses where knowledge is stored in more complex systems.
+- Subtly mention that a tool like [eesel AI](https://www.eesel.ai/integrations/all) offers over 100 out-of-the-box integrations, including deeper connections with sources like Confluence and past support tickets, ensuring a more comprehensive knowledge base from day one.
 
-*   **Cost:** $0.99 per resolution plus the monthly per-seat fee for your helpdesk plan [(Essential, Advanced, or Expert)](https://www.intercom.com/help/en/articles/9061614-intercom-plans-explained).
-*   **Best for:** Teams who are already fully committed to the Intercom platform for all their support needs.
+### H3: Basic simulation and forecasting
+- Mention that MyAskAI allows testing on historical tickets, which is a useful starting point.
+- Explain the limitation: this basic test doesn't provide the hard data (like projected deflection rates or cost savings) needed for a confident, data-backed rollout.
+- Highlight how [eesel AI](https://www.eesel.ai/) stands out with its robust simulation mode, which runs on thousands of past tickets to provide precise, data-backed forecasts on resolution rates and ROI before you go live.
 
-**Option 2: Fin with your current helpdesk (Standalone)**
+## H2: A more predictable alternative: eesel AI [~400 words]
+- Position eesel AI as a compelling alternative for teams seeking more control, predictability, and power.
 
-*   **Cost:** $0.99 per resolution, with the 50-resolution monthly minimum.
-*   **Benefit:** The upside here is that the standalone plan [includes unlimited teammates](https://www.intercom.com/help/en/articles/9440354-knowledge-sources-to-power-ai-agents-and-self-serve-support#:~:text=Pro%20tip:%20For%20the%20best,Fin%20is%20updated%20right%20away.), so you don't have to pay extra per-seat costs just to manage the bot.
-*   **Best for:** Teams who like their current helpdesk, such as [Zendesk](https://www.eesel.ai/integrations/zendesk) or Salesforce, but want to add Fin's AI features.
+### H3: Transparent pricing that stays flat
+- Explain [eesel AI's pricing model](https://www.eesel.ai/pricing): a straightforward, capacity-based system where you pay a fixed monthly cost for a pool of \"AI interactions\" (one reply or one action).
+- Mention specific plans like the **Team Plan** ($299/mo for 1,000 interactions) and **Business Plan** ($799/mo for 3,000 interactions) to emphasize predictability and transparency.
+- **Image Placeholder:** Screenshot of the eesel AI pricing page, highlighting the capacity-based model.
 
-## The practical challenges of the Intercom AI pricing model
+### H3: A truly self-serve setup in minutes
+- Emphasize that users can sign up, connect their helpdesk, train the AI, and go live entirely on their own, without mandatory demos or sales calls. This respects the user's time and empowers them to get started immediately.
 
-This pricing model doesn't just inflate the cost; it also creates some real headaches for teams trying to run their support operations smoothly.
+### H3: Total control over your AI agent
+- Briefly describe the power of eesel AI's workflow engine.
+- Mention key control features: deciding exactly which tickets the AI handles, fine-tuning its personality with a prompt editor, and adding custom actions (like looking up Shopify orders or automatically tagging tickets).
 
-### Why the per-resolution model makes Intercom AI pricing a nightmare for budgeting
+## H2: The bottom line on MyAskAI pricing [~200 words]
+- Summarize the main points: MyAskAI offers a functional AI agent with a simple, per-conversation pricing model that can be a decent entry point for some teams.
+- Reiterate the limitations: the pricing can become expensive and unpredictable as you scale, and the platform lacks the deep integrations and robust forecasting tools needed by modern support teams.
+- Conclude by positioning [eesel AI](https://eesel.ai/) as a more robust and scalable solution for teams that value a predictable budget, deep customization, and a data-backed deployment strategy.
 
-Trying to forecast your monthly spending is almost impossible when [your costs are tied directly to ticket volume](https://www.gptbots.ai/blog/intercom-fin-pricing). A new product launch, an unexpected outage, or a viral marketing campaign could make your support bill shoot through the roof without warning.
-
-And while Intercom does [offer volume discounts, they aren't listed publicly](https://www.intercom.com/help/en/articles/8205718-fin-ai-agent-resolutions#:~:text=please%20contact%20Sales.-,Resolution%20definition,to%20speak%20with%20a%20person.). You have to call their sales team to work out a custom deal for pre-committed resolution bundles. In other words, you pay a penalty for growth unless you can negotiate an enterprise-level contract.
-
-It's a big change from platforms with more predictable costs. For example, [eesel AI offers simple, all-inclusive tiered plans](https://docs.eesel.ai/pricing-admin-and-more/pricing) based on a generous number of AI interactions each month. You get the whole suite, including an [AI Agent](https://www.eesel.ai/product/ai-agent), [Copilot](https://www.eesel.ai/product/ai-copilot), and [Triage](https://www.eesel.ai/product/ai-triage), for one flat fee, letting you scale support without sweating over surprise bills.
-
-
-
-### Platform lock-in and migration headaches with the Intercom AI pricing structure
-
-Let's be honest: Fin is built to work best inside the Intercom world. This creates a classic case of platform lock-in. If you want all the advanced features, you have to buy into their entire suite.
-
-This puts teams using other helpdesks like [Freshdesk](https://www.eesel.ai/integrations/freshdesk) or [Gorgias](https://www.eesel.ai/integrations/gorgias) in a tough spot. Do you undertake a painful and costly migration to a whole new helpdesk? Or do you make do with a less powerful, standalone version of Fin?
-
-This is where an AI layer that works with any platform can be a lifesaver. [eesel AI](https://www.eesel.ai/) is designed to plug right into the helpdesk you *already* use. It improves your existing workflows without forcing you to tear out and replace the tools your team knows and loves.
-
-<pre><img class=\"alignnone size-medium wp-image\" src=\"https://wmeojibgfvjvinftolho.supabase.co/storage/v1/object/public/public_assets/blog-gen/b8f6ede1-cdb2-4b49-ba65-bca19eb3a5b1\" alt=\"An infographic illustrating how eesel AI integrates with multiple helpdesks, offering a flexible alternative to the restrictive Intercom AI pricing structure.\" width=\"300\" height=\"169\" />An infographic illustrating how eesel AI integrates with multiple helpdesks, offering a flexible alternative to the restrictive Intercom AI pricing structure.</pre>
-
-### The impact of limited knowledge sources on your Intercom AI pricing
-
-Fin gets its smarts mostly from a well-organized help center. That's great, but there's a big catch: if you're pulling in content from external websites, that information is only [refreshed once a week](https://www.intercom.com/help/en/articles/9440354-knowledge-sources-to-power-ai-agents-and-self-serve-support#:~:text=Pro%20tip:%20For%20the%20best,Fin%20is%20updated%20right%20away.). This means your AI could be giving customers outdated information for up to seven days after you've updated a policy or product detail.
-
-<pre><img class=\"alignnone size-medium wp-image\" src=\"https://wmeojibgfvjvinftolho.supabase.co/storage/v1/object/public/public_assets/blog-gen/e58ea552-9f4d-40b8-b3fb-a71e8363c60f\" alt=\"An infographic comparing Intercom's weekly knowledge refresh to eesel AI's instant sync, a key factor to consider with Intercom AI pricing.\" width=\"300\" height=\"169\" />An infographic comparing Intercom's weekly knowledge refresh to eesel AI's instant sync, a key factor to consider with Intercom AI pricing.</pre>
-
-A smarter approach to knowledge avoids this lag. For instance, [eesel AI](https://www.eesel.ai/) instantly syncs with *all* your knowledge, no matter where it is. It doesn't just read help articles; it also learns from your past support tickets, agent macros, and internal guides in tools like [Confluence](https://www.eesel.ai/integrations/confluence) and [Google Docs](https://www.eesel.ai/integration/google-docs), making sure your AI always has the most current and relevant answers.
-
-## How eesel AI compares to the Intercom AI pricing model
-
-If the thought of unpredictable bills and being locked into one platform makes you nervous, you're not alone. The good news is that there are other options designed for predictability and flexibility.
-
-[eesel AI](https://www.eesel.ai/) was built to solve these very problems. Here’s how it’s different:
-
-1.  **Predictable, Flat-Rate Pricing:** Your bill is your bill, period. It doesn't jump just because you had a busy month. You get the entire product suite for one clear price, so you always know what you're paying.
-2.  **True Workflow Automation:** This is about more than just text replies. With the \"Actions\" feature, the AI can [look up live order statuses in Shopify, tag tickets, or route urgent issues in Slack](https://www.eesel.ai/blog/ai-agent-studio-actions#:~:text=You%20shouldn't%20need%20to,platforms%20just%20don't%20offer.). It automates the actual work, not just the chat.
-3.  **Risk-Free Deployment:** You can use a powerful [simulation mode to test the AI on thousands of your real past tickets *before* it ever talks to a customer](https://www.eesel.ai/blog/ai-agent-studio-actions#:~:text=You%20shouldn't%20need%20to,platforms%20just%20don't%20offer.). This gives you an accurate preview of your resolution rate and potential savings, without any of the guesswork.
-
-<pre><img class=\"alignnone size-medium wp-image\" src=\"https://wmeojibgfvjvinftolho.supabase.co/storage/v1/object/public/public_assets/blog-gen/5cc8d455-cba1-4638-87f3-f6140769797d\" alt=\"Workflow diagram showing how to test eesel AI safely before deployment, a key advantage over the standard Intercom AI pricing model.\" width=\"300\" height=\"169\" />Workflow diagram showing how to test eesel AI safely before deployment, a key advantage over the standard Intercom AI pricing model.</pre>
-
-<pre><iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/omsvIUvgSBI\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>A YouTube video explaining the hidden costs and limitations that come with Intercom AI pricing and its features like Fin AI Summaries.</pre>
-
-
-
-## Is the Intercom AI pricing model worth it?
-
-In the end, Intercom Fin is a solid AI agent. But its [real cost is far more complex](https://www.customerly.io/blog/intercom-pricing) and much higher than the sticker price implies. The volatile per-resolution model makes budgeting tough, and the platform-first design can feel restrictive.
-
-This model really only works for large enterprise companies that are already heavily invested in the Intercom ecosystem. These are the teams with the budget flexibility to absorb fluctuating monthly costs without batting an eye.
-
-For just about everyone else—teams that need cost control, flexibility, and automation that plays nicely with their current tools—a more adaptable solution is probably a better fit.
-
-Ready for a powerful AI solution without the sticker shock? You can [try eesel AI for free](https://dashboard.eesel.ai/api/auth/signup?returnTo=v2) or [book a demo](https://calendly.com/eesel/30) to see how you can automate your support without the unpredictable bills.",
+## H2: Call to action
+- Encourage readers to take the next step.
+- Offer two clear options: \"[Start your free eesel AI trial](https://dashboard.eesel.ai/api/auth/signup?returnTo=v2) to see how it works, or [book a demo](https://calendly.com/eesel/30) with our team.\""=
