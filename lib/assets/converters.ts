@@ -4,6 +4,17 @@
  */
 
 /**
+ * Normalize placeholder text by trimming and removing stray delimiter artifacts like "::"
+ */
+function cleanPlaceholderText(value: string): string {
+  const trimmed = value.trim();
+  const withoutDelimiter = trimmed.includes("::")
+    ? trimmed.split("::")[0].trim()
+    : trimmed;
+  return withoutDelimiter.replace(/^:+/, "").replace(/:+$/, "");
+}
+
+/**
  * Convert __IMAGE:: placeholders to HTML img tags wrapped in <pre>
  */
 export function convertImagePlaceholdersToHTML(content: string): string {
@@ -12,8 +23,8 @@ export function convertImagePlaceholdersToHTML(content: string): string {
 
   return content.replace(imagePattern, (_match, url, title, caption) => {
     url = url.trim();
-    title = title.trim();
-    caption = caption.trim();
+    title = cleanPlaceholderText(title);
+    caption = cleanPlaceholderText(caption);
 
     return `<pre><img class="alignnone size-medium wp-image" src="${url}" alt="${caption}" width="300" height="169" />${caption}</pre>`;
   });
@@ -42,8 +53,8 @@ export function convertScreenshotsPlaceholdersToHTML(content: string): string {
 
   return content.replace(imagePattern, (_match, url, title, caption) => {
     url = url.trim();
-    title = title.trim();
-    caption = caption.trim();
+    title = cleanPlaceholderText(title);
+    caption = cleanPlaceholderText(caption);
 
     return `<pre><img class="alignnone size-medium wp-image" src="${url}" alt="${caption}" width="300" height="169" />${caption}</pre>`;
   });

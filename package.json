@@ -13,13 +13,14 @@
     "@ai-sdk/openai": "^2.0.79",
     "ai": "^5.0.108",
     "fast-xml-parser": "^5.3.3",
-    "firecrawl": "^4.8.3",
     "jsonrepair": "^3.13.1",
     "next": "16.0.7",
     "react": "19.2.0",
     "react-dom": "19.2.0",
-    "workflow": "^4.0.1-beta.29",
-    "zod": "^4.1.13"
+        "firecrawl": "^4.8.3",
+    "zod": "^4.1.13",
+    "workflow": "^4.0.1-beta.29"
+
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

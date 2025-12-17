@@ -49,6 +49,14 @@ export async function assetsProcessTagsStep(
     const videoPattern =
       /\*{0,}__VIDEO::(.*?)::([^:]+?)::(.+?)(?:__|(?=\n)|$)\*{0,}/g;
 
+    const cleanPlaceholderText = (value: string): string => {
+      const trimmed = value.trim();
+      const withoutDelimiter = trimmed.includes("::")
+        ? trimmed.split("::")[0].trim()
+        : trimmed;
+      return withoutDelimiter.replace(/^:+/, "").replace(/:+$/, "");
+    };
+
     const processHtml = (content: string): string => {
       let htmlContent = content;
 
@@ -57,14 +65,18 @@ export async function assetsProcessTagsStep(
       htmlContent = htmlContent.replace(
         imagePattern,
         (_match, url, _title, caption) => {
-          return `<pre><img class="alignnone size-medium wp-image" src="${url.trim()}" alt="${caption.trim()}" width="300" height="169" />${caption.trim()}</pre>`;
+          const cleanCaption = cleanPlaceholderText(caption);
+          const cleanUrl = url.trim();
+          return `<pre><img class="alignnone size-medium wp-image" src="${cleanUrl}" alt="${cleanCaption}" width="300" height="169" />${cleanCaption}</pre>`;
         }
       );
 
       htmlContent = htmlContent.replace(
         screenshotPattern,
         (_match, url, _title, caption) => {
-          return `<pre><img class="alignnone size-medium wp-image" src="${url.trim()}" alt="${caption.trim()}" width="300" height="169" />${caption.trim()}</pre>`;
+          const cleanCaption = cleanPlaceholderText(caption);
+          const cleanUrl = url.trim();
+          return `<pre><img class="alignnone size-medium wp-image" src="${cleanUrl}" alt="${cleanCaption}" width="300" height="169" />${cleanCaption}</pre>`;
         }
       );
 
@@ -108,8 +120,7 @@ export async function assetsProcessTagsStep(
         imagePattern,
         (_match, url, title, caption) => {
           const cleanUrl = url.trim();
-          const cleanTitle = title.trim();
-          const cleanCaption = caption.trim();
+          const cleanCaption = cleanPlaceholderText(caption);
           return `![${cleanCaption}](${cleanUrl})\n\n_${cleanCaption}_`;
         }
       );
@@ -118,8 +129,7 @@ export async function assetsProcessTagsStep(
         screenshotPattern,
         (_match, url, title, caption) => {
           const cleanUrl = url.trim();
-          const cleanTitle = title.trim();
-          const cleanCaption = caption.trim();
+          const cleanCaption = cleanPlaceholderText(caption);
           return `![${cleanCaption}](${cleanUrl})\n\n_${cleanCaption}_`;
         }
       );
@@ -128,8 +138,8 @@ export async function assetsProcessTagsStep(
         videoPattern,
         (_match, url, title, caption) => {
           const cleanUrl = url.trim();
-          const cleanTitle = title.trim();
-          const cleanCaption = caption.trim();
+          const cleanTitle = cleanPlaceholderText(title);
+          const cleanCaption = cleanPlaceholderText(caption);
           return `[${cleanTitle || "Video"}](${cleanUrl})\n\n_${
             cleanCaption || "Watch the video for more context."
           }_`;

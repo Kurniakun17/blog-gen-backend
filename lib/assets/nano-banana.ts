@@ -1,10 +1,17 @@
 /**
  * Nano-Banana Asset Generation
  * Generates visual assets (infographics, workflow diagrams) using Gemini AI
+ * with real brand logos from Brandfetch
  */
 
 import { randomUUID } from "crypto";
 import type { NanoBananaResult } from "./types";
+
+interface BrandLogo {
+  name: string;
+  url: string;
+  domain: string;
+}
 
 /**
  * Generate visual assets using Gemini AI and upload to Supabase
@@ -18,6 +25,7 @@ export async function generateNanoBananaAsset(
     const geminiApiKey = process.env.GEMINI_API_KEY;
     const supabaseUrl = process.env.SUPABASE_URL;
     const supabaseAnonKey = process.env.SUPABASE_ANON_KEY;
+    const brandfetchClientId = process.env.BRANDFETCH_CLIENT_ID;
 
     if (!geminiApiKey || !supabaseUrl || !supabaseAnonKey) {
       console.warn("[Nano-Banana] Missing API keys, skipping generation");
@@ -27,8 +35,30 @@ export async function generateNanoBananaAsset(
     // Generate UUID for unique file naming
     const uuid = randomUUID();
 
+    // Extract brand names and fetch logos if Brandfetch is available
+    let brandLogos: BrandLogo[] = [];
+    if (brandfetchClientId) {
+      console.log("[Nano-Banana] Extracting brand names from description...");
+      const brandDomains = await extractBrandNames(
+        assetDescription,
+        geminiApiKey
+      );
+
+      if (brandDomains.length > 0) {
+        console.log(
+          `[Nano-Banana] Found ${brandDomains.length} brands:`,
+          brandDomains
+        );
+        brandLogos = await fetchBrandLogos(brandDomains, brandfetchClientId);
+      }
+    } else {
+      console.warn(
+        "[Nano-Banana] BRANDFETCH_CLIENT_ID not set, logos will not be fetched"
+      );
+    }
+
     // Build the detailed prompt for asset generation
-    const prompt = buildNanoBananaPrompt(assetDescription);
+    const prompt = buildNanoBananaPrompt(assetDescription, brandLogos);
 
     // Step 1: Call Gemini API to generate image
     console.log("[Nano-Banana] Calling Gemini API to generate asset...");
@@ -122,9 +152,33 @@ export async function generateNanoBananaAsset(
 /**
  * Build the detailed prompt for Gemini AI asset generation
  */
-function buildNanoBananaPrompt(assetDescription: string): string {
-  
+function buildNanoBananaPrompt(
+  assetDescription: string,
+  brandLogos: BrandLogo[]
+): string {
+  const logoSection =
+    brandLogos.length > 0
+      ? `
+<brand_guidelines>
+The following well-known brands are mentioned in this asset. Use their official brand identities:
+
+${brandLogos.map((logo) => `- ${logo.name.toUpperCase()}`).join("\n")}
+
+CRITICAL INSTRUCTIONS for brand representation:
+1. Use the OFFICIAL and ACCURATE logo designs for these brands as they appear in reality
+2. Use the brands' correct official colors and typography
+3. DO NOT create fictional, modified, or stylized versions of these logos
+4. DO NOT include any URLs, web addresses, or link text in the visual
+5. Keep logos clean, recognizable, and true to their actual appearance
+6. Ensure proper spacing and sizing for professional presentation
+
+If you are not confident you can accurately represent a brand's logo, use a simple text label with the brand name in a clean sans-serif font instead.
+</brand_guidelines>
+`
+      : "";
+
   return `You are an asset designer tasked with creating an asset for a blog. You will be given a few inputs that will detail exactly the kind of asset you should make.
+${logoSection}
 
 <important_style_guide>
 • Colour Palette:
@@ -249,4 +303,102 @@ function extractTitleFromDescription(description: string): string {
     .join(" ");
 
   return title || "Generated Asset";
+}
+
+/**
+ * Fetch logo URLs from Brandfetch for given domains
+ */
+async function fetchBrandLogos(
+  domains: string[],
+  brandfetchClientId: string
+): Promise<BrandLogo[]> {
+  const logos: BrandLogo[] = [];
+
+  for (const domain of domains) {
+    try {
+      // Use Brandfetch Logo API CDN for high-quality PNG logos
+      const logoUrl = `https://cdn.brandfetch.io/${domain}.png?c=${brandfetchClientId}&theme=light&h=300`;
+
+      // Verify the logo exists by making a HEAD request
+      const response = await fetch(logoUrl, { method: "HEAD" });
+
+      if (response.ok) {
+        logos.push({
+          name: domain.split(".")[0],
+          url: logoUrl,
+          domain: domain,
+        });
+        console.log(`[Nano-Banana] Found logo for ${domain}`);
+      }
+    } catch (error) {
+      console.warn(`[Nano-Banana] Could not fetch logo for ${domain}:`, error);
+    }
+  }
+
+  return logos;
+}
+
+/**
+ * Extract brand names from asset description using Gemini AI
+ */
+async function extractBrandNames(
+  assetDescription: string,
+  geminiApiKey: string
+): Promise<string[]> {
+  try {
+    const prompt = `Analyze the following asset description and extract all brand/company names mentioned.
+Return ONLY a JSON array of brand names (lowercase, no spaces). If a brand is mentioned, also try to infer its domain (e.g., "GitHub" -> "github.com").
+
+Examples:
+Input: "Workflow showing GitHub Actions deploying to AWS S3"
+Output: ["github.com", "aws.amazon.com"]
+
+Input: "Infographic about Docker containerization vs traditional VMs"
+Output: ["docker.com"]
+
+Asset description:
+${assetDescription}
+
+Return ONLY the JSON array, nothing else.`;
+
+    const response = await fetch(
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent",
+      {
+        method: "POST",
+        headers: {
+          "x-goog-api-key": geminiApiKey,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          contents: [
+            {
+              parts: [{ text: prompt }],
+            },
+          ],
+          generationConfig: {
+            temperature: 0.1,
+          },
+        }),
+      }
+    );
+
+    if (!response.ok) {
+      console.error("[Nano-Banana] Failed to extract brands");
+      return [];
+    }
+
+    const data = await response.json();
+    const text =
+      data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || "[]";
+
+    // Extract JSON array from response (handle markdown code blocks)
+    const jsonMatch = text.match(/\[[\s\S]*\]/);
+    if (!jsonMatch) return [];
+
+    const brands = JSON.parse(jsonMatch[0]);
+    return Array.isArray(brands) ? brands : [];
+  } catch (error) {
+    console.error("[Nano-Banana] Error extracting brands:", error);
+    return [];
+  }
 }
