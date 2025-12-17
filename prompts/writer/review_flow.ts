@@ -24,6 +24,7 @@ Here is a list of the things you are going to update:
 * Make sure that the table markdown is in a proper format.
 * Check if any graph, chart, or mermaid flow has NOT been wrapped with <assets></assets> and add them. Example: <assets> \`graph TD ...\` </assets> or <assets> \`mermaid graph TD ... \` </assets>.
 * If a paragraph starts with a clear semantic label followed by a colon (e.g. "Pros:", "Cons:", "Who it's for:", "Who should look for alternatives:"), the label MUST be bolded, while the rest of the sentence remains unchanged.
+* You MUST fix if there's any capitalzation error on the CAPTION of an Image
 * The output should be in Markdown, with:
 
 1. No title or H1

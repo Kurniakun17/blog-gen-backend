@@ -3,6 +3,9 @@
  */
 
 import FirecrawlApp from "firecrawl";
+import { generateObject } from "ai";
+import { getModel } from "@/config/models";
+import { z } from "zod";
 
 interface SerpApiResult {
   organic_results?: Array<{
@@ -28,6 +31,65 @@ export type ResearchData = {
   /** Failed scrape URLs */
   failedUrls: string[];
 };
+
+/**
+ * Extract official landing page domains from keyword using AI
+ * Returns domains if the keyword mentions specific products/tools, otherwise returns empty array
+ */
+async function extractOfficialDomains(keyword: string): Promise<string[]> {
+  const schema = z.object({
+    domains: z
+      .array(z.string())
+      .describe(
+        "Official landing page domains (e.g., zendesk.com, freshdesk.com)"
+      ),
+  });
+
+  const prompt = `# Task
+Analyze the following keyword and identify if it mentions specific products or tools as their primary context.
+
+# Keyword
+${keyword}
+
+# Instructions
+1. If the keyword mentions specific product/tool names (e.g., "Zendesk pricing", "Intercom vs Drift", "Salesforce features"), extract their official domains
+2. Return the main domain WITHOUT protocol (e.g., "zendesk.com" not "https://zendesk.com")
+3. Only return domains for products/tools that are explicitly mentioned in the keyword
+4. If the keyword is generic (e.g., "customer support software", "best CRM tools") and doesn't mention specific products, return an empty array
+
+
+# Examples
+- "Zendesk pricing" → ["zendesk.com"]
+- "Intercom vs Drift comparison" → ["intercom.com", "drift.com"]
+- "Salesforce CRM features" → ["salesforce.com"]
+- "best customer support software" → []
+- "how to improve customer service" → []
+
+# Output
+Return only the domains array. Do not include explanations.`;
+
+  try {
+    const result = await generateObject({
+      model: getModel("writer"),
+      schema,
+      prompt,
+      temperature: 0.2,
+    });
+
+    const domains = result.object.domains || [];
+
+    if (domains.length > 0) {
+      console.log(`[Research] AI extracted domains from keyword: ${domains.join(", ")}`);
+    } else {
+      console.log(`[Research] No specific product domains found in keyword`);
+    }
+
+    return domains;
+  } catch (error) {
+    console.error(`[Research] Error extracting domains from keyword:`, error);
+    return [];
+  }
+}
 
 function parseRedditIds(url: string): RedditIds | null {
   try {
@@ -148,7 +210,12 @@ export async function researchTopic(keyword: string): Promise<ResearchData> {
   console.log(`[RESEARCH] Starting research for keyword: ${keyword}`);
   const MAX_URLS = 20;
 
-  // Step 1: Google Search using SerpApi
+  // Step 1: Extract official domains from keyword using AI
+  console.log(`[RESEARCH] Step 1: Extracting official domains from keyword...`);
+  const aiDomains = await extractOfficialDomains(keyword);
+  const aiUrls = aiDomains.map((domain) => `https://${domain}`);
+
+  // Step 2: Google Search using SerpApi
   const serpApiKey = process.env.SERPAPI_API_KEY;
   if (!serpApiKey) {
     const error = new Error("SERPAPI_API_KEY environment variable is not set");
@@ -160,7 +227,7 @@ export async function researchTopic(keyword: string): Promise<ResearchData> {
     keyword
   )}&api_key=${serpApiKey}`;
 
-  console.log(`[RESEARCH] Calling SerpApi...`);
+  console.log(`[RESEARCH] Step 2: Calling SerpApi...`);
   let searchResponse: Response;
   try {
     searchResponse = await fetch(searchUrl);
@@ -183,10 +250,22 @@ export async function researchTopic(keyword: string): Promise<ResearchData> {
   const searchData: SerpApiResult = await searchResponse.json();
   const organicResults = searchData.organic_results || [];
 
-  const selectedUrls = organicResults
+  const serpUrls = organicResults
     .slice(0, MAX_URLS)
     .map((result) => result.link)
     .filter(Boolean);
+
+  // Step 3: Combine AI URLs (first) with SerpAPI URLs
+  // Remove duplicates while preserving order (AI URLs first)
+  const allUrls = [...aiUrls];
+  for (const url of serpUrls) {
+    if (!allUrls.includes(url)) {
+      allUrls.push(url);
+    }
+  }
+
+  // Limit to MAX_URLS total
+  const selectedUrls = allUrls.slice(0, MAX_URLS);
 
   if (selectedUrls.length === 0) {
     console.warn("No search results found");
@@ -199,9 +278,11 @@ export async function researchTopic(keyword: string): Promise<ResearchData> {
     };
   }
 
-  console.log(`[RESEARCH] Found ${selectedUrls.length} URLs to scrape`);
+  console.log(
+    `[RESEARCH] Combined URLs: ${aiUrls.length} from AI + ${serpUrls.length} from SerpAPI = ${selectedUrls.length} total to scrape`
+  );
 
-  // Step 2: Scrape URLs in parallel using Firecrawl
+  // Step 4: Scrape URLs in parallel using Firecrawl
   const firecrawlApiKey = process.env.FIRECRAWL_API_KEY;
   if (!firecrawlApiKey) {
     const error = new Error(
@@ -211,7 +292,7 @@ export async function researchTopic(keyword: string): Promise<ResearchData> {
     throw error;
   }
 
-  console.log(`[RESEARCH] Initializing Firecrawl...`);
+  console.log(`[RESEARCH] Step 4: Initializing Firecrawl...`);
   const firecrawl = new FirecrawlApp({ apiKey: firecrawlApiKey });
 
   const scrapePromises = selectedUrls.map(
@@ -251,7 +332,7 @@ export async function researchTopic(keyword: string): Promise<ResearchData> {
 
   const scrapeResults = await Promise.allSettled(scrapePromises);
 
-  // Step 3: Process results and filter out failures
+  // Step 5: Process results and filter out failures
   const successfulScrapes: ScrapeResult[] = scrapeResults
     .filter(
       (result): result is PromiseFulfilledResult<ScrapeResult> =>
@@ -260,7 +341,7 @@ export async function researchTopic(keyword: string): Promise<ResearchData> {
     .map((result) => result.value);
 
   console.log(
-    `Successfully scraped ${successfulScrapes.length} out of ${selectedUrls.length} URLs`
+    `[RESEARCH] Step 5: Successfully scraped ${successfulScrapes.length} out of ${selectedUrls.length} URLs`
   );
 
   const successfulUrls = successfulScrapes.map((s) => s.url);
@@ -268,13 +349,14 @@ export async function researchTopic(keyword: string): Promise<ResearchData> {
     (url) => !successfulScrapes.find((s) => s.url === url)
   );
 
-  console.log("Scrape Overview:", {
-    attempted: selectedUrls,
-    successful: successfulUrls,
-    failed: failedUrls,
+  console.log("[RESEARCH] Scrape Overview:", {
+    aiUrlsCount: aiUrls.length,
+    attemptedCount: selectedUrls.length,
+    successfulCount: successfulUrls.length,
+    failedCount: failedUrls.length,
   });
 
-  // Step 4: Format as XML-like string
+  // Step 6: Format as XML-like string
   if (successfulScrapes.length === 0) {
     return {
       context:

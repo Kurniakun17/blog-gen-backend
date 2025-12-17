@@ -17,9 +17,8 @@ import { assetsDefinerStep } from "./steps/assets/assetsDefiner";
 import { assetsSearchStep } from "./steps/assets/assetsSearch";
 import { assetsProcessTagsStep } from "./steps/assets/assetsProcessTags";
 import {
-  identifyToolsStep,
-  findOfficialPagesStep,
-  scrapeOfficialPagesStep,
+  gatherResearchUrlsStep,
+  scrapeResearchUrlsStep,
 } from "./steps/writer/verifyContext";
 import { outlineVerifiedStep } from "./steps/writer/outlineVerified";
 import { metaTextSplitterStep } from "./steps/writer/metaTextSplitter";
@@ -101,30 +100,21 @@ export async function generateBlogWorkflow(
     durationMs: outlineResult.durationMs,
   });
 
-  // Step 5.1a: Identify tools from outline
-  const identifyToolsResult = await identifyToolsStep({
+  // Step 5.1a: Gather comprehensive research URLs from outline
+  const gatherUrlsResult = await gatherResearchUrlsStep({
     outline: outlineResult.value.outline,
   });
   diagnostics.push({
-    phase: "identify-tools",
-    durationMs: identifyToolsResult.durationMs,
+    phase: "gather-research-urls",
+    durationMs: gatherUrlsResult.durationMs,
   });
 
-  // Step 5.1b: Find official pages for identified tools
-  const findPagesResult = await findOfficialPagesStep({
-    tools: identifyToolsResult.value.tools,
+  // Step 5.1b: Scrape all research URLs
+  const verifyContextResult = await scrapeResearchUrlsStep({
+    toolsWithUrls: gatherUrlsResult.value.toolsWithUrls,
   });
   diagnostics.push({
-    phase: "find-official-pages",
-    durationMs: findPagesResult.durationMs,
-  });
-
-  // Step 5.1c: Scrape official pages
-  const verifyContextResult = await scrapeOfficialPagesStep({
-    officialPages: findPagesResult.value.officialPages,
-  });
-  diagnostics.push({
-    phase: "scrape-official-pages",
+    phase: "scrape-research-urls",
     durationMs: verifyContextResult.durationMs,
   });
 
@@ -202,16 +192,16 @@ export async function generateBlogWorkflow(
   // Combine internal links from company profile and gathered links
   const allInternalLinks = [...internalLinks, ...gatheredInternalLinks];
 
-  const verifiedSources = verifyContextResult.value.verifiedData
-    .map((item) => item.source)
-    .filter((source): source is string => !!source);
+  // Combine external URLs from research with successfully scraped verification URLs
+  const verifiedSources = verifyContextResult.value.successfulUrls;
+  const allExternalUrls = [...new Set([...externalUrls, ...verifiedSources])];
 
   // Step 8b: Linking Sources (Internal & External Links)
   const linkingResult = await linkingSourcesStep({
     blogContent: polishResult.value.polishedContent.result,
     blogType: metadataResult.value.blogType || "",
     internalLinks: allInternalLinks,
-    externalUrls: externalUrls,
+    externalUrls: allExternalUrls,
     internalUsage: input.internalUsage,
     verifiedSources: verifiedSources,
   });
@@ -281,12 +271,16 @@ export async function generateBlogWorkflow(
 
   // Log tool call summary
   console.log("\n========== [Assets Search] Tool Calls Summary ==========");
-  console.log("Tool Call Logs:", JSON.stringify(assetsSearchResult.value.toolCallLogs, null, 2));
+  console.log(
+    "Tool Call Logs:",
+    JSON.stringify(assetsSearchResult.value.toolCallLogs, null, 2)
+  );
   console.log("=========================================================\n");
 
   // Step 12: Assets Process Tags
   const assetsResult = await assetsProcessTagsStep({
-    contentWithProcessedAssets: assetsSearchResult.value.contentWithProcessedAssets,
+    contentWithProcessedAssets:
+      assetsSearchResult.value.contentWithProcessedAssets,
     outputFormat: input.internalUsage ? "html" : "markdown",
   });
   diagnostics.push({

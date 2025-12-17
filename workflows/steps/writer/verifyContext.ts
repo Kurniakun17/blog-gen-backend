@@ -1,18 +1,9 @@
 import { runStep, type TimedResult } from "../../utils/steps";
 import {
-  identifyToolsAndPages,
-  findOfficialPages,
-  type ToolVerificationPage,
-  type OfficialPageResult,
+  gatherResearchUrls,
+  type ToolResearchPages,
 } from "@/lib/verifyContext";
 import FirecrawlApp from "firecrawl";
-
-type VerificationQuestion = {
-  claim: string;
-  question: string;
-  answer?: string;
-  source?: string;
-};
 
 type ScrapedPage = {
   tool: string;
@@ -20,13 +11,10 @@ type ScrapedPage = {
   url: string;
   success: boolean;
   contentLength?: number;
+  category?: string;
 };
 
 type VerifyContextResult = {
-  /** Legacy field - kept for backwards compatibility */
-  questions: VerificationQuestion[];
-  /** Legacy field - kept for backwards compatibility */
-  verifiedData: VerificationQuestion[];
   /** List of all pages attempted to scrape with success status */
   scrapedPages: ScrapedPage[];
   /** Full combined context from all successfully scraped pages */
@@ -38,164 +26,69 @@ type VerifyContextResult = {
 };
 
 /**
- * Step 1: Identify Tools and Pages
- * Analyzes the outline to identify which tools/platforms need verification
+ * Step 1: Gather Research URLs
+ * Comprehensively identifies tools and gathers all relevant official URLs in one step
  */
-export async function identifyToolsStep(input: {
+export async function gatherResearchUrlsStep(input: {
   outline: string;
-}): Promise<TimedResult<{ tools: ToolVerificationPage[] }>> {
+}): Promise<TimedResult<{ toolsWithUrls: ToolResearchPages[] }>> {
   const outline = input.outline;
 
   return runStep(
-    "identify-tools",
+    "gather-research-urls",
     { outlineLength: outline.length },
     async () => {
       "use step";
 
-      console.log("\n[Identify Tools] Analyzing outline...");
-      const tools = await identifyToolsAndPages(outline);
+      console.log("\n[Gather Research URLs] Analyzing outline and finding URLs...");
+      const toolsWithUrls = await gatherResearchUrls(outline);
 
-      console.log(`[Identify Tools] Found ${tools.length} tools to verify`);
-      tools.forEach((tool) => {
-        console.log(
-          `  - ${tool.tool_name}: ${tool.verification_pages.length} pages`
-        );
-      });
+      console.log(`[Gather Research URLs] Found ${toolsWithUrls.length} tools`);
 
-      return {
-        value: { tools },
-        completeData: { toolsCount: tools.length },
-      };
-    }
-  );
-}
+      let totalUrls = 0;
+      toolsWithUrls.forEach((tool) => {
+        const urlCount =
+          (tool.official_page ? 1 : 0) +
+          (tool.pricing_page ? 1 : 0) +
+          (tool.verified_pages?.length || 0);
+        totalUrls += urlCount;
 
-/**
- * Step 2: Find Official Pages
- * Searches for official URLs for each tool's verification pages
- */
-export async function findOfficialPagesStep(input: {
-  tools: ToolVerificationPage[];
-}): Promise<
-  TimedResult<{
-    officialPages: Array<{ tool: string; page: OfficialPageResult }>;
-  }>
-> {
-  const tools = input.tools; // Extract before runStep to avoid closure issues
-
-  return runStep(
-    "find-official-pages",
-    { toolsCount: tools.length },
-    async () => {
-      "use step";
-
-      console.log("\n[Find Official Pages] Searching for URLs...");
-      console.log(
-        `[Find Official Pages] Processing ${tools.length} tools in parallel`
-      );
-
-      // Process all tools in parallel
-      const results = await Promise.allSettled(
-        tools.map(async (tool, i) => {
-          console.log(
-            `[Find Official Pages] [${i + 1}/${tools.length}] Starting: ${
-              tool.tool_name
-            } with ${tool.verification_pages.length} pages`
-          );
-
-          try {
-            const pages = await findOfficialPages(
-              tool.tool_name,
-              tool.verification_pages
-            );
-
-            console.log(
-              `[Find Official Pages] [${i + 1}/${tools.length}] Found ${
-                pages.length
-              } URLs for ${tool.tool_name}`
-            );
-
-            return {
-              tool: tool.tool_name,
-              pages,
-            };
-          } catch (error) {
-            console.error(
-              `[Find Official Pages] ERROR processing ${tool.tool_name}:`,
-              {
-                toolName: tool.tool_name,
-                verificationPages: tool.verification_pages,
-                errorMessage:
-                  error instanceof Error ? error.message : String(error),
-                errorStack: error instanceof Error ? error.stack : undefined,
-                errorType: error?.constructor?.name || typeof error,
-              }
-            );
-            throw error;
-          }
-        })
-      );
-
-      // Collect all successful results
-      const allOfficialPages: Array<{
-        tool: string;
-        page: OfficialPageResult;
-      }> = [];
-
-      let successCount = 0;
-      let failureCount = 0;
-
-      results.forEach((result, i) => {
-        if (result.status === "fulfilled") {
-          successCount++;
-          result.value.pages.forEach((page) => {
-            allOfficialPages.push({ tool: result.value.tool, page });
-          });
-        } else {
-          failureCount++;
-          console.error(
-            `[Find Official Pages] Failed to process tool ${i + 1}/${
-              tools.length
-            }:`,
-            result.reason instanceof Error
-              ? result.reason.message
-              : String(result.reason)
-          );
+        console.log(`  - ${tool.tool_name}: ${urlCount} URLs`);
+        if (tool.verified_pages?.length > 0) {
+          console.log(`    Pages: ${tool.verified_pages.map(p => p.page_name).join(", ")}`);
         }
       });
 
-      console.log(
-        `[Find Official Pages] Complete: ${successCount}/${tools.length} tools succeeded, ${failureCount} failed`
-      );
-      console.log(
-        `[Find Official Pages] Total: ${allOfficialPages.length} URLs found`
-      );
+      console.log(`[Gather Research URLs] Total: ${totalUrls} URLs to scrape`);
 
       return {
-        value: { officialPages: allOfficialPages },
-        completeData: { pagesFound: allOfficialPages.length },
+        value: { toolsWithUrls },
+        completeData: {
+          toolsCount: toolsWithUrls.length,
+          totalUrls,
+        },
       };
     }
   );
 }
 
 /**
- * Step 3: Scrape Official Pages
- * Scrapes all identified official pages using Firecrawl Batch Scrape API
+ * Step 2: Scrape Research URLs
+ * Scrapes all identified URLs using Firecrawl Batch Scrape API
  */
-export async function scrapeOfficialPagesStep(input: {
-  officialPages: Array<{ tool: string; page: OfficialPageResult }>;
+export async function scrapeResearchUrlsStep(input: {
+  toolsWithUrls: ToolResearchPages[];
 }): Promise<TimedResult<VerifyContextResult>> {
-  const officialPages = input.officialPages;
+  const toolsWithUrls = input.toolsWithUrls;
 
   return runStep(
-    "scrape-official-pages",
-    { pagesCount: officialPages.length },
+    "scrape-research-urls",
+    { toolsCount: toolsWithUrls.length },
     async () => {
       "use step";
 
       console.log(
-        "\n[Scrape Pages] Scraping official pages using batch scrape..."
+        "\n[Scrape URLs] Scraping all research URLs using batch scrape..."
       );
 
       const firecrawlApiKey = process.env.FIRECRAWL_API_KEY;
@@ -203,16 +96,14 @@ export async function scrapeOfficialPagesStep(input: {
         console.warn("FIRECRAWL_API_KEY not found. Skipping scraping.");
         return {
           value: {
-            questions: [],
-            verifiedData: [],
             scrapedPages: [],
             fullContext: "",
             successfulUrls: [],
-            failedUrls: officialPages.map(({ page }) => page.link),
+            failedUrls: [],
           },
           completeData: {
             pagesScraped: 0,
-            pagesFailed: officialPages.length,
+            pagesFailed: 0,
             scraped: false,
           },
         };
@@ -220,23 +111,65 @@ export async function scrapeOfficialPagesStep(input: {
 
       const firecrawl = new FirecrawlApp({ apiKey: firecrawlApiKey });
 
-      // Extract all URLs for batch scraping
-      const urls = officialPages.map(({ page }) => page.link);
+      // Flatten all URLs from the comprehensive research data
+      type UrlMapping = {
+        url: string;
+        tool: string;
+        title: string;
+        category: string; // official, pricing, verified
+      };
+
+      const urlMappings: UrlMapping[] = [];
+
+      toolsWithUrls.forEach((tool) => {
+        // Add official page
+        if (tool.official_page) {
+          urlMappings.push({
+            url: tool.official_page,
+            tool: tool.tool_name,
+            title: `${tool.tool_name} - Official Page`,
+            category: "official",
+          });
+        }
+
+        // Add pricing page
+        if (tool.pricing_page) {
+          urlMappings.push({
+            url: tool.pricing_page,
+            tool: tool.tool_name,
+            title: `${tool.tool_name} - Pricing`,
+            category: "pricing",
+          });
+        }
+
+        // Add all verified pages (features, docs, help center, etc.)
+        tool.verified_pages?.forEach((page) => {
+          urlMappings.push({
+            url: page.url,
+            tool: tool.tool_name,
+            title: `${tool.tool_name} - ${page.page_name}`,
+            category: "verified",
+          });
+        });
+      });
+
+      const urls = urlMappings.map((m) => m.url);
 
       console.log(
-        `[Scrape Pages] Starting batch scrape for ${urls.length} URLs...`
+        `[Scrape URLs] Starting batch scrape for ${urls.length} URLs across ${toolsWithUrls.length} tools...`
       );
 
-      try {        
+      try {
         const batchResult = await firecrawl.batchScrape(urls, {});
 
-        console.log(`[Scrape Pages] Batch scrape completed`);
+        console.log(`[Scrape URLs] Batch scrape completed`);
 
         const successfulScrapes: Array<{
           tool: string;
           title: string;
           url: string;
           content: string;
+          category: string;
         }> = [];
 
         const failedUrls: string[] = [];
@@ -244,50 +177,40 @@ export async function scrapeOfficialPagesStep(input: {
         // Process batch results
         if (batchResult?.data && Array.isArray(batchResult.data)) {
           batchResult.data.forEach((result: any, index: number) => {
-            const officialPage = officialPages[index];
+            const mapping = urlMappings[index];
 
             if (result?.metadata.statusCode === 200 && result?.markdown) {
               successfulScrapes.push({
-                tool: officialPage.tool,
-                title: result.metadata.title || "",
-                url: result.metadata.url || "",
+                tool: mapping.tool,
+                title: result.metadata.title || mapping.title,
+                url: result.metadata.url || mapping.url,
                 content: result.markdown || "",
+                category: mapping.category,
               });
             } else {
-              failedUrls.push(officialPage.page.link);
+              failedUrls.push(mapping.url);
             }
           });
         }
 
         console.log(
-          `[Scrape Pages] Successfully scraped ${successfulScrapes.length}/${officialPages.length} pages`
-        );
-
-        // Build verified context from scraped data (legacy format)
-        const verifiedData: VerificationQuestion[] = successfulScrapes.map(
-          (scrape) => ({
-            claim: `${scrape.tool} - ${scrape.title}`,
-            question: `Official information about ${scrape.tool}`,
-            answer: scrape.content || "No content available",
-            source: scrape.url,
-          })
+          `[Scrape URLs] Successfully scraped ${successfulScrapes.length}/${urls.length} pages`
         );
 
         // Build list of all scraped pages with status
-        const scrapedPages: ScrapedPage[] = officialPages.map(
-          ({ tool, page }) => {
-            const scrape = successfulScrapes.find((s) => s.url === page.link);
-            const success = !!scrape;
+        const scrapedPages: ScrapedPage[] = urlMappings.map((mapping) => {
+          const scrape = successfulScrapes.find((s) => s.url === mapping.url);
+          const success = !!scrape;
 
-            return {
-              tool,
-              title: page.title,
-              url: page.link,
-              success,
-              contentLength: scrape?.content?.length,
-            };
-          }
-        );
+          return {
+            tool: mapping.tool,
+            title: mapping.title,
+            url: mapping.url,
+            success,
+            contentLength: scrape?.content?.length,
+            category: mapping.category,
+          };
+        });
 
         // Build full combined context from all scraped pages
         const fullContext = successfulScrapes
@@ -296,6 +219,7 @@ export async function scrapeOfficialPagesStep(input: {
   <source>${scrape.url}</source>
   <tool>${scrape.tool}</tool>
   <title>${scrape.title}</title>
+  <category>${scrape.category}</category>
   <content>${scrape.content?.trim() || ""}</content>
 </context>`;
           })
@@ -304,16 +228,14 @@ export async function scrapeOfficialPagesStep(input: {
         // Extract successful URLs
         const successfulUrls = successfulScrapes.map((s) => s.url);
 
-        console.log(`[Scrape Pages] Success: ${successfulScrapes.length}`);
-        console.log(`[Scrape Pages] Failed: ${failedUrls.length}`);
+        console.log(`[Scrape URLs] Success: ${successfulScrapes.length}`);
+        console.log(`[Scrape URLs] Failed: ${failedUrls.length}`);
         console.log(
-          `[Scrape Pages] Context length: ${fullContext.length} chars`
+          `[Scrape URLs] Context length: ${fullContext.length} chars`
         );
 
         return {
           value: {
-            questions: [],
-            verifiedData,
             scrapedPages,
             fullContext,
             successfulUrls,
@@ -326,13 +248,11 @@ export async function scrapeOfficialPagesStep(input: {
           },
         };
       } catch (error) {
-        console.error("[Scrape Pages] Batch scrape failed:", error);
+        console.error("[Scrape URLs] Batch scrape failed:", error);
 
         // Return empty results on error
         return {
           value: {
-            questions: [],
-            verifiedData: [],
             scrapedPages: [],
             fullContext: "",
             successfulUrls: [],

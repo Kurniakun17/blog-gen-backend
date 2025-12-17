@@ -123,6 +123,7 @@ export async function generateNanoBananaAsset(
  * Build the detailed prompt for Gemini AI asset generation
  */
 function buildNanoBananaPrompt(assetDescription: string): string {
+  
   return `You are an asset designer tasked with creating an asset for a blog. You will be given a few inputs that will detail exactly the kind of asset you should make.
 
 <important_style_guide>

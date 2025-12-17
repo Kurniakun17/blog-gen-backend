@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import { identifyToolsStep } from "@/workflows/steps/writer/verifyContext";
+import { gatherResearchUrlsStep } from "@/workflows/steps/writer/verifyContext";
 
 /**
- * Test endpoint for identifying tools from outline
+ * Test endpoint for gathering comprehensive research URLs from outline
  *
  * Usage:
  * POST /api/test-identify-tools
@@ -24,15 +24,15 @@ export async function POST(request: NextRequest) {
 
     const outline = body.outline;
 
-    console.log("\n========== [Test] Identify Tools ==========");
+    console.log("\n========== [Test] Gather Research URLs ==========");
     console.log("Outline length:", outline.length);
     console.log("Outline preview:", outline.substring(0, 200));
-    console.log("===========================================\n");
+    console.log("=================================================\n");
 
     const startTime = Date.now();
 
-    console.log("\n[Test] Calling identifyToolsStep...");
-    const result = await identifyToolsStep({ outline });
+    console.log("\n[Test] Calling gatherResearchUrlsStep...");
+    const result = await gatherResearchUrlsStep({ outline });
 
     const duration = Date.now() - startTime;
 
@@ -41,14 +41,15 @@ export async function POST(request: NextRequest) {
 
     console.log("\n========== [Test] Complete ==========");
     console.log("Duration:", duration, "ms");
-    console.log("Tools found:", result.value.tools.length);
+    console.log("Tools found:", result.value.toolsWithUrls.length);
     console.log("=====================================\n");
 
     return NextResponse.json({
       success: true,
       duration,
-      tools: result.value.tools,
-      toolsCount: result.value.tools.length,
+      executionTime: result.durationMs,
+      toolsWithUrls: result.value.toolsWithUrls,
+      toolsCount: result.value.toolsWithUrls.length,
     });
   } catch (error) {
     console.error("\n[Test] Error:", error);
@@ -71,7 +72,7 @@ export async function GET() {
     endpoint: "/api/test-identify-tools",
     method: "POST",
     description:
-      "Test the identifyToolsStep function that analyzes blog outlines to identify tools/platforms that need verification",
+      "Test the gatherResearchUrlsStep function that analyzes blog outlines to identify primary tools and gather comprehensive official URLs for research",
     requiredFields: {
       outline: "Blog post outline or draft text to analyze",
     },
@@ -94,19 +95,29 @@ When comparing MyAskAI to Zendesk, there are several factors to consider...`,
       success: true,
       duration: "Number (ms)",
       executionTime: "Number (ms) - from workflow step",
-      tools: [
+      toolsWithUrls: [
         {
           tool_name: "MyAskAI",
-          verification_pages: [
-            "Pricing Page",
-            "Features Page",
-            "Help Center / Documentation",
+          official_page: "https://myaskai.com",
+          pricing_page: "https://myaskai.com/pricing",
+          verified_pages: [
+            {
+              page_name: "AI Chatbot",
+              url: "https://myaskai.com/features/chatbot",
+            },
+            {
+              page_name: "Help Center",
+              url: "https://help.myaskai.com",
+            },
+            {
+              page_name: "API Documentation",
+              url: "https://docs.myaskai.com/api",
+            },
           ],
         },
       ],
       toolsCount: "Number of tools identified",
-      completeData: "Additional metadata from the workflow step",
     },
-    note: "This endpoint uses the identifyToolsStep from workflows/steps/writer/verifyContext.ts",
+    note: "This endpoint uses the gatherResearchUrlsStep from workflows/steps/writer/verifyContext.ts. It combines tool identification and URL discovery into a single comprehensive step.",
   });
 }

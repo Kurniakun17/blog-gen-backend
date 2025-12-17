@@ -1,29 +1,99 @@
 {
-  "results": [
-    {
-      "title": "My AskAI Pricing",
-      "link": "https://myaskai.com/pricing",
-      "snippet": "Details about pricing plans for My AskAI including Pro, Enterprise, free trial, cost per ticket, etc."
-    },
-    {
-      "title": "My AskAI Features / Channels (Integrations)",
-      "link": "https://support.myaskai.com/features/channels",
-      "snippet": "List of channels & integrations available: Zendesk, Intercom, Freshchat, HubSpot, etc."
-    },
-    {
-      "title": "My AskAI Integrations: Website AI Assistant",
-      "link": "https://myaskai.com/integrations/website-ai-assistant",
-      "snippet": "Overview of integrating My AskAI with your website and other tools."
-    },
-    {
-      "title": "My AskAI Help Center / Support Documentation",
-      "link": "https://support.myaskai.com/",
-      "snippet": "Main Help / Support for My AskAI: guides, FAQs, API docs, features."
-    },
-    {
-      "title": "My AskAI API Documentation (API Docs Introduction)",
-      "link": "https://support.myaskai.com/api-documentation/api-docs-introduction",
-      "snippet": "Introduction to My AskAI APIs, authentication, usage."
-    }
-  ]
+  "success": true,
+  "duration": 21997,
+  "toolsCount": 3,
+  "totalUrls": 21,
+  "tools": [
+      {
+          "tool_name": "Zendesk",
+          "official_page": "https://www.zendesk.com/",
+          "pricing_page": "https://www.zendesk.com/pricing/",
+          "feature_pages": [
+              {
+                  "feature_name": "AI-powered knowledge base",
+                  "url": "https://www.zendesk.com/service/knowledge-base/"
+              },
+              {
+                  "feature_name": "Side Conversations, Skills-based Routing, Contextual Workspaces announcement",
+                  "url": "https://zendesk.com/newsroom/press-releases/zendesk-launches-workflow-collaboration-tools-help-enterprises-deliver-better-customer-experience-scale/"
+              },
+              {
+                  "feature_name": "Agent Workspace (multi-channel within ticket)",
+                  "url": "https://z3nall4.zendesk.com/hc/en-us/articles/8096327997847-About-the-Zendesk-Agent-Workspace"
+              }
+          ],
+          "other_pages": [
+              {
+                  "page_name": "Documentation",
+                  "url": "https://developer.zendesk.com/documentation/ticketing/managing-tickets/side-conversations/"
+              },
+              {
+                  "page_name": "Help Center",
+                  "url": "https://support.zendesk.com/"
+              },
+              {
+                  "page_name": "Security",
+                  "url": "https://www.zendesk.com/security/"
+              }
+          ],
+          "url_count": 8
+      },
+      {
+          "tool_name": "Freshdesk",
+          "official_page": "https://www.freshworks.com/freshdesk/",
+          "pricing_page": "https://www.freshworks.com/freshdesk/pricing/",
+          "feature_pages": [
+              {
+                  "feature_name": "Feature availability per plan including Freddy AI, routing, SLAs",
+                  "url": "https://www.freshworks.com/freshdesk/pricing/"
+              },
+              {
+                  "feature_name": "Managing Freddy AI add-ons",
+                  "url": "https://support.freshdesk.com/support/solutions/articles/50000011515/manage-freddy-ai-add-ons"
+              },
+              {
+                  "feature_name": "Freddy AI features and pricing details",
+                  "url": "https://crmsupport.freshworks.com/support/solutions/articles/50000009124-understanding-freddy-ai-features-and-pricing"
+              }
+          ],
+          "other_pages": [
+              {
+                  "page_name": "Help Center",
+                  "url": "https://support.freshdesk.com/support/home"
+              },
+              {
+                  "page_name": "Security",
+                  "url": "https://www.freshworks.com/company/security/"
+              }
+          ],
+          "url_count": 7
+      },
+      {
+          "tool_name": "eesel AI",
+          "official_page": "https://www.eesel.ai/",
+          "pricing_page": "https://www.eesel.ai/demo-pricing",
+          "feature_pages": [
+              {
+                  "feature_name": "Plan tiers, what’s included",
+                  "url": "https://docs.eesel.ai/pricing-admin-and-more/pricing"
+              },
+              {
+                  "feature_name": "Plan-options page showing bots, interactions, integration etc",
+                  "url": "https://www.eesel.ai/demo-pricing"
+              }
+          ],
+          "other_pages": [
+              {
+                  "page_name": "Documentation",
+                  "url": "https://docs.eesel.ai/"
+              },
+              {
+                  "page_name": "Privacy",
+                  "url": "https://www.eesel.ai/privacy"
+              }
+          ],
+          "url_count": 6
+      }
+  ],
+  "method": "gatherResearchUrls (comprehensive single-step approach)"
 }
