@@ -47,10 +47,8 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       success: true,
       duration,
-      executionTime: result.executionTime,
       tools: result.value.tools,
       toolsCount: result.value.tools.length,
-      completeData: result.completeData,
     });
   } catch (error) {
     console.error("\n[Test] Error:", error);
