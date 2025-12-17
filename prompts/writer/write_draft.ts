@@ -71,6 +71,8 @@ Always include relevant links from the company context, writing tips, or context
 
 NEVER suggest placeholder images or .pngs or any image links or mermaid flow whatsoever. Stick to text and URL links that you have access to inline for relevant info—your job is not to suggest any assets.
 
+**YOUTUBE VIDEO MARKERS**: If the outline contains [YOUTUBE_VIDEO: url] markers, you MUST preserve them exactly as written. Write the contextual paragraph around the marker as specified in the outline, then keep the marker on its own line. Do not remove or modify these markers.
+
 When talking about pricing, really try to be specific if that is possible given the information you are provided. ALWAYS get pricing from the OFFICIAL blog site and provide a pricing table if possible. Try to be specific about the prices and add that in. Do not make information up of course.
 
 Follow these writing guidelines strictly:

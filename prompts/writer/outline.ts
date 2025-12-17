@@ -8,6 +8,7 @@ export const buildSystemPrompt = ({
   tone,
   customOutline,
   companyName,
+  youtubeTranscripts,
 }: {
   topic: string;
   keyword: string;
@@ -17,6 +18,7 @@ export const buildSystemPrompt = ({
   tone?: string;
   companyName: string;
   customOutline?: string;
+  youtubeTranscripts?: string;
 }): string => {
   const toneInstruction =
     tone?.toLowerCase() !== "casual"
@@ -54,7 +56,46 @@ Here is the Blog type:
 
 <blog_type>
 ${blogType}
-</blog_type>
+</blog_type>${
+    youtubeTranscripts &&
+    youtubeTranscripts !== "No YouTube transcripts available."
+      ? `
+Here are relevant YouTube video transcripts that provide additional context and insights for the topic:
+
+<youtube_transcripts>
+${youtubeTranscripts}
+</youtube_transcripts>
+
+**CRITICAL: YOUTUBE VIDEO INTEGRATION**
+You MUST create a dedicated section in the outline that will embed the most relevant YouTube video. Follow these rules:
+
+1. **Create a contextual paragraph/section**: Add a section (can be a subsection under a relevant H2) that introduces and contextualizes the YouTube video content. This paragraph should:
+   - Explain what insights the video provides
+   - Summarize key takeaways from the transcript that are relevant to the topic
+   - Naturally lead into the video embed
+
+2. **Mark the video placement**: In the outline, explicitly note where the YouTube video should be embedded using this format:
+   [YOUTUBE_VIDEO: {video_url}]
+   Place this marker AFTER the contextual paragraph, not randomly in the content.
+
+3. **Placement rules**:
+   - The YouTube section should be placed in the MIDDLE or toward the END of the blog (never at the beginning)
+   - For LISTICLE blogs, place the YouTube section AFTER the list items but BEFORE the conclusion
+   - Only include 1 YouTube video maximum
+
+4. **Content requirements**: The backing paragraph should be 2-3 sentences minimum, providing real context about why this video is valuable for the reader.
+
+Example outline section:
+\`\`\`
+### Expert insights on [topic]
+- Discuss key points from the video transcript about [specific insight]
+- Mention practical tips or real-world examples from the video
+[YOUTUBE_VIDEO: https://www.youtube.com/watch?v=xxxxx]
+\`\`\`
+
+Do NOT randomly place videos without contextual backing text.`
+      : ""
+  }
 
 Here are the blog type definitions:
 

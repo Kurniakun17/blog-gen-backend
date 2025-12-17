@@ -8,6 +8,7 @@ import { metadataStep } from "./steps/data/metadata";
 import { companyProfileStep } from "./steps/data/companyProfile";
 import { researchStep } from "./steps/data/research";
 import { youtubeStep } from "./steps/data/youtube";
+import { youtubeTranscriptStep } from "./steps/data/youtubeTranscript";
 import { generateOutlineStep } from "./steps/writer/generateOutline";
 import { writeFirstDraftStep } from "./steps/writer/writeFirstDraft";
 import { finalPolishStep } from "./steps/writer/finalPolish";
@@ -76,6 +77,19 @@ export async function generateBlogWorkflow(
     durationMs: youtubeResult.durationMs,
   });
 
+  // Step 3.5: Fetch YouTube transcripts for outline context
+  let youtubeTranscriptsResult = null;
+  if (youtubeResult.value.videoUrls.length > 0) {
+    youtubeTranscriptsResult = await youtubeTranscriptStep({
+      youtubeUrls: youtubeResult.value.videoUrls,
+      maxTranscripts: 3,
+    });
+    diagnostics.push({
+      phase: "youtube-transcript",
+      durationMs: youtubeTranscriptsResult.durationMs,
+    });
+  }
+
   // Step 4: Compile Research Context
   const researchWithContext = mergeResearchContext(
     researchResult.value.context,
@@ -94,6 +108,7 @@ export async function generateBlogWorkflow(
     tone: metadataResult.value.tone,
     customOutline: metadataResult.value.outline,
     companyName: companyProfileResult.value.company_name || "",
+    youtubeTranscripts: youtubeTranscriptsResult?.value.formattedTranscripts,
   });
   diagnostics.push({
     phase: "generate-outline",

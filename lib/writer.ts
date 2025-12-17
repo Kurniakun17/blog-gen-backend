@@ -35,6 +35,7 @@ export interface BlogDraft {
  * @param researchContext - Research context from Phase 2
  * @param companyContext - Company profile context
  * @param blogType - Type of blog post
+ * @param youtubeTranscripts - Optional YouTube video transcripts for context
  * @returns Generated outline as string
  */
 export async function generateOutline(
@@ -46,7 +47,7 @@ export async function generateOutline(
   companyName: string,
   tone?: string,
   customOutline?: string,
-  
+  youtubeTranscripts?: string
 ): Promise<{ outline: string; prompt: string }> {
   const topicStr = String(topic);
 
@@ -60,7 +61,8 @@ export async function generateOutline(
     blogType,
     tone,
     customOutline,
-    companyName
+    companyName,
+    youtubeTranscripts,
   });
 
   const outlineResult = await generateText({

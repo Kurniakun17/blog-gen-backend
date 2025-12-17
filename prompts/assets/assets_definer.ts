@@ -3,7 +3,11 @@ export function buildAssetsDefinerPrompt(
   isInternalTeam: boolean,
   youtubeResults: string
 ): string {
-  const priorityList = `${isInternalTeam ? "1. **Eesel Internal Assets** (WordPress predefined assets)\n" : ""}2. **WorkflowV2** (WordPress predefined workflows)\n3. **Screenshots** \n4. **Infographics**`;
+  const priorityList = `${
+    isInternalTeam
+      ? "1. **Eesel Internal Assets** (WordPress predefined assets)\n"
+      : ""
+  }2. **WorkflowV2** (WordPress predefined workflows)\n3. **Screenshots** \n4. **Infographics**`;
 
   const eesselInternalSection = isInternalTeam
     ? `
@@ -129,12 +133,36 @@ You must:
 ---
 
 # YOUTUBE INSERTION
-You should suggest a youtube video when its RELEVANT to the FOCUS KEYWORD to add more context to the blog.
+
+## Pre-placed YouTube Videos (HIGHEST PRIORITY)
+If the blog already contains \`[YOUTUBE_VIDEO: url]\` markers, these are PRE-PLACED by the outline generator with contextual backing paragraphs. You MUST:
+1. Convert these markers into proper \`<assets>\` blocks
+2. Keep them in their EXACT location (do not move them)
+3. The contextual paragraph BEFORE the marker is the backing text - do NOT add another paragraph
+
+Format for pre-placed markers:
+\`\`\`
+[YOUTUBE_VIDEO: https://www.youtube.com/watch?v=xxxxx]
+\`\`\`
+
+Convert to:
+\`\`\`
+<assets>
+Asset 1: [YouTube] – [description based on context]
+Alt title: [text that includes the exact focus keyword]
+Alt text: [text that includes the exact focus keyword]
+URL: https://www.youtube.com/watch?v=xxxxx
+</assets>
+\`\`\`
+
+## Fallback YouTube Insertion (ONLY if no pre-placed markers exist)
+If there are NO \`[YOUTUBE_VIDEO: url]\` markers in the blog, you MAY suggest a youtube video when its RELEVANT to the FOCUS KEYWORD.
 The [type] of assets will be YouTube. You SHOULD also suggest an engaging alt title and alt text.
 *   YouTube videos SHOULD BE placed in the middle or at the end of the blog. It must NEVER BE at the beginning.
 *   When the blog is a LISTICLE, then any YouTube videos can ONLY be embedded AFTER the list, and BEFORE the conclusion. It must NEVER BE before the list.
+*   You MUST write a contextual paragraph BEFORE the YouTube asset that introduces why this video is relevant.
 
-Here's the YouTube search results:
+Here's the YouTube search results (use for fallback only):
 ${youtubeResults}
 
 ---

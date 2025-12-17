@@ -1,4 +1,4 @@
-import { searchYouTubeVideos } from "@/lib/youtube";
+import { searchYouTubeVideosWithUrls } from "@/lib/youtube";
 import { runStep, type TimedResult } from "../../utils/steps";
 
 export interface YouTubeStepInput {
@@ -9,12 +9,13 @@ export interface YouTubeStepInput {
 export interface YouTubeStepOutput {
   results: string;
   videoCount: number;
+  videoUrls: string[];
 }
 
 /**
  * YouTube search step - searches for relevant YouTube videos using SerpApi
  * @param input - Keyword to search for YouTube videos
- * @returns Formatted YouTube search results
+ * @returns Formatted YouTube search results with video URLs
  */
 export async function youtubeStep(
   input: YouTubeStepInput
@@ -22,21 +23,20 @@ export async function youtubeStep(
   return runStep("youtube", undefined, async () => {
     "use step";
 
-    const results = await searchYouTubeVideos(input.keyword, input.limit);
-
-    // Count the number of videos found
-    const videoCount = results.includes("Found")
-      ? parseInt(results.match(/Found (\d+) YouTube/)?.[1] || "0")
-      : 0;
+    const { formattedResults, urls } = await searchYouTubeVideosWithUrls(
+      input.keyword,
+      input.limit
+    );
 
     return {
       value: {
-        results,
-        videoCount,
+        results: formattedResults,
+        videoCount: urls.length,
+        videoUrls: urls,
       },
       completeData: {
         keyword: input.keyword,
-        videoCount,
+        videoCount: urls.length,
       },
     };
   });

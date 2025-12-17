@@ -50,6 +50,7 @@ YOU MUST remove the followings from the text, make sure the output will only con
 6. Horizontal rule (---)
 
 CRITICAL: You should NEVER remove an asset formating such as: __SCREENSHOTS::, __IMAGE::, __VIDEO::, etc.
+CRITICAL: PRESERVE all \`[YOUTUBE_VIDEO: url]\` markers exactly as they appear. Do not remove or modify them.
 
 Here is the keyword:
 <keyword>

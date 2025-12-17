@@ -53,6 +53,7 @@ You MUST implement these rules:
 CRITICAL:  
 - NEVER change any existing link.  
 - NEVER add images, placeholders, PNGs, mermaid diagrams, or similar.
+- PRESERVE all \`[YOUTUBE_VIDEO: url]\` markers exactly as they appear. Do not remove or modify them.
 
 You must also avoid the following AI phrases:
 

@@ -37,17 +37,33 @@ export async function searchYouTubeVideos(
   keyword: string,
   limit: number = 10
 ): Promise<string> {
+  const { formattedResults } = await searchYouTubeVideosWithUrls(
+    keyword,
+    limit
+  );
+  return formattedResults;
+}
+
+/**
+ * Search for YouTube videos and return both formatted results and raw URLs
+ * @param keyword - The search keyword
+ * @param limit - Maximum number of results (default: 10)
+ * @returns Object with formatted results and array of video URLs
+ */
+export async function searchYouTubeVideosWithUrls(
+  keyword: string,
+  limit: number = 10
+): Promise<{ formattedResults: string; urls: string[] }> {
   try {
     const serpApiKey = process.env.SERPAPI_API_KEY;
 
     if (!serpApiKey) {
       console.warn("[YouTube] Missing SERPAPI_API_KEY");
-      return "No YouTube results available.";
+      return { formattedResults: "No YouTube results available.", urls: [] };
     }
 
     console.log(`[YouTube] Searching for: ${keyword}`);
 
-    // Build SerpApi URL with YouTube site filter
     const searchUrl = new URL("https://serpapi.com/search");
     searchUrl.searchParams.set("engine", "google");
     searchUrl.searchParams.set("api_key", serpApiKey);
@@ -56,14 +72,13 @@ export async function searchYouTubeVideos(
     searchUrl.searchParams.set("hl", "en");
     searchUrl.searchParams.set("q", `${keyword} site:youtube.com`);
 
-    // Make API request
     const response = await fetch(searchUrl.toString());
 
     if (!response.ok) {
       console.error(
         `[YouTube] SerpApi request failed with status ${response.status}`
       );
-      return "No YouTube results available.";
+      return { formattedResults: "No YouTube results available.", urls: [] };
     }
 
     const data: SerpApiYouTubeResponse = await response.json();
@@ -71,10 +86,9 @@ export async function searchYouTubeVideos(
 
     if (organicResults.length === 0) {
       console.log("[YouTube] No results found");
-      return "No YouTube results available.";
+      return { formattedResults: "No YouTube results available.", urls: [] };
     }
 
-    // Parse and format results
     const videos: YouTubeVideo[] = organicResults
       .filter((result) => result.link && result.link.includes("youtube.com"))
       .map((result) => ({
@@ -84,17 +98,17 @@ export async function searchYouTubeVideos(
         channel: result.source || "",
         published: result.date || "",
       }))
-      .filter((video) => video.link); // Ensure valid links
+      .filter((video) => video.link);
 
     console.log(`[YouTube] Found ${videos.length} videos`);
 
-    // Format as structured text for the AI
     const formattedResults = formatYouTubeResults(videos);
+    const urls = videos.map((video) => video.link);
 
-    return formattedResults;
+    return { formattedResults, urls };
   } catch (error) {
     console.error("[YouTube] Search failed:", error);
-    return "No YouTube results available.";
+    return { formattedResults: "No YouTube results available.", urls: [] };
   }
 }
 

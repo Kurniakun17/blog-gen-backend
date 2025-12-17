@@ -80,6 +80,7 @@ Before creating the final outline, prepare the outline:
 After your preparation, create a detailed blog outline:
 
 - **Refines and finalizes the \`<original_outline>\`** based on the factual evidence in \`<verified_context>\`.
+- **PRESERVE all \`[YOUTUBE_VIDEO: url]\` markers** exactly as they appear in the original outline. Do not remove, move, or modify these markers - they indicate pre-placed YouTube video embeds with contextual backing paragraphs.
 - Is clear, logical, and easy to understand for a non-technical audience, especially decision-makers like heads of support
 - Is logical given the word count limits and explicitly specifies target word count for each section in [] brackets
 - Does not double up on sections/repeat the same information
